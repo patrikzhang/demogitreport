@@ -1,0 +1,5983 @@
+<html>
+<head><meta charset="UTF-8" /><script>
+var $gwt_version = "2.4.0-rc1";
+var $wnd = parent;
+var $doc = $wnd.document;
+var $moduleName, $moduleBase;
+var $strongName = '6BB5ABB91EDA22E6E0558B742E47BE77';
+var $stats = $wnd.__gwtStatsEvent ? function(a) {return $wnd.__gwtStatsEvent(a);} : null,
+$sessionId = $wnd.__gwtStatsSessionId ? $wnd.__gwtStatsSessionId : null;
+$stats && $stats({moduleName:'gwtsamples',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalStart'});
+</script></head>
+<body>
+<script><!--
+var _, N81_longLit = {l:4194175, m:4194303, h:1048575}, P0_longLit = {l:0, m:0, h:0}, P80_longLit = {l:128, m:0, h:0}, Q$Object = 0, Q$String = 1, Q$EventHandler = 2, Q$LongLibBase$LongEmul = 3, Q$SimpleEventBus$Command = 4, Q$UmbrellaException = 5, Q$Overflow = 6, Q$Positioning = 7, Q$ValueEnum = 8, Q$BaseWidget = 9, Q$Canvas = 10, Q$Serializable = 11, Q$Boolean = 12, Q$CharSequence = 13, Q$Comparable = 14, Q$Double = 15, Q$Enum = 16, Q$Float = 17, Q$Integer = 18, Q$Long = 19, Q$Number = 20, Q$RuntimeException = 21, Q$StackTraceElement = 22, Q$Throwable = 23, Q$Throwable_$1 = 24, Q$Date = 25, Q$LinkedHashMap$ChainEntry = 26, Q$List = 27, Q$Map = 28, Q$Map$Entry = 29, Q$Set = 30;
+function makeCastMap(a){
+  var result = {};
+  for (var i = 0, c = a.length; i < c; ++i) {
+    result[a[i]] = 1;
+  }
+  return result;
+}
+
+function nullMethod(){
+}
+
+function Object_0(){
+}
+
+_ = Object_0.prototype = {};
+_.equals$ = function equals(other){
+  return this === other;
+}
+;
+_.getClass$ = function getClass_0(){
+  return Ljava_lang_Object_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_0(){
+  return getHashCode(this);
+}
+;
+_.toString$ = function toString_0(){
+  return this.getClass$().typeName + '@' + toPowerOfTwoString(this.hashCode$());
+}
+;
+_.toString = function(){
+  return this.toString$();
+}
+;
+_.typeMarker$ = nullMethod;
+_.castableTypeMap$ = {};
+function setUncaughtExceptionHandler(handler){
+  sUncaughtExceptionHandler = handler;
+}
+
+var sUncaughtExceptionHandler = null;
+function $setStackTrace(stackTrace){
+  var c, copy, i;
+  copy = initDim(_3Ljava_lang_StackTraceElement_2_classLit, makeCastMap([Q$Serializable]), Q$StackTraceElement, stackTrace.length, 0);
+  for (i = 0 , c = stackTrace.length; i < c; ++i) {
+    if (!stackTrace[i]) {
+      throw new NullPointerException_0;
+    }
+    copy[i] = stackTrace[i];
+  }
+}
+
+function Throwable(){
+}
+
+_ = Throwable.prototype = new Object_0;
+_.getClass$ = function getClass_1(){
+  return Ljava_lang_Throwable_2_classLit;
+}
+;
+_.getMessage = function getMessage(){
+  return this.detailMessage;
+}
+;
+_.toString$ = function toString_1(){
+  var className, msg;
+  className = this.getClass$().typeName;
+  msg = this.getMessage();
+  return msg != null?className + ': ' + msg:className;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Throwable]);
+_.detailMessage = null;
+function Exception_0(message){
+  $fillInStackTrace();
+  this.detailMessage = message;
+}
+
+function Exception(){
+}
+
+_ = Exception.prototype = new Throwable;
+_.getClass$ = function getClass_2(){
+  return Ljava_lang_Exception_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Throwable]);
+function RuntimeException_0(message){
+  Exception_0.call(this, message);
+}
+
+function RuntimeException_1(){
+  $fillInStackTrace();
+  this.detailMessage = 'One or more exceptions caught, see full set in UmbrellaException#getCauses';
+}
+
+function RuntimeException(){
+}
+
+_ = RuntimeException.prototype = new Exception;
+_.getClass$ = function getClass_3(){
+  return Ljava_lang_RuntimeException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$RuntimeException, Q$Throwable]);
+function JavaScriptException_0(e){
+  $fillInStackTrace();
+  this.e = e;
+  $createStackTrace(this);
+}
+
+function getDescription(e){
+  return instanceOfJso(e)?getDescription0(dynamicCastJso(e)):e + '';
+}
+
+function getDescription0(e){
+  return e == null?null:e.message;
+}
+
+function getName(e){
+  var maybeJsoInvocation;
+  return e == null?'null':instanceOfJso(e)?getName0(dynamicCastJso(e)):instanceOf(e, Q$String)?'String':(maybeJsoInvocation = e , isJavaObject(maybeJsoInvocation)?maybeJsoInvocation.getClass$():Lcom_google_gwt_core_client_JavaScriptObject_2_classLit).typeName;
+}
+
+function getName0(e){
+  return e == null?null:e.name;
+}
+
+function getProperties(e){
+  return instanceOfJso(e)?$getProperties(dynamicCastJso(e)):'';
+}
+
+function JavaScriptException(){
+}
+
+_ = JavaScriptException_0.prototype = JavaScriptException.prototype = new RuntimeException;
+_.getClass$ = function getClass_4(){
+  return Lcom_google_gwt_core_client_JavaScriptException_2_classLit;
+}
+;
+_.getMessage = function getMessage_0(){
+  this.message_0 == null && (this.name_0 = getName(this.e) , this.description = getDescription(this.e) , this.message_0 = '(' + this.name_0 + '): ' + this.description + getProperties(this.e) , undefined);
+  return this.message_0;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$RuntimeException, Q$Throwable]);
+_.description = null;
+_.e = null;
+_.message_0 = null;
+_.name_0 = null;
+function equals__devirtual$(this$static, other){
+  var maybeJsoInvocation;
+  return maybeJsoInvocation = this$static , isJavaObject(maybeJsoInvocation)?maybeJsoInvocation.equals$(other):maybeJsoInvocation === other;
+}
+
+function hashCode__devirtual$(this$static){
+  var maybeJsoInvocation;
+  return maybeJsoInvocation = this$static , isJavaObject(maybeJsoInvocation)?maybeJsoInvocation.hashCode$():getHashCode(maybeJsoInvocation);
+}
+
+function create(milliseconds){
+  return new Date(milliseconds);
+}
+
+function Scheduler(){
+}
+
+_ = Scheduler.prototype = new Object_0;
+_.getClass$ = function getClass_5(){
+  return Lcom_google_gwt_core_client_Scheduler_2_classLit;
+}
+;
+function apply(jsFunction, thisObj, arguments_0){
+  return jsFunction.apply(thisObj, arguments_0);
+  var __0;
+}
+
+function enter(){
+  if (entryDepth++ == 0) {
+    $flushEntryCommands(($clinit_SchedulerImpl() , INSTANCE));
+    return true;
+  }
+  return false;
+}
+
+function entry_0(jsFunction){
+  return function(){
+    try {
+      return entry0(jsFunction, this, arguments);
+    }
+     catch (e) {
+      throw e;
+    }
+  }
+  ;
+}
+
+function entry0(jsFunction, thisObj, arguments_0){
+  var $e0, initialEntry;
+  initialEntry = enter();
+  try {
+    if (sUncaughtExceptionHandler) {
+      try {
+        return apply(jsFunction, thisObj, arguments_0);
+      }
+       catch ($e0) {
+        $e0 = caught($e0);
+        if (instanceOf($e0, Q$Throwable)) {
+          return undefined;
+        }
+         else 
+          throw $e0;
+      }
+    }
+     else {
+      return apply(jsFunction, thisObj, arguments_0);
+    }
+  }
+   finally {
+    initialEntry && $flushFinallyCommands(($clinit_SchedulerImpl() , INSTANCE));
+    --entryDepth;
+  }
+}
+
+function getHashCode(o){
+  return o.$H || (o.$H = ++sNextHashId);
+}
+
+var entryDepth = 0, sNextHashId = 0;
+function $clinit_SchedulerImpl(){
+  $clinit_SchedulerImpl = nullMethod;
+  INSTANCE = new SchedulerImpl_0;
+}
+
+function $flushEntryCommands(this$static){
+  var oldQueue, rescheduled;
+  if (this$static.entryCommands) {
+    rescheduled = null;
+    do {
+      oldQueue = this$static.entryCommands;
+      this$static.entryCommands = null;
+      rescheduled = runScheduledTasks(oldQueue, rescheduled);
+    }
+     while (this$static.entryCommands);
+    this$static.entryCommands = rescheduled;
+  }
+}
+
+function $flushFinallyCommands(this$static){
+  var oldQueue, rescheduled;
+  if (this$static.finallyCommands) {
+    rescheduled = null;
+    do {
+      oldQueue = this$static.finallyCommands;
+      this$static.finallyCommands = null;
+      rescheduled = runScheduledTasks(oldQueue, rescheduled);
+    }
+     while (this$static.finallyCommands);
+    this$static.finallyCommands = rescheduled;
+  }
+}
+
+function SchedulerImpl_0(){
+}
+
+function push(queue, task){
+  !queue && (queue = []);
+  queue[queue.length] = task;
+  return queue;
+}
+
+function runScheduledTasks(tasks, rescheduled){
+  var $e0, i, j, t;
+  for (i = 0 , j = tasks.length; i < j; ++i) {
+    t = tasks[i];
+    try {
+      t[1]?t[0].nullMethod() && (rescheduled = push(rescheduled, t)):t[0].nullMethod();
+    }
+     catch ($e0) {
+      $e0 = caught($e0);
+      if (!instanceOf($e0, Q$RuntimeException))
+        throw $e0;
+    }
+  }
+  return rescheduled;
+}
+
+function SchedulerImpl(){
+}
+
+_ = SchedulerImpl_0.prototype = SchedulerImpl.prototype = new Scheduler;
+_.getClass$ = function getClass_6(){
+  return Lcom_google_gwt_core_client_impl_SchedulerImpl_2_classLit;
+}
+;
+_.entryCommands = null;
+_.finallyCommands = null;
+var INSTANCE;
+function extractNameFromToString(fnToString){
+  var index, start, toReturn;
+  toReturn = '';
+  fnToString = $trim(fnToString);
+  index = fnToString.indexOf('(');
+  if (index != -1) {
+    start = fnToString.indexOf('function') == 0?8:0;
+    toReturn = $trim(fnToString.substr(start, index - start));
+  }
+  return toReturn.length > 0?toReturn:'anonymous';
+}
+
+function $collect(this$static){
+  var seen = {};
+  var toReturn = [];
+  var callee = arguments.callee.caller.caller;
+  while (callee) {
+    var name_0 = this$static.extractName(callee.toString());
+    toReturn.push(name_0);
+    var keyName = ':' + name_0;
+    var withThisName = seen[keyName];
+    if (withThisName) {
+      var i, j;
+      for (i = 0 , j = withThisName.length; i < j; i++) {
+        if (withThisName[i] === callee) {
+          return toReturn;
+        }
+      }
+    }
+    (withThisName || (seen[keyName] = [])).push(callee);
+    callee = callee.caller;
+  }
+  return toReturn;
+}
+
+function $createStackTrace(e){
+  var i, j, stack, stackTrace;
+  stack = (instanceOfJso(e.e)?dynamicCastJso(e.e):null , []);
+  stackTrace = initDim(_3Ljava_lang_StackTraceElement_2_classLit, makeCastMap([Q$Serializable]), Q$StackTraceElement, stack.length, 0);
+  for (i = 0 , j = stackTrace.length; i < j; ++i) {
+    stackTrace[i] = new StackTraceElement_0(stack[i]);
+  }
+  $setStackTrace(stackTrace);
+}
+
+function $fillInStackTrace(){
+  var i, j, stack, stackTrace;
+  stack = $collect(new StackTraceCreator$Collector_0);
+  stackTrace = initDim(_3Ljava_lang_StackTraceElement_2_classLit, makeCastMap([Q$Serializable]), Q$StackTraceElement, stack.length, 0);
+  for (i = 0 , j = stackTrace.length; i < j; ++i) {
+    stackTrace[i] = new StackTraceElement_0(stack[i]);
+  }
+  $setStackTrace(stackTrace);
+}
+
+function $getProperties(e){
+  var result = '';
+  try {
+    for (var prop in e) {
+      if (prop != 'name' && prop != 'message' && prop != 'toString') {
+        try {
+          result += '\n ' + prop + ': ' + e[prop];
+        }
+         catch (ignored) {
+        }
+      }
+    }
+  }
+   catch (ignored) {
+  }
+  return result;
+}
+
+function StackTraceCreator$Collector_0(){
+}
+
+function StackTraceCreator$Collector(){
+}
+
+_ = StackTraceCreator$Collector_0.prototype = StackTraceCreator$Collector.prototype = new Object_0;
+_.extractName = function extractName(fnToString){
+  return extractNameFromToString(fnToString);
+}
+;
+_.getClass$ = function getClass_7(){
+  return Lcom_google_gwt_core_client_impl_StackTraceCreator$Collector_2_classLit;
+}
+;
+function $append(a, x){
+  a[a.explicitLength++] = x == null?'null':x;
+}
+
+function $toString(a){
+  var s, s_0;
+  s = (s_0 = a.join('') , a.length = a.explicitLength = 0 , s_0);
+  a[a.explicitLength++] = s;
+  return s;
+}
+
+function $appendChild(this$static, newChild){
+  return this$static.appendChild(newChild);
+}
+
+function Event_0(){
+}
+
+_ = Event_0.prototype = new Object_0;
+_.getClass$ = function getClass_8(){
+  return Lcom_google_web_bindery_event_shared_Event_2_classLit;
+}
+;
+_.toString$ = function toString_2(){
+  return 'An event type';
+}
+;
+_.source = null;
+function $overrideSource(this$static, source){
+  this$static.source = source;
+}
+
+function GwtEvent(){
+}
+
+_ = GwtEvent.prototype = new Event_0;
+_.getClass$ = function getClass_9(){
+  return Lcom_google_gwt_event_shared_GwtEvent_2_classLit;
+}
+;
+_.dead = false;
+function Event$Type(){
+}
+
+_ = Event$Type.prototype = new Object_0;
+_.getClass$ = function getClass_10(){
+  return Lcom_google_web_bindery_event_shared_Event$Type_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_1(){
+  return this.index;
+}
+;
+_.toString$ = function toString_3(){
+  return 'Event type';
+}
+;
+_.index = 0;
+var nextHashCode = 0;
+function GwtEvent$Type_0(){
+  this.index = ++nextHashCode;
+}
+
+function GwtEvent$Type(){
+}
+
+_ = GwtEvent$Type_0.prototype = GwtEvent$Type.prototype = new Event$Type;
+_.getClass$ = function getClass_11(){
+  return Lcom_google_gwt_event_shared_GwtEvent$Type_2_classLit;
+}
+;
+function $addHandler(this$static, type, handler){
+  return new LegacyHandlerWrapper_0($doAdd(this$static.eventBus, type, handler));
+}
+
+function $fireEvent(this$static, event_0){
+  var $e0, e, oldSource;
+  !event_0.dead || (event_0.dead = false , event_0.source = null);
+  oldSource = event_0.source;
+  $overrideSource(event_0, this$static.source);
+  try {
+    $doFire(this$static.eventBus, event_0);
+  }
+   catch ($e0) {
+    $e0 = caught($e0);
+    if (instanceOf($e0, Q$UmbrellaException)) {
+      e = $e0;
+      throw new UmbrellaException_2(e.causes);
+    }
+     else 
+      throw $e0;
+  }
+   finally {
+    oldSource == null?(event_0.dead = true , event_0.source = null):(event_0.source = oldSource);
+  }
+}
+
+function $getHandlerCount(this$static, type){
+  return $getHandlerList(this$static.eventBus, type).size_0();
+}
+
+function HandlerManager_0(source){
+  this.eventBus = new HandlerManager$Bus_0;
+  this.source = source;
+}
+
+function HandlerManager(){
+}
+
+_ = HandlerManager_0.prototype = HandlerManager.prototype = new Object_0;
+_.getClass$ = function getClass_12(){
+  return Lcom_google_gwt_event_shared_HandlerManager_2_classLit;
+}
+;
+_.eventBus = null;
+_.source = null;
+function EventBus(){
+}
+
+_ = EventBus.prototype = new Object_0;
+_.getClass$ = function getClass_13(){
+  return Lcom_google_web_bindery_event_shared_EventBus_2_classLit;
+}
+;
+function $defer(this$static, command){
+  !this$static.deferredDeltas && (this$static.deferredDeltas = new ArrayList_0);
+  $add(this$static.deferredDeltas, command);
+}
+
+function $doAdd(this$static, type, handler){
+  if (!type) {
+    throw new NullPointerException_1('Cannot add a handler with a null type');
+  }
+  if (!handler) {
+    throw new NullPointerException_1('Cannot add a null handler');
+  }
+  this$static.firingDepth > 0?$defer(this$static, new SimpleEventBus$2_0(this$static, type, handler)):$doAddNow(this$static, type, null, handler);
+  return new SimpleEventBus$1_0;
+}
+
+function $doAddNow(this$static, type, source, handler){
+  var l_0;
+  l_0 = $ensureHandlerList(this$static, type, source);
+  l_0.add(handler);
+}
+
+function $doFire(this$static, event_0){
+  var $e0, causes, e, handler, handlers, it;
+  if (!event_0) {
+    throw new NullPointerException_1('Cannot fire null event');
+  }
+  try {
+    ++this$static.firingDepth;
+    handlers = $getDispatchList(this$static, event_0.getAssociatedType());
+    causes = null;
+    it = this$static.isReverseOrder?handlers.listIterator_0(handlers.size_0()):handlers.listIterator();
+    while (this$static.isReverseOrder?it.i > 0:it.i < it.this$0_0.size_0()) {
+      handler = this$static.isReverseOrder?$previous(it):$next(it);
+      try {
+        event_0.dispatch(dynamicCast(handler, Q$EventHandler));
+      }
+       catch ($e0) {
+        $e0 = caught($e0);
+        if (instanceOf($e0, Q$Throwable)) {
+          e = $e0;
+          !causes && (causes = new HashSet_0);
+          $add_0(causes, e);
+        }
+         else 
+          throw $e0;
+      }
+    }
+    if (causes) {
+      throw new UmbrellaException_1(causes);
+    }
+  }
+   finally {
+    --this$static.firingDepth;
+    this$static.firingDepth == 0 && $handleQueuedAddsAndRemoves(this$static);
+  }
+}
+
+function $ensureHandlerList(this$static, type, source){
+  var handlers, sourceMap;
+  sourceMap = dynamicCast(this$static.map.get(type), Q$Map);
+  if (!sourceMap) {
+    sourceMap = new HashMap_0;
+    this$static.map.put(type, sourceMap);
+  }
+  handlers = dynamicCast(sourceMap.get(source), Q$List);
+  if (!handlers) {
+    handlers = new ArrayList_0;
+    sourceMap.put(source, handlers);
+  }
+  return handlers;
+}
+
+function $getDispatchList(this$static, type){
+  var directHandlers;
+  directHandlers = $getHandlerList(this$static, type);
+  return directHandlers;
+}
+
+function $getHandlerList(this$static, type){
+  var handlers, sourceMap;
+  sourceMap = dynamicCast(this$static.map.get(type), Q$Map);
+  if (!sourceMap) {
+    return $clinit_Collections() , $clinit_Collections() , EMPTY_LIST;
+  }
+  handlers = dynamicCast(sourceMap.get(null), Q$List);
+  if (!handlers) {
+    return $clinit_Collections() , $clinit_Collections() , EMPTY_LIST;
+  }
+  return handlers;
+}
+
+function $handleQueuedAddsAndRemoves(this$static){
+  var c, c$iterator;
+  if (this$static.deferredDeltas) {
+    try {
+      for (c$iterator = new AbstractList$IteratorImpl_0(this$static.deferredDeltas); c$iterator.i < c$iterator.this$0_0.size_0();) {
+        c = dynamicCast($next(c$iterator), Q$SimpleEventBus$Command);
+        $doAddNow(c.this$0, c.val$type, c.val$source, c.val$handler);
+      }
+    }
+     finally {
+      this$static.deferredDeltas = null;
+    }
+  }
+}
+
+function SimpleEventBus(){
+}
+
+_ = SimpleEventBus.prototype = new EventBus;
+_.getClass$ = function getClass_14(){
+  return Lcom_google_web_bindery_event_shared_SimpleEventBus_2_classLit;
+}
+;
+_.deferredDeltas = null;
+_.firingDepth = 0;
+_.isReverseOrder = false;
+function HandlerManager$Bus_0(){
+  this.map = new HashMap_0;
+  this.isReverseOrder = false;
+}
+
+function HandlerManager$Bus(){
+}
+
+_ = HandlerManager$Bus_0.prototype = HandlerManager$Bus.prototype = new SimpleEventBus;
+_.getClass$ = function getClass_15(){
+  return Lcom_google_gwt_event_shared_HandlerManager$Bus_2_classLit;
+}
+;
+function LegacyHandlerWrapper_0(){
+}
+
+function LegacyHandlerWrapper(){
+}
+
+_ = LegacyHandlerWrapper_0.prototype = LegacyHandlerWrapper.prototype = new Object_0;
+_.getClass$ = function getClass_16(){
+  return Lcom_google_gwt_event_shared_LegacyHandlerWrapper_2_classLit;
+}
+;
+function UmbrellaException_1(causes){
+  RuntimeException_1.call(this, causes.size_0() == 0?null:dynamicCast(causes.toArray(initDim(_3Ljava_lang_Throwable_2_classLit, makeCastMap([Q$Serializable, Q$Throwable_$1]), Q$Throwable, 0, 0)), Q$Throwable_$1)[0]);
+  this.causes = causes;
+}
+
+function UmbrellaException_0(){
+}
+
+_ = UmbrellaException_1.prototype = UmbrellaException_0.prototype = new RuntimeException;
+_.getClass$ = function getClass_17(){
+  return Lcom_google_web_bindery_event_shared_UmbrellaException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$UmbrellaException, Q$Serializable, Q$RuntimeException, Q$Throwable]);
+_.causes = null;
+function UmbrellaException_2(causes){
+  UmbrellaException_1.call(this, causes);
+}
+
+function UmbrellaException(){
+}
+
+_ = UmbrellaException_2.prototype = UmbrellaException.prototype = new UmbrellaException_0;
+_.getClass$ = function getClass_18(){
+  return Lcom_google_gwt_event_shared_UmbrellaException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$UmbrellaException, Q$Serializable, Q$RuntimeException, Q$Throwable]);
+function Array_1(){
+}
+
+function createFrom(array, length_0){
+  var a, result;
+  a = array;
+  result = createFromSeed(0, length_0);
+  initValues(a.arrayClass$, a.castableTypeMap$, a.queryId$, result);
+  return result;
+}
+
+function createFromSeed(seedType, length_0){
+  var array = new Array(length_0);
+  if (seedType == 3) {
+    for (var i = 0; i < length_0; ++i) {
+      var value = new Object;
+      value.l = value.m = value.h = 0;
+      array[i] = value;
+    }
+  }
+   else if (seedType > 0) {
+    var value = [null, 0, false][seedType];
+    for (var i = 0; i < length_0; ++i) {
+      array[i] = value;
+    }
+  }
+  return array;
+}
+
+function initDim(arrayClass, castableTypeMap, queryId, length_0, seedType){
+  var result;
+  result = createFromSeed(seedType, length_0);
+  initValues(arrayClass, castableTypeMap, queryId, result);
+  return result;
+}
+
+function initValues(arrayClass, castableTypeMap, queryId, array){
+  $clinit_Array$ExpandoWrapper();
+  wrapArray(array, expandoNames_0, expandoValues_0);
+  array.arrayClass$ = arrayClass;
+  array.castableTypeMap$ = castableTypeMap;
+  array.queryId$ = queryId;
+  return array;
+}
+
+function setCheck(array, index, value){
+  if (value != null) {
+    if (array.queryId$ > 0 && !canCastUnsafe(value, array.queryId$)) {
+      throw new ArrayStoreException_0;
+    }
+    if (array.queryId$ < 0 && (value.typeMarker$ == nullMethod || canCast(value, 1))) {
+      throw new ArrayStoreException_0;
+    }
+  }
+  return array[index] = value;
+}
+
+function Array_0(){
+}
+
+_ = Array_1.prototype = Array_0.prototype = new Object_0;
+_.getClass$ = function getClass_19(){
+  return this.arrayClass$;
+}
+;
+_.arrayClass$ = null;
+_.queryId$ = 0;
+function $clinit_Array$ExpandoWrapper(){
+  $clinit_Array$ExpandoWrapper = nullMethod;
+  expandoNames_0 = [];
+  expandoValues_0 = [];
+  initExpandos(new Array_1, expandoNames_0, expandoValues_0);
+}
+
+function initExpandos(protoType, expandoNames, expandoValues){
+  var i = 0, value;
+  for (var name_0 in protoType) {
+    if (value = protoType[name_0]) {
+      expandoNames[i] = name_0;
+      expandoValues[i] = value;
+      ++i;
+    }
+  }
+}
+
+function wrapArray(array, expandoNames, expandoValues){
+  $clinit_Array$ExpandoWrapper();
+  for (var i = 0, c = expandoNames.length; i < c; ++i) {
+    array[expandoNames[i]] = expandoValues[i];
+  }
+}
+
+var expandoNames_0, expandoValues_0;
+function canCast(src, dstId){
+  return src.castableTypeMap$ && !!src.castableTypeMap$[dstId];
+}
+
+function canCastUnsafe(src, dstId){
+  return src.castableTypeMap$ && src.castableTypeMap$[dstId];
+}
+
+function dynamicCast(src, dstId){
+  if (src != null && !canCastUnsafe(src, dstId)) {
+    throw new ClassCastException_0;
+  }
+  return src;
+}
+
+function dynamicCastJso(src){
+  if (src != null && (src.typeMarker$ == nullMethod || canCast(src, 1))) {
+    throw new ClassCastException_0;
+  }
+  return src;
+}
+
+function instanceOf(src, dstId){
+  return src != null && canCast(src, dstId);
+}
+
+function instanceOfJso(src){
+  return src != null && src.typeMarker$ != nullMethod && !canCast(src, 1);
+}
+
+function isJavaObject(src){
+  return src.typeMarker$ == nullMethod || canCast(src, 1);
+}
+
+function maskUndefined(src){
+  return src == null?null:src;
+}
+
+function round_int(x){
+  return ~~Math.max(Math.min(x, 2147483647), -2147483648);
+}
+
+function throwClassCastExceptionUnlessNull(o){
+  if (o != null) {
+    throw new ClassCastException_0;
+  }
+  return null;
+}
+
+function init(){
+  var runtimeValue, button, htmlCanvas, layout, richTextEditor;
+  !!$stats && onModuleStart('com.google.gwt.user.client.UserAgentAsserter');
+  runtimeValue = $getRuntimeValue();
+  $equals('ie8', runtimeValue) || ($wnd.alert('ERROR: Possible problem with your *.gwt.xml module file.\nThe compile time user.agent value (ie8) does not match the runtime user.agent value (' + runtimeValue + '). Expect more errors.\n') , undefined);
+  !!$stats && onModuleStart('com.google.gwt.user.client.DocumentModeAsserter');
+  $onModuleLoad();
+  !!$stats && onModuleStart('com.smartgwt.client.SmartGwtEntryPoint');
+  $onModuleLoad_0();
+  !!$stats && onModuleStart('mygwt.client.GWTsamples');
+  layout = new VLayout_0;
+  $isCreated(layout)?$setProperty_2(layout, 'membersMargin', 5):(layout.config['membersMargin'] = 5 , undefined);
+  htmlCanvas = new Canvas_1;
+  $isCreated(htmlCanvas)?$setProperty_2(htmlCanvas, 'height', 130):(htmlCanvas.config['height'] = 130 , undefined);
+  $setPadding(htmlCanvas, valueOf(2));
+  htmlCanvas.setOverflow(($clinit_Overflow() , HIDDEN));
+  $setCanDragResize(htmlCanvas, ($clinit_Boolean() , $clinit_Boolean() , TRUE));
+  $setShowEdges(htmlCanvas, TRUE);
+  $isCreated(htmlCanvas)?$setProperty(htmlCanvas, 'contents', 'Click <b>Set Canvas HTML<\/b> to display edited content.'):(htmlCanvas.config['contents'] = 'Click <b>Set Canvas HTML<\/b> to display edited content.' , undefined);
+  richTextEditor = new RichTextEditor_0;
+  $isCreated(richTextEditor)?$setProperty_2(richTextEditor, 'height', 155):(richTextEditor.config['height'] = 155 , undefined);
+  $setAttribute(richTextEditor, HIDDEN.value_0, false);
+  $setCanDragResize(richTextEditor, TRUE);
+  $setShowEdges(richTextEditor, TRUE);
+  $isCreated(richTextEditor)?$setProperty(richTextEditor, 'value', "<span style='font-size:22px;'>Ajax<\/span> <b>A<\/b>synchronous <b>J<\/b>avaScript <b>A<\/b>nd <b>X<\/b>ML (AJAX) is a Web development technique for creating interactive <b>web applications<\/b>. The intent is to make web pages feel more responsive by exchanging small amounts of data with the server behind the scenes, so that the entire Web page does not have to be reloaded each time the user makes a change. This is meant to increase the Web page's <b>interactivity<\/b>, <b>speed<\/b>, and <b>usability<\/b>.<br>(Source: <a href='http://www.wikipedia.org' title='Wikipedia' target='_blank'>Wikipedia<\/a>)"):(richTextEditor.config['value'] = "<span style='font-size:22px;'>Ajax<\/span> <b>A<\/b>synchronous <b>J<\/b>avaScript <b>A<\/b>nd <b>X<\/b>ML (AJAX) is a Web development technique for creating interactive <b>web applications<\/b>. The intent is to make web pages feel more responsive by exchanging small amounts of data with the server behind the scenes, so that the entire Web page does not have to be reloaded each time the user makes a change. This is meant to increase the Web page's <b>interactivity<\/b>, <b>speed<\/b>, and <b>usability<\/b>.<br>(Source: <a href='http://www.wikipedia.org' title='Wikipedia' target='_blank'>Wikipedia<\/a>)" , undefined);
+  $addMember(layout, richTextEditor);
+  button = new IButton_0;
+  $isCreated(button)?$setProperty_2(button, 'width', 150):(button.config['width'] = 150 , undefined);
+  $addClickHandler(button, new GWTsamples$1_0(htmlCanvas, richTextEditor));
+  $addMember(layout, button);
+  $addMember(layout, htmlCanvas);
+  $draw(layout);
+}
+
+function caught(e){
+  if (instanceOf(e, Q$Throwable)) {
+    return e;
+  }
+  return new JavaScriptException_0(e);
+}
+
+function create_0(value){
+  var a0, a1, a2;
+  a0 = value & 4194303;
+  a1 = value >> 22 & 4194303;
+  a2 = value < 0?1048575:0;
+  return create0(a0, a1, a2);
+}
+
+function create_1(a){
+  return create0(a.l, a.m, a.h);
+}
+
+function create0(l_0, m_0, h_0){
+  return _ = new LongLibBase$LongEmul_0 , _.l = l_0 , _.m = m_0 , _.h = h_0 , _;
+}
+
+function divMod(a, b, computeRemainder){
+  var aIsCopy, aIsMinValue, aIsNegative, bpower, c, negative;
+  if (b.l == 0 && b.m == 0 && b.h == 0) {
+    throw new ArithmeticException_0;
+  }
+  if (a.l == 0 && a.m == 0 && a.h == 0) {
+    computeRemainder && (remainder = create0(0, 0, 0));
+    return create0(0, 0, 0);
+  }
+  if (b.h == 524288 && b.m == 0 && b.l == 0) {
+    return divModByMinValue(a, computeRemainder);
+  }
+  negative = false;
+  if (b.h >> 19 != 0) {
+    b = neg(b);
+    negative = true;
+  }
+  bpower = powerOfTwo(b);
+  aIsNegative = false;
+  aIsMinValue = false;
+  aIsCopy = false;
+  if (a.h == 524288 && a.m == 0 && a.l == 0) {
+    aIsMinValue = true;
+    aIsNegative = true;
+    if (bpower == -1) {
+      a = create_1(($clinit_LongLib$Const() , MAX_VALUE));
+      aIsCopy = true;
+      negative = !negative;
+    }
+     else {
+      c = shr(a, bpower);
+      negative && negate(c);
+      computeRemainder && (remainder = create0(0, 0, 0));
+      return c;
+    }
+  }
+   else if (a.h >> 19 != 0) {
+    aIsNegative = true;
+    a = neg(a);
+    aIsCopy = true;
+    negative = !negative;
+  }
+  if (bpower != -1) {
+    return divModByShift(a, bpower, negative, aIsNegative, computeRemainder);
+  }
+  if (!gte_0(a, b)) {
+    computeRemainder && (aIsNegative?(remainder = neg(a)):(remainder = create0(a.l, a.m, a.h)));
+    return create0(0, 0, 0);
+  }
+  return divModHelper(aIsCopy?a:create0(a.l, a.m, a.h), b, negative, aIsNegative, aIsMinValue, computeRemainder);
+}
+
+function divModByMinValue(a, computeRemainder){
+  if (a.h == 524288 && a.m == 0 && a.l == 0) {
+    computeRemainder && (remainder = create0(0, 0, 0));
+    return create_1(($clinit_LongLib$Const() , ONE));
+  }
+  computeRemainder && (remainder = create0(a.l, a.m, a.h));
+  return create0(0, 0, 0);
+}
+
+function divModByShift(a, bpower, negative, aIsNegative, computeRemainder){
+  var c;
+  c = shr(a, bpower);
+  negative && negate(c);
+  if (computeRemainder) {
+    a = maskRight(a, bpower);
+    aIsNegative?(remainder = neg(a)):(remainder = create0(a.l, a.m, a.h));
+  }
+  return c;
+}
+
+function divModHelper(a, b, negative, aIsNegative, aIsMinValue, computeRemainder){
+  var bshift, gte, quotient, shift, a0, a1, a2;
+  shift = numberOfLeadingZeros(b) - numberOfLeadingZeros(a);
+  bshift = shl(b, shift);
+  quotient = create0(0, 0, 0);
+  while (shift >= 0) {
+    gte = trialSubtract(a, bshift);
+    if (gte) {
+      shift < 22?(quotient.l |= 1 << shift , undefined):shift < 44?(quotient.m |= 1 << shift - 22 , undefined):(quotient.h |= 1 << shift - 44 , undefined);
+      if (a.l == 0 && a.m == 0 && a.h == 0) {
+        break;
+      }
+    }
+    a1 = bshift.m;
+    a2 = bshift.h;
+    a0 = bshift.l;
+    bshift.h = a2 >>> 1;
+    bshift.m = a1 >>> 1 | (a2 & 1) << 21;
+    bshift.l = a0 >>> 1 | (a1 & 1) << 21;
+    --shift;
+  }
+  negative && negate(quotient);
+  if (computeRemainder) {
+    if (aIsNegative) {
+      remainder = neg(a);
+      aIsMinValue && (remainder = sub(remainder, ($clinit_LongLib$Const() , ONE)));
+    }
+     else {
+      remainder = create0(a.l, a.m, a.h);
+    }
+  }
+  return quotient;
+}
+
+function maskRight(a, bits){
+  var b0, b1, b2;
+  if (bits <= 22) {
+    b0 = a.l & (1 << bits) - 1;
+    b1 = b2 = 0;
+  }
+   else if (bits <= 44) {
+    b0 = a.l;
+    b1 = a.m & (1 << bits - 22) - 1;
+    b2 = 0;
+  }
+   else {
+    b0 = a.l;
+    b1 = a.m;
+    b2 = a.h & (1 << bits - 44) - 1;
+  }
+  return create0(b0, b1, b2);
+}
+
+function negate(a){
+  var neg0, neg1, neg2;
+  neg0 = ~a.l + 1 & 4194303;
+  neg1 = ~a.m + (neg0 == 0?1:0) & 4194303;
+  neg2 = ~a.h + (neg0 == 0 && neg1 == 0?1:0) & 1048575;
+  a.l = neg0;
+  a.m = neg1;
+  a.h = neg2;
+}
+
+function numberOfLeadingZeros(a){
+  var b1, b2;
+  b2 = numberOfLeadingZeros_0(a.h);
+  if (b2 == 32) {
+    b1 = numberOfLeadingZeros_0(a.m);
+    return b1 == 32?numberOfLeadingZeros_0(a.l) + 32:b1 + 20 - 10;
+  }
+   else {
+    return b2 - 12;
+  }
+}
+
+--></script>
+<script><!--
+function powerOfTwo(a){
+  var h_0, l_0, m_0;
+  l_0 = a.l;
+  if ((l_0 & l_0 - 1) != 0) {
+    return -1;
+  }
+  m_0 = a.m;
+  if ((m_0 & m_0 - 1) != 0) {
+    return -1;
+  }
+  h_0 = a.h;
+  if ((h_0 & h_0 - 1) != 0) {
+    return -1;
+  }
+  if (h_0 == 0 && m_0 == 0 && l_0 == 0) {
+    return -1;
+  }
+  if (h_0 == 0 && m_0 == 0 && l_0 != 0) {
+    return numberOfTrailingZeros(l_0);
+  }
+  if (h_0 == 0 && m_0 != 0 && l_0 == 0) {
+    return numberOfTrailingZeros(m_0) + 22;
+  }
+  if (h_0 != 0 && m_0 == 0 && l_0 == 0) {
+    return numberOfTrailingZeros(h_0) + 44;
+  }
+  return -1;
+}
+
+function toDoubleHelper(a){
+  return a.l + a.m * 4194304 + a.h * 17592186044416;
+}
+
+function trialSubtract(a, b){
+  var sum0, sum1, sum2;
+  sum2 = a.h - b.h;
+  if (sum2 < 0) {
+    return false;
+  }
+  sum0 = a.l - b.l;
+  sum1 = a.m - b.m + (sum0 >> 22);
+  sum2 += sum1 >> 22;
+  if (sum2 < 0) {
+    return false;
+  }
+  a.l = sum0 & 4194303;
+  a.m = sum1 & 4194303;
+  a.h = sum2 & 1048575;
+  return true;
+}
+
+var remainder = null;
+function eq(a, b){
+  return a.l == b.l && a.m == b.m && a.h == b.h;
+}
+
+function fromDouble(value){
+  var a0, a1, a2, negative, result;
+  if (isNaN(value)) {
+    return $clinit_LongLib$Const() , ZERO;
+  }
+  if (value < -9223372036854775808) {
+    return $clinit_LongLib$Const() , MIN_VALUE;
+  }
+  if (value >= 9223372036854775807) {
+    return $clinit_LongLib$Const() , MAX_VALUE;
+  }
+  negative = false;
+  if (value < 0) {
+    negative = true;
+    value = -value;
+  }
+  a2 = 0;
+  if (value >= 17592186044416) {
+    a2 = round_int(value / 17592186044416);
+    value -= a2 * 17592186044416;
+  }
+  a1 = 0;
+  if (value >= 4194304) {
+    a1 = round_int(value / 4194304);
+    value -= a1 * 4194304;
+  }
+  a0 = round_int(value);
+  result = create0(a0, a1, a2);
+  negative && negate(result);
+  return result;
+}
+
+function fromInt(value){
+  var rebase, result;
+  if (value > -129 && value < 128) {
+    rebase = value + 128;
+    boxedValues == null && (boxedValues = initDim(_3Lcom_google_gwt_lang_LongLibBase$LongEmul_2_classLit, makeCastMap([Q$Serializable]), Q$LongLibBase$LongEmul, 256, 0));
+    result = boxedValues[rebase];
+    !result && (result = boxedValues[rebase] = create_0(value));
+    return result;
+  }
+  return create_0(value);
+}
+
+function gt(a, b){
+  var signa, signb;
+  signa = a.h >> 19;
+  signb = b.h >> 19;
+  return signa == 0?signb != 0 || a.h > b.h || a.h == b.h && a.m > b.m || a.h == b.h && a.m == b.m && a.l > b.l:!(signb == 0 || a.h < b.h || a.h == b.h && a.m < b.m || a.h == b.h && a.m == b.m && a.l <= b.l);
+}
+
+function gte_0(a, b){
+  var signa, signb;
+  signa = a.h >> 19;
+  signb = b.h >> 19;
+  return signa == 0?signb != 0 || a.h > b.h || a.h == b.h && a.m > b.m || a.h == b.h && a.m == b.m && a.l >= b.l:!(signb == 0 || a.h < b.h || a.h == b.h && a.m < b.m || a.h == b.h && a.m == b.m && a.l < b.l);
+}
+
+function lt(a, b){
+  return !gte_0(a, b);
+}
+
+function neg(a){
+  var neg0, neg1, neg2;
+  neg0 = ~a.l + 1 & 4194303;
+  neg1 = ~a.m + (neg0 == 0?1:0) & 4194303;
+  neg2 = ~a.h + (neg0 == 0 && neg1 == 0?1:0) & 1048575;
+  return create0(neg0, neg1, neg2);
+}
+
+function shl(a, n){
+  var res0, res1, res2;
+  n &= 63;
+  if (n < 22) {
+    res0 = a.l << n;
+    res1 = a.m << n | a.l >> 22 - n;
+    res2 = a.h << n | a.m >> 22 - n;
+  }
+   else if (n < 44) {
+    res0 = 0;
+    res1 = a.l << n - 22;
+    res2 = a.m << n - 22 | a.l >> 44 - n;
+  }
+   else {
+    res0 = 0;
+    res1 = 0;
+    res2 = a.l << n - 44;
+  }
+  return create0(res0 & 4194303, res1 & 4194303, res2 & 1048575);
+}
+
+function shr(a, n){
+  var a2, negative, res0, res1, res2;
+  n &= 63;
+  a2 = a.h;
+  negative = (a2 & 524288) != 0;
+  negative && (a2 |= -1048576);
+  if (n < 22) {
+    res2 = a2 >> n;
+    res1 = a.m >> n | a2 << 22 - n;
+    res0 = a.l >> n | a.m << 22 - n;
+  }
+   else if (n < 44) {
+    res2 = negative?1048575:0;
+    res1 = a2 >> n - 22;
+    res0 = a.m >> n - 22 | a2 << 44 - n;
+  }
+   else {
+    res2 = negative?1048575:0;
+    res1 = negative?4194303:0;
+    res0 = a2 >> n - 44;
+  }
+  return create0(res0 & 4194303, res1 & 4194303, res2 & 1048575);
+}
+
+function shru(a, n){
+  var a2, res0, res1, res2;
+  n &= 63;
+  a2 = a.h & 1048575;
+  if (n < 22) {
+    res2 = a2 >>> n;
+    res1 = a.m >> n | a2 << 22 - n;
+    res0 = a.l >> n | a.m << 22 - n;
+  }
+   else if (n < 44) {
+    res2 = 0;
+    res1 = a2 >>> n - 22;
+    res0 = a.m >> n - 22 | a.h << 44 - n;
+  }
+   else {
+    res2 = 0;
+    res1 = 0;
+    res0 = a2 >>> n - 44;
+  }
+  return create0(res0 & 4194303, res1 & 4194303, res2 & 1048575);
+}
+
+function sub(a, b){
+  var sum0, sum1, sum2;
+  sum0 = a.l - b.l;
+  sum1 = a.m - b.m + (sum0 >> 22);
+  sum2 = a.h - b.h + (sum1 >> 22);
+  return create0(sum0 & 4194303, sum1 & 4194303, sum2 & 1048575);
+}
+
+function toDouble(a){
+  if (eq(a, ($clinit_LongLib$Const() , MIN_VALUE))) {
+    return -9223372036854775808;
+  }
+  if (!gte_0(a, ZERO)) {
+    return -toDoubleHelper(neg(a));
+  }
+  return a.l + a.m * 4194304 + a.h * 17592186044416;
+}
+
+function toInt(a){
+  return a.l | a.m << 22;
+}
+
+function toString_4(a){
+  var digits, rem, res, tenPowerLong, zeroesNeeded;
+  if (a.l == 0 && a.m == 0 && a.h == 0) {
+    return '0';
+  }
+  if (a.h == 524288 && a.m == 0 && a.l == 0) {
+    return '-9223372036854775808';
+  }
+  if (a.h >> 19 != 0) {
+    return '-' + toString_4(neg(a));
+  }
+  rem = a;
+  res = '';
+  while (!(rem.l == 0 && rem.m == 0 && rem.h == 0)) {
+    tenPowerLong = fromInt(1000000000);
+    rem = divMod(rem, tenPowerLong, true);
+    digits = '' + toInt(remainder);
+    if (!(rem.l == 0 && rem.m == 0 && rem.h == 0)) {
+      zeroesNeeded = 9 - digits.length;
+      for (; zeroesNeeded > 0; --zeroesNeeded) {
+        digits = '0' + digits;
+      }
+    }
+    res = digits + res;
+  }
+  return res;
+}
+
+function xor(a, b){
+  return create0(a.l ^ b.l, a.m ^ b.m, a.h ^ b.h);
+}
+
+var boxedValues = null;
+function $clinit_LongLib$Const(){
+  $clinit_LongLib$Const = nullMethod;
+  MAX_VALUE = create0(4194303, 4194303, 524287);
+  MIN_VALUE = create0(0, 0, 524288);
+  ONE = fromInt(1);
+  fromInt(2);
+  ZERO = fromInt(0);
+}
+
+var MAX_VALUE, MIN_VALUE, ONE, ZERO;
+function LongLibBase$LongEmul_0(){
+}
+
+function LongLibBase$LongEmul(){
+}
+
+_ = LongLibBase$LongEmul_0.prototype = LongLibBase$LongEmul.prototype = new Object_0;
+_.getClass$ = function getClass_20(){
+  return Lcom_google_gwt_lang_LongLibBase$LongEmul_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$LongLibBase$LongEmul]);
+function onModuleStart(mainClassName){
+  return $stats({moduleName:$moduleName, sessionId:$sessionId, subSystem:'startup', evtGroup:'moduleStartup', millis:(new Date).getTime(), type:'onModuleLoadStart', className:mainClassName});
+}
+
+function $onModuleLoad(){
+  var allowedModes, currentMode, i;
+  currentMode = $doc.compatMode;
+  allowedModes = initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable]), Q$String, ['CSS1Compat']);
+  for (i = 0; i < allowedModes.length; ++i) {
+    if ($equals(allowedModes[i], currentMode)) {
+      return;
+    }
+  }
+  allowedModes.length == 1 && $equals('CSS1Compat', allowedModes[0]) && $equals('BackCompat', currentMode)?"GWT no longer supports Quirks Mode (document.compatMode=' BackCompat').<br>Make sure your application's host HTML page has a Standards Mode (document.compatMode=' CSS1Compat') doctype,<br>e.g. by using &lt;!doctype html&gt; at the start of your application's HTML page.<br><br>To continue using this unsupported rendering mode and risk layout problems, suppress this message by adding<br>the following line to your*.gwt.xml module file:<br>&nbsp;&nbsp;&lt;extend-configuration-property name=\"document.compatMode\" value=\"" + currentMode + '"/&gt;':"Your *.gwt.xml module configuration prohibits the use of the current doucment rendering mode (document.compatMode=' " + currentMode + "').<br>Modify your application's host HTML page doctype, or update your custom 'document.compatMode' configuration property settings.";
+}
+
+function $getRuntimeValue(){
+  var ua = navigator.userAgent.toLowerCase();
+  var makeVersion = function(result){
+    return parseInt(result[1]) * 1000 + parseInt(result[2]);
+  }
+  ;
+  if (function(){
+    return ua.indexOf('opera') != -1;
+  }
+  ())
+    return 'opera';
+  if (function(){
+    return ua.indexOf('webkit') != -1 || function(){
+      if (ua.indexOf('chromeframe') != -1) {
+        return true;
+      }
+      if (typeof window['ActiveXObject'] != 'undefined') {
+        try {
+          var obj = new ActiveXObject('ChromeTab.ChromeFrame');
+          if (obj) {
+            obj.registerBhoIfNeeded();
+            return true;
+          }
+        }
+         catch (e) {
+        }
+      }
+      return false;
+    }
+    ();
+  }
+  ())
+    return 'safari';
+  if (function(){
+    return ua.indexOf('msie') != -1 && $doc.documentMode >= 9;
+  }
+  ())
+    return 'ie9';
+  if (function(){
+    return ua.indexOf('msie') != -1 && $doc.documentMode >= 8;
+  }
+  ())
+    return 'ie8';
+  if (function(){
+    var result = /msie ([0-9]+)\.([0-9]+)/.exec(ua);
+    if (result && result.length == 3)
+      return makeVersion(result) >= 6000;
+  }
+  ())
+    return 'ie6';
+  if (function(){
+    return ua.indexOf('gecko') != -1;
+  }
+  ())
+    return 'gecko1_8';
+  return 'unknown';
+}
+
+function UIObject(){
+}
+
+_ = UIObject.prototype = new Object_0;
+_.getClass$ = function getClass_21(){
+  return Lcom_google_gwt_user_client_ui_UIObject_2_classLit;
+}
+;
+_.getElement = function getElement(){
+  return this.element;
+}
+;
+_.toString$ = function toString_5(){
+  if (!this.element) {
+    return '(null handle)';
+  }
+  return this.getElement().outerHTML;
+}
+;
+_.element = null;
+function Widget(){
+}
+
+_ = Widget.prototype = new UIObject;
+_.getClass$ = function getClass_22(){
+  return Lcom_google_gwt_user_client_ui_Widget_2_classLit;
+}
+;
+function $clinit_RootPanel(){
+  $clinit_RootPanel = nullMethod;
+  new HashMap_0;
+  new HashSet_0;
+}
+
+function SimpleEventBus$1_0(){
+}
+
+function SimpleEventBus$1(){
+}
+
+_ = SimpleEventBus$1_0.prototype = SimpleEventBus$1.prototype = new Object_0;
+_.getClass$ = function getClass_23(){
+  return Lcom_google_web_bindery_event_shared_SimpleEventBus$1_2_classLit;
+}
+;
+function SimpleEventBus$2_0(this$0, val$type, val$handler){
+  this.this$0 = this$0;
+  this.val$type = val$type;
+  this.val$source = null;
+  this.val$handler = val$handler;
+}
+
+function SimpleEventBus$2(){
+}
+
+_ = SimpleEventBus$2_0.prototype = SimpleEventBus$2.prototype = new Object_0;
+_.getClass$ = function getClass_24(){
+  return Lcom_google_web_bindery_event_shared_SimpleEventBus$2_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$SimpleEventBus$Command]);
+_.this$0 = null;
+_.val$handler = null;
+_.val$source = null;
+_.val$type = null;
+function $onModuleLoad_0(){
+  if (!initialized) {
+    setJSNIErrorHandler();
+    init_0();
+    init_1();
+    setUncaughtExceptionHandler(new SmartGwtEntryPoint$1_0);
+    initialized = true;
+  }
+}
+
+function init_0(){
+  typeof $entry === 'undefined' && ($entry = function(jsFunction){
+    return jsFunction;
+  }
+  );
+  $wnd.isc.Browser.isIE && $wnd.isc.Browser.version >= 7 && ($wnd.isc.EventHandler._IECanSetKeyCode = {});
+  $debox = function(val){
+    return val;
+  }
+  ;
+  $wnd.isc.Browser.isSGWT = true;
+  $wnd.SmartGWT = {};
+  $wnd.SmartGWT.convertToJavaType = function(obj){
+    if (obj == null || obj === undefined)
+      return null;
+    var objType = typeof obj;
+    if (objType == 'string') {
+      return obj;
+    }
+     else if (objType == 'number') {
+      if (obj.toString().indexOf('.') == -1) {
+        if (obj <= 2147483647) {
+          return valueOf(obj);
+        }
+         else {
+          return valueOf_0(fromDouble(obj));
+        }
+      }
+       else {
+        if (obj <= 3.4028234663852886E38) {
+          return new Float_0(obj);
+        }
+         else {
+          return new Double_0(obj);
+        }
+      }
+    }
+     else if (objType == 'boolean') {
+      return toBoolean(obj);
+    }
+     else if ($wnd.isA.Date(obj)) {
+      return toDate(obj.getTime());
+    }
+     else if (obj._constructor && obj._constructor == 'DateRange') {
+      return convertToDateRange(obj);
+    }
+     else if (instanceOfJso(obj)) {
+      return obj;
+    }
+     else if ($wnd.isA.Array(obj)) {
+      return convertToJavaObjectArray(obj);
+    }
+     else {
+      return obj;
+    }
+  }
+  ;
+  $wnd.SmartGWT.convertToJavaObject = function(object, listAsArray){
+    if (object == null)
+      return null;
+    if (!$wnd.isc.isA.Object(object)) {
+      return $wnd.SmartGWT.convertToJavaType(object);
+    }
+     else if ($wnd.isc.isA.Date(object)) {
+      return toDate(object.getTime());
+    }
+     else if ($wnd.isc.isAn.Array(object)) {
+      var convertedArray = [];
+      for (var i = 0; i < object.length; i++) {
+        convertedArray[i] = $wnd.SmartGWT.convertToJavaObject(object[i]);
+      }
+      if (listAsArray) {
+        return convertToJavaObjectArray(convertedArray);
+      }
+       else {
+        var javaList = new ArrayList_0;
+        for (var i = 0; i < convertedArray.length; i++) {
+          javaList.add(convertedArray[i]);
+        }
+        return javaList;
+      }
+    }
+     else {
+      if ($wnd.isc.isA.Canvas(object)) {
+        return '' + object;
+      }
+      var javaMap = new LinkedHashMap_0;
+      (object._isc_tree != null || object.$42c != null) && (object = $wnd.isc.Tree.getCleanNodeData(object));
+      for (var fieldName in object) {
+        if (!$wnd.isA.String(fieldName)) {
+          continue;
+        }
+        var convertedVal = fieldName == '__ref'?object[fieldName]:$wnd.SmartGWT.convertToJavaObject(object[fieldName]);
+        javaMap.put(fieldName, convertedVal);
+      }
+      return javaMap;
+    }
+  }
+  ;
+  $wnd.SmartGWT.convertToPrimitiveType = function(object){
+    if (object == null)
+      return null;
+    var objType = typeof object;
+    if (objType == 'function' || objType == 'object') {
+      if (instanceOf(object, Q$Integer))
+        return object.intValue();
+      if (instanceOf(object, Q$Number))
+        return object.floatValue();
+      if (instanceOf(object, Q$Boolean))
+        return object.booleanValue();
+      if (instanceOf(object, Q$Date))
+        return convertToJavaScriptDate(object);
+      if (instanceOf(object, Q$String))
+        return convertToString(object);
+    }
+    return object;
+  }
+  ;
+  if ($wnd.isc.RPCManager.__fireReplyCallback == null) {
+    $wnd.isc.RPCManager.__fireReplyCallback = $wnd.isc.RPCManager.fireReplyCallback;
+    $wnd.isc.RPCManager.fireReplyCallback = function(callback, request, response, data){
+      (data != null && $wnd.isc.isA.Number(data) || $wnd.isc.isA.Boolean(data)) && (data = response.data = $wnd.SmartGWT.convertToJavaType(data));
+      return this.__fireReplyCallback(callback, request, response, data);
+    }
+    ;
+  }
+}
+
+var initialized = false;
+function SmartGwtEntryPoint$1_0(){
+}
+
+function SmartGwtEntryPoint$1(){
+}
+
+_ = SmartGwtEntryPoint$1_0.prototype = SmartGwtEntryPoint$1.prototype = new Object_0;
+_.getClass$ = function getClass_25(){
+  return Lcom_smartgwt_client_SmartGwtEntryPoint$1_2_classLit;
+}
+;
+function JsObject_0(jsObj){
+  this.jsObj = jsObj;
+}
+
+function JsObject(){
+}
+
+_ = JsObject.prototype = new Object_0;
+_.getClass$ = function getClass_26(){
+  return Lcom_smartgwt_client_core_JsObject_2_classLit;
+}
+;
+_.jsObj = null;
+function DataClass(){
+}
+
+_ = DataClass.prototype = new JsObject;
+_.getClass$ = function getClass_27(){
+  return Lcom_smartgwt_client_core_DataClass_2_classLit;
+}
+;
+_.getJsObj = function getJsObj(){
+  return this.jsObj;
+}
+;
+function JsObject$SGWT_WARN_0(message){
+  Exception_0.call(this, message);
+}
+
+function JsObject$SGWT_WARN(){
+}
+
+_ = JsObject$SGWT_WARN_0.prototype = JsObject$SGWT_WARN.prototype = new Exception;
+_.getClass$ = function getClass_28(){
+  return Lcom_smartgwt_client_core_JsObject$SGWT_1WARN_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Throwable]);
+function DateRange_0(){
+}
+
+function DateRange(){
+}
+
+_ = DateRange_0.prototype = DateRange.prototype = new JsObject;
+_.getClass$ = function getClass_29(){
+  return Lcom_smartgwt_client_data_DateRange_2_classLit;
+}
+;
+_.setEndDate = function setEndDate(endDate){
+}
+;
+_.setRelativeEndDate = function setRelativeEndDate(relativeEndDate){
+}
+;
+_.setRelativeStartDate = function setRelativeStartDate(relativeStartDate){
+}
+;
+_.setStartDate = function setStartDate(startDate){
+}
+;
+function $clinit_RelativeDate(){
+  $clinit_RelativeDate = nullMethod;
+  new RelativeDate_0('$now');
+  new RelativeDate_0('$today');
+  new RelativeDate_0('$startOfToday');
+  new RelativeDate_0('$endOfToday');
+  new RelativeDate_0('$yesterday');
+  new RelativeDate_0('$startOfYesterday');
+  new RelativeDate_0('$endOfYesterday');
+  new RelativeDate_0('$tomorrow');
+  new RelativeDate_0('$startOfTomorrow');
+  new RelativeDate_0('$endOfTomorrow');
+  new RelativeDate_0('$weekAgo');
+  new RelativeDate_0('$weekFromNow');
+  new RelativeDate_0('$monthAgo');
+  new RelativeDate_0('$monthFromNow');
+  new RelativeDate_0('$startOfWeek');
+  new RelativeDate_0('$endOfWeek');
+  new RelativeDate_0('$startOfMonth');
+  new RelativeDate_0('$endOfMonth');
+  new RelativeDate_0('$startOfYear');
+  new RelativeDate_0('$endOfYear');
+}
+
+function $mapRelativeDateShortcut(relativeDateString){
+  return $wnd.isc.DateUtil.mapRelativeDateShortcut(relativeDateString);
+}
+
+function RelativeDate_0(value){
+  $clinit_RelativeDate();
+  JsObject_0.call(this, new Object);
+  this.value_0 = value;
+}
+
+function RelativeDate(){
+}
+
+_ = RelativeDate_0.prototype = RelativeDate.prototype = new DataClass;
+_.getClass$ = function getClass_30(){
+  return Lcom_smartgwt_client_data_RelativeDate_2_classLit;
+}
+;
+_.getJsObj = function getJsObj_0(){
+  var jsObj;
+  jsObj = {};
+  jsObj['_constructor'] = 'RelativeDate';
+  jsObj['value'] = $mapRelativeDateShortcut(this.value_0);
+  return jsObj;
+}
+;
+_.value_0 = null;
+function AbstractSmartEvent(){
+}
+
+_ = AbstractSmartEvent.prototype = new GwtEvent;
+_.getClass$ = function getClass_31(){
+  return Lcom_smartgwt_client_event_AbstractSmartEvent_2_classLit;
+}
+;
+function SmartGwtMessages__0(){
+}
+
+function SmartGwtMessages_(){
+}
+
+_ = SmartGwtMessages__0.prototype = SmartGwtMessages_.prototype = new Object_0;
+_.advancedHiliteEditor_invalidCriteriaPrompt = function advancedHiliteEditor_invalidCriteriaPrompt(){
+  return 'Either enter valid criteria or hit &#39;Cancel&#39; to abandon changes.';
+}
+;
+_.calendar_addEventButtonHoverText = function calendar_addEventButtonHoverText(){
+  return 'Add an event';
+}
+;
+_.calendar_cancelButtonTitle = function calendar_cancelButtonTitle(){
+  return 'Cancel';
+}
+;
+_.calendar_datePickerHoverText = function calendar_datePickerHoverText(){
+  return 'Choose a date';
+}
+;
+_.calendar_dayViewTitle = function calendar_dayViewTitle(){
+  return 'Day';
+}
+;
+_.calendar_detailsButtonTitle = function calendar_detailsButtonTitle(){
+  return 'Edit Details';
+}
+;
+_.calendar_eventNameFieldTitle = function calendar_eventNameFieldTitle(){
+  return 'Event Name';
+}
+;
+_.calendar_invalidDateMessage = function calendar_invalidDateMessage(){
+  return 'From must be before To';
+}
+;
+_.calendar_monthViewTitle = function calendar_monthViewTitle(){
+  return 'Month';
+}
+;
+_.calendar_nextButtonHoverText = function calendar_nextButtonHoverText(){
+  return 'Next';
+}
+;
+_.calendar_previousButtonHoverText = function calendar_previousButtonHoverText(){
+  return 'Previous';
+}
+;
+_.calendar_saveButtonTitle = function calendar_saveButtonTitle(){
+  return 'Save Event';
+}
+;
+_.calendar_timelineViewTitle = function calendar_timelineViewTitle(){
+  return 'Timeline';
+}
+;
+_.calendar_weekViewTitle = function calendar_weekViewTitle(){
+  return 'Week';
+}
+;
+_.dataBoundComponent_addFormulaFieldText = function dataBoundComponent_addFormulaFieldText(){
+  return 'Add formula column...';
+}
+;
+_.dataBoundComponent_addSummaryFieldText = function dataBoundComponent_addSummaryFieldText(){
+  return 'Add summary column...';
+}
+;
+_.dataBoundComponent_duplicateDragMessage = function dataBoundComponent_duplicateDragMessage(){
+  return 'Duplicates not allowed';
+}
+;
+_.dataBoundComponent_editFormulaFieldText = function dataBoundComponent_editFormulaFieldText(){
+  return 'Edit formula...';
+}
+;
+_.dataBoundComponent_editSummaryFieldText = function dataBoundComponent_editSummaryFieldText(){
+  return 'Edit summary format...';
+}
+;
+_.dataBoundComponent_offlineMessage = function dataBoundComponent_offlineMessage(){
+  return 'This data not available while offline.';
+}
+;
+_.dataBoundComponent_removeFormulaFieldText = function dataBoundComponent_removeFormulaFieldText(){
+  return 'Remove formula';
+}
+;
+_.dataBoundComponent_removeSummaryFieldText = function dataBoundComponent_removeSummaryFieldText(){
+  return 'Remove summary column..';
+}
+;
+_.dataBoundComponent_requiredFieldMessage = function dataBoundComponent_requiredFieldMessage(){
+  return 'Field is required';
+}
+;
+_.dataBoundComponent_unknownErrorMessage = function dataBoundComponent_unknownErrorMessage(){
+  return 'Invalid value';
+}
+;
+_.dateChooser_cancelButtonTitle = function dateChooser_cancelButtonTitle(){
+  return 'Cancel';
+}
+;
+_.dateChooser_firstDayOfWeek = function dateChooser_firstDayOfWeek(){
+  return '0';
+}
+;
+_.dateChooser_todayButtonTitle = function dateChooser_todayButtonTitle(){
+  return 'Today';
+}
+;
+_.dateItem_daySelectorPrompt = function dateItem_daySelectorPrompt(){
+  return 'Choose a day';
+}
+;
+_.dateItem_invalidDateStringMessage = function dateItem_invalidDateStringMessage(){
+  return 'Invalid date';
+}
+;
+_.dateItem_monthSelectorPrompt = function dateItem_monthSelectorPrompt(){
+  return 'Choose a month';
+}
+;
+_.dateItem_pickerIconPrompt = function dateItem_pickerIconPrompt(){
+  return 'Show Date Chooser';
+}
+;
+_.dateItem_selectorFormat = function dateItem_selectorFormat(){
+  return 'null';
+}
+;
+_.dateItem_yearSelectorPrompt = function dateItem_yearSelectorPrompt(){
+  return 'Choose a year';
+}
+;
+_.dateRangeDialog_cancelButtonTitle = function dateRangeDialog_cancelButtonTitle(){
+  return 'Cancel';
+}
+;
+_.dateRangeDialog_clearButtonTitle = function dateRangeDialog_clearButtonTitle(){
+  return 'Clear';
+}
+;
+_.dateRangeDialog_headerTitle = function dateRangeDialog_headerTitle(){
+  return 'Select Date Range';
+}
+;
+_.dateRangeDialog_okButtonTitle = function dateRangeDialog_okButtonTitle(){
+  return 'OK';
+}
+;
+_.dateRangeItem_fromTitle = function dateRangeItem_fromTitle(){
+  return 'From';
+}
+;
+_.dateRangeItem_toTitle = function dateRangeItem_toTitle(){
+  return 'To';
+}
+;
+_.date_dateSeparator = function date_dateSeparator(){
+  return '/';
+}
+;
+_.date_shortDateFormat = function date_shortDateFormat(){
+  return 'toUSShortDate';
+}
+;
+_.date_shortDatetimeFormat = function date_shortDatetimeFormat(){
+  return 'toUSShortDatetime';
+}
+;
+_.date_shortDayNames_1 = function date_shortDayNames_1(){
+  return 'Sun';
+}
+;
+_.date_shortDayNames_2 = function date_shortDayNames_2(){
+  return 'Mon';
+}
+;
+_.date_shortDayNames_3 = function date_shortDayNames_3(){
+  return 'Tue';
+}
+;
+_.date_shortDayNames_4 = function date_shortDayNames_4(){
+  return 'Wed';
+}
+;
+_.date_shortDayNames_5 = function date_shortDayNames_5(){
+  return 'Thu';
+}
+;
+_.date_shortDayNames_6 = function date_shortDayNames_6(){
+  return 'Fri';
+}
+;
+_.date_shortDayNames_7 = function date_shortDayNames_7(){
+  return 'Sat';
+}
+;
+_.date_shortMonthNames_1 = function date_shortMonthNames_1(){
+  return 'Jan';
+}
+;
+_.date_shortMonthNames_10 = function date_shortMonthNames_10(){
+  return 'Oct';
+}
+;
+_.date_shortMonthNames_11 = function date_shortMonthNames_11(){
+  return 'Nov';
+}
+;
+_.date_shortMonthNames_12 = function date_shortMonthNames_12(){
+  return 'Dec';
+}
+;
+_.date_shortMonthNames_2 = function date_shortMonthNames_2(){
+  return 'Feb';
+}
+;
+_.date_shortMonthNames_3 = function date_shortMonthNames_3(){
+  return 'Mar';
+}
+;
+_.date_shortMonthNames_4 = function date_shortMonthNames_4(){
+  return 'Apr';
+}
+;
+_.date_shortMonthNames_5 = function date_shortMonthNames_5(){
+  return 'May';
+}
+;
+_.date_shortMonthNames_6 = function date_shortMonthNames_6(){
+  return 'Jun';
+}
+;
+_.date_shortMonthNames_7 = function date_shortMonthNames_7(){
+  return 'Jul';
+}
+;
+_.date_shortMonthNames_8 = function date_shortMonthNames_8(){
+  return 'Aug';
+}
+;
+_.date_shortMonthNames_9 = function date_shortMonthNames_9(){
+  return 'Sep';
+}
+;
+_.dialog_ApplyButtonTitle = function dialog_ApplyButtonTitle(){
+  return 'Apply';
+}
+;
+_.dialog_AskForValueTitle = function dialog_AskForValueTitle(){
+  return 'Please enter a value';
+}
+;
+_.dialog_AskTitle = function dialog_AskTitle(){
+  return 'Question';
+}
+;
+_.dialog_CancelButtonTitle = function dialog_CancelButtonTitle(){
+  return 'Cancel';
+}
+;
+_.dialog_ConfirmTitle = function dialog_ConfirmTitle(){
+  return 'Confirm';
+}
+;
+_.dialog_DoneButtonTitle = function dialog_DoneButtonTitle(){
+  return 'Done';
+}
+;
+_.dialog_LoginButtonTitle = function dialog_LoginButtonTitle(){
+  return 'Log in';
+}
+;
+_.dialog_LoginErrorMessage = function dialog_LoginErrorMessage(){
+  return 'Invalid username or password';
+}
+;
+_.dialog_LoginTitle = function dialog_LoginTitle(){
+  return 'Please log in';
+}
+;
+_.dialog_NoButtonTitle = function dialog_NoButtonTitle(){
+  return 'No';
+}
+;
+_.dialog_OkButtonTitle = function dialog_OkButtonTitle(){
+  return 'OK';
+}
+;
+_.dialog_PasswordTitle = function dialog_PasswordTitle(){
+  return 'Password';
+}
+;
+_.dialog_SayTitle = function dialog_SayTitle(){
+  return 'Note';
+}
+;
+_.dialog_UserNameTitle = function dialog_UserNameTitle(){
+  return 'Username';
+}
+;
+_.dialog_WarnTitle = function dialog_WarnTitle(){
+  return 'Warning';
+}
+;
+_.dialog_YesButtonTitle = function dialog_YesButtonTitle(){
+  return 'Yes';
+}
+;
+_.dynamicForm_errorsPreamble = function dynamicForm_errorsPreamble(){
+  return 'The following errors were found';
+}
+;
+_.dynamicForm_formSubmitFailedWarning = function dynamicForm_formSubmitFailedWarning(){
+  return 'Form was unable to be submitted. The most likely cause for this is an invalid value in an upload field.';
+}
+;
+_.filterBuilder_addButtonPrompt = function filterBuilder_addButtonPrompt(){
+  return 'Add';
+}
+;
+_.filterBuilder_matchAllTitle = function filterBuilder_matchAllTitle(){
+  return 'Match All';
+}
+;
+_.filterBuilder_matchAnyTitle = function filterBuilder_matchAnyTitle(){
+  return 'Match Any';
+}
+;
+_.filterBuilder_matchNoneTitle = function filterBuilder_matchNoneTitle(){
+  return 'Match None';
+}
+;
+_.filterBuilder_missingFieldPrompt = function filterBuilder_missingFieldPrompt(){
+  return '[missing field definition]';
+}
+;
+_.filterBuilder_rangeSeparator = function filterBuilder_rangeSeparator(){
+  return 'and';
+}
+;
+_.filterBuilder_removeButtonPrompt = function filterBuilder_removeButtonPrompt(){
+  return 'Remove';
+}
+;
+_.filterBuilder_subClauseButtonPrompt = function filterBuilder_subClauseButtonPrompt(){
+  return 'Add Subclause';
+}
+;
+_.filterBuilder_subClauseButtonTitle = function filterBuilder_subClauseButtonTitle(){
+  return '+()';
+}
+;
+_.filterClause_removeButtonPrompt = function filterClause_removeButtonPrompt(){
+  return 'Remove';
+}
+;
+_.formulaBuilder_builderTypeText = function formulaBuilder_builderTypeText(){
+  return 'Formula';
+}
+;
+_.formulaBuilder_cancelButtonTitle = function formulaBuilder_cancelButtonTitle(){
+  return 'Cancel';
+}
+;
+_.formulaBuilder_defaultNewFieldTitle = function formulaBuilder_defaultNewFieldTitle(){
+  return 'New Field';
+}
+;
+_.formulaBuilder_helpWindowTitle = function formulaBuilder_helpWindowTitle(){
+  return '$builderType Help';
+}
+;
+_.formulaBuilder_instructionsTextStart = function formulaBuilder_instructionsTextStart(){
+  return 'The following fields are available for use in this';
+}
+;
+_.formulaBuilder_invalidBlankPrompt = function formulaBuilder_invalidBlankPrompt(){
+  return 'Invalid blank $builderType';
+}
+;
+_.formulaBuilder_invalidBuilderPrompt = function formulaBuilder_invalidBuilderPrompt(){
+  return 'Invalid $builderType: $errorText';
+}
+;
+_.formulaBuilder_invalidGeneratedFunctionPrompt = function formulaBuilder_invalidGeneratedFunctionPrompt(){
+  return 'The generated function is invalid - Check your $builderType and retry.';
+}
+;
+_.formulaBuilder_keyColumnTitle = function formulaBuilder_keyColumnTitle(){
+  return 'Key';
+}
+;
+_.formulaBuilder_sampleHeaderTitle = function formulaBuilder_sampleHeaderTitle(){
+  return 'Sample:';
+}
+;
+_.formulaBuilder_samplePromptForRecord = function formulaBuilder_samplePromptForRecord(){
+  return 'For record:';
+}
+;
+_.formulaBuilder_samplePromptOutput = function formulaBuilder_samplePromptOutput(){
+  return 'Output:';
+}
+;
+_.formulaBuilder_saveButtonTitle = function formulaBuilder_saveButtonTitle(){
+  return 'Save';
+}
+;
+_.formulaBuilder_saveConfirmationPrompt = function formulaBuilder_saveConfirmationPrompt(){
+  return 'Save changes to this $builderType?';
+}
+;
+_.formulaBuilder_sourceFieldColumnTitle = function formulaBuilder_sourceFieldColumnTitle(){
+  return 'Source Field';
+}
+;
+_.formulaBuilder_testButtonTitle = function formulaBuilder_testButtonTitle(){
+  return 'Test';
+}
+;
+_.formulaBuilder_titleFieldTitle = function formulaBuilder_titleFieldTitle(){
+  return 'Title';
+}
+;
+_.formulaBuilder_validBuilderPrompt = function formulaBuilder_validBuilderPrompt(){
+  return 'Valid $builderType';
+}
+;
+_.getClass$ = function getClass_32(){
+  return Lcom_smartgwt_client_i18n_SmartGwtMessages_1_2_classLit;
+}
+;
+_.grouping_byDayOfMonthTitle = function grouping_byDayOfMonthTitle(){
+  return 'by Day of Month';
+}
+;
+_.grouping_byDayTitle = function grouping_byDayTitle(){
+  return 'by Day';
+}
+;
+_.grouping_byHoursTitle = function grouping_byHoursTitle(){
+  return 'by Hours';
+}
+;
+_.grouping_byMillisecondsTitle = function grouping_byMillisecondsTitle(){
+  return 'by Milliseconds';
+}
+;
+_.grouping_byMinutesTitle = function grouping_byMinutesTitle(){
+  return 'by Minutes';
+}
+;
+_.grouping_byMonthTitle = function grouping_byMonthTitle(){
+  return 'by Month';
+}
+;
+_.grouping_byQuarterTitle = function grouping_byQuarterTitle(){
+  return 'by Quarter';
+}
+;
+_.grouping_bySecondsTitle = function grouping_bySecondsTitle(){
+  return 'by Seconds';
+}
+;
+_.grouping_byUpcomingTitle = function grouping_byUpcomingTitle(){
+  return 'by Upcoming';
+}
+;
+_.grouping_byWeekTitle = function grouping_byWeekTitle(){
+  return 'by Week';
+}
+;
+--></script>
+<script><!--
+_.grouping_byYearTitle = function grouping_byYearTitle(){
+  return 'by Year';
+}
+;
+_.grouping_upcomingBeforeTitle = function grouping_upcomingBeforeTitle(){
+  return 'Before';
+}
+;
+_.grouping_upcomingLaterTitle = function grouping_upcomingLaterTitle(){
+  return 'Later';
+}
+;
+_.grouping_upcomingNextMonthTitle = function grouping_upcomingNextMonthTitle(){
+  return 'Next Month';
+}
+;
+_.grouping_upcomingNextWeekTitle = function grouping_upcomingNextWeekTitle(){
+  return 'Next Week';
+}
+;
+_.grouping_upcomingThisWeekTitle = function grouping_upcomingThisWeekTitle(){
+  return 'This Week';
+}
+;
+_.grouping_upcomingTodayTitle = function grouping_upcomingTodayTitle(){
+  return 'Today';
+}
+;
+_.grouping_upcomingTomorrowTitle = function grouping_upcomingTomorrowTitle(){
+  return 'Tomorrow';
+}
+;
+_.hiliteRule_removeButtonPrompt = function hiliteRule_removeButtonPrompt(){
+  return 'Remove';
+}
+;
+_.iMenuButton_title = function iMenuButton_title(){
+  return 'Show Menu';
+}
+;
+_.listGrid_autoFitAllText = function listGrid_autoFitAllText(){
+  return 'Auto Fit All Columns';
+}
+;
+_.listGrid_autoFitFieldText = function listGrid_autoFitFieldText(){
+  return 'Auto Fit';
+}
+;
+_.listGrid_cancelEditingConfirmationMessage = function listGrid_cancelEditingConfirmationMessage(){
+  return 'Cancelling this edit will clear unsaved edit values for this record. Continue?';
+}
+;
+_.listGrid_clearAllSortingText = function listGrid_clearAllSortingText(){
+  return 'Clear All Sorting';
+}
+;
+_.listGrid_clearFilterText = function listGrid_clearFilterText(){
+  return 'Clear Filter';
+}
+;
+_.listGrid_clearSortFieldText = function listGrid_clearSortFieldText(){
+  return 'Clear Sort';
+}
+;
+_.listGrid_configureSortText = function listGrid_configureSortText(){
+  return 'Configure Sort';
+}
+;
+_.listGrid_confirmDiscardEditsMessage = function listGrid_confirmDiscardEditsMessage(){
+  return 'This action will discard all unsaved edited values for this list.';
+}
+;
+_.listGrid_deleteRecordContextMenuItemTitle = function listGrid_deleteRecordContextMenuItemTitle(){
+  return 'Delete';
+}
+;
+_.listGrid_discardEditsSaveButtonTitle = function listGrid_discardEditsSaveButtonTitle(){
+  return 'Save';
+}
+;
+_.listGrid_dismissEmbeddedComponentContextMenuItemTitle = function listGrid_dismissEmbeddedComponentContextMenuItemTitle(){
+  return 'Dismiss';
+}
+;
+_.listGrid_emptyMessage = function listGrid_emptyMessage(){
+  return 'No items to show.';
+}
+;
+_.listGrid_fieldVisibilitySubmenuTitle = function listGrid_fieldVisibilitySubmenuTitle(){
+  return 'Columns';
+}
+;
+_.listGrid_freezeFieldText = function listGrid_freezeFieldText(){
+  return 'Freeze';
+}
+;
+_.listGrid_freezeOnLeftText = function listGrid_freezeOnLeftText(){
+  return 'Freeze on left';
+}
+;
+_.listGrid_freezeOnRightText = function listGrid_freezeOnRightText(){
+  return 'Freeze on right';
+}
+;
+_.listGrid_groupByText = function listGrid_groupByText(){
+  return 'Group by';
+}
+;
+_.listGrid_loadingDataMessage = function listGrid_loadingDataMessage(){
+  return 'Loading data...';
+}
+;
+_.listGrid_maxExpandedRecordsPrompt = function listGrid_maxExpandedRecordsPrompt(){
+  return 'This grid is limited to $count simultaneously expanded records.  Please collapse some expanded records and retry.';
+}
+;
+_.listGrid_newRecordRowMessage = function listGrid_newRecordRowMessage(){
+  return '-- Add New Row --';
+}
+;
+_.listGrid_openRecordEditorContextMenuItemTitle = function listGrid_openRecordEditorContextMenuItemTitle(){
+  return 'Edit';
+}
+;
+_.listGrid_recordEditorCancelButtonTitle = function listGrid_recordEditorCancelButtonTitle(){
+  return 'Cancel';
+}
+;
+_.listGrid_recordEditorSaveButtonTitle = function listGrid_recordEditorSaveButtonTitle(){
+  return 'Save';
+}
+;
+_.listGrid_removeFieldTitle = function listGrid_removeFieldTitle(){
+  return '[Remove record]';
+}
+;
+_.listGrid_sortFieldAscendingText = function listGrid_sortFieldAscendingText(){
+  return 'Sort Ascending';
+}
+;
+_.listGrid_sortFieldDescendingText = function listGrid_sortFieldDescendingText(){
+  return 'Sort Descending';
+}
+;
+_.listGrid_unfreezeFieldText = function listGrid_unfreezeFieldText(){
+  return 'Unfreeze';
+}
+;
+_.listGrid_ungroupText = function listGrid_ungroupText(){
+  return 'Ungroup';
+}
+;
+_.menuButton_title = function menuButton_title(){
+  return 'Show Menu';
+}
+;
+_.miniDateRangeItem_fromDateOnlyPrefix = function miniDateRangeItem_fromDateOnlyPrefix(){
+  return 'Since';
+}
+;
+_.miniDateRangeItem_pickerIconPrompt = function miniDateRangeItem_pickerIconPrompt(){
+  return 'Show Date Chooser';
+}
+;
+_.miniDateRangeItem_toDateOnlyPrefix = function miniDateRangeItem_toDateOnlyPrefix(){
+  return 'Before';
+}
+;
+_.multiFileItem_emptyMessage = function multiFileItem_emptyMessage(){
+  return 'Click icon to add...';
+}
+;
+_.multiFilePicker_emptyMessage = function multiFilePicker_emptyMessage(){
+  return 'Click icon to add...';
+}
+;
+_.multiSortDialog_addLevelButtonTitle = function multiSortDialog_addLevelButtonTitle(){
+  return 'Add Level';
+}
+;
+_.multiSortDialog_applyButtonTitle = function multiSortDialog_applyButtonTitle(){
+  return 'Apply';
+}
+;
+_.multiSortDialog_ascendingTitle = function multiSortDialog_ascendingTitle(){
+  return 'Ascending';
+}
+;
+_.multiSortDialog_cancelButtonTitle = function multiSortDialog_cancelButtonTitle(){
+  return 'Cancel';
+}
+;
+_.multiSortDialog_copyLevelButtonTitle = function multiSortDialog_copyLevelButtonTitle(){
+  return 'Copy Level';
+}
+;
+_.multiSortDialog_deleteLevelButtonTitle = function multiSortDialog_deleteLevelButtonTitle(){
+  return 'Delete Level';
+}
+;
+_.multiSortDialog_descendingTitle = function multiSortDialog_descendingTitle(){
+  return 'Descending';
+}
+;
+_.multiSortDialog_directionFieldTitle = function multiSortDialog_directionFieldTitle(){
+  return 'Order';
+}
+;
+_.multiSortDialog_firstSortLevelTitle = function multiSortDialog_firstSortLevelTitle(){
+  return 'Sort by';
+}
+;
+_.multiSortDialog_invalidListPrompt = function multiSortDialog_invalidListPrompt(){
+  return 'Columns may only be used once: $title is used multiple times.';
+}
+;
+_.multiSortDialog_levelDownPrompt = function multiSortDialog_levelDownPrompt(){
+  return 'Move Level Down';
+}
+;
+_.multiSortDialog_levelUpPrompt = function multiSortDialog_levelUpPrompt(){
+  return 'Move Level Up';
+}
+;
+_.multiSortDialog_otherSortLevelTitle = function multiSortDialog_otherSortLevelTitle(){
+  return 'Then by';
+}
+;
+_.multiSortDialog_propertyFieldTitle = function multiSortDialog_propertyFieldTitle(){
+  return 'Column';
+}
+;
+_.multiSortDialog_title = function multiSortDialog_title(){
+  return 'Sort';
+}
+;
+_.operators_andTitle = function operators_andTitle(){
+  return 'Match All';
+}
+;
+_.operators_betweenInclusiveTitle = function operators_betweenInclusiveTitle(){
+  return 'between (inclusive)';
+}
+;
+_.operators_betweenTitle = function operators_betweenTitle(){
+  return 'between';
+}
+;
+_.operators_containsFieldTitle = function operators_containsFieldTitle(){
+  return 'contains (match case) another field value';
+}
+;
+_.operators_containsTitle = function operators_containsTitle(){
+  return 'contains (match case)';
+}
+;
+_.operators_endsWithFieldTitle = function operators_endsWithFieldTitle(){
+  return 'ends with (match case) another field value';
+}
+;
+_.operators_endsWithTitle = function operators_endsWithTitle(){
+  return 'ends with (match case)';
+}
+;
+_.operators_equalsFieldTitle = function operators_equalsFieldTitle(){
+  return 'matches other field';
+}
+;
+_.operators_equalsTitle = function operators_equalsTitle(){
+  return 'equals';
+}
+;
+_.operators_greaterOrEqualFieldTitle = function operators_greaterOrEqualFieldTitle(){
+  return 'greater than or equal to field';
+}
+;
+_.operators_greaterOrEqualTitle = function operators_greaterOrEqualTitle(){
+  return 'greater than or equal to';
+}
+;
+_.operators_greaterThanFieldTitle = function operators_greaterThanFieldTitle(){
+  return 'greater than field';
+}
+;
+_.operators_greaterThanTitle = function operators_greaterThanTitle(){
+  return 'greater than';
+}
+;
+_.operators_iContainsTitle = function operators_iContainsTitle(){
+  return 'contains';
+}
+;
+_.operators_iEndsWithTitle = function operators_iEndsWithTitle(){
+  return 'ends with';
+}
+;
+_.operators_iEqualsTitle = function operators_iEqualsTitle(){
+  return 'equals (disregard case)';
+}
+;
+_.operators_iNotContainsTitle = function operators_iNotContainsTitle(){
+  return 'does not contain';
+}
+;
+_.operators_iNotEndsWithTitle = function operators_iNotEndsWithTitle(){
+  return 'does not end with';
+}
+;
+_.operators_iNotEqualTitle = function operators_iNotEqualTitle(){
+  return 'not equal (disregard case)';
+}
+;
+_.operators_iNotStartsWithTitle = function operators_iNotStartsWithTitle(){
+  return 'does not start with';
+}
+;
+_.operators_iStartsWithTitle = function operators_iStartsWithTitle(){
+  return 'starts with';
+}
+;
+_.operators_inSetTitle = function operators_inSetTitle(){
+  return 'is one of';
+}
+;
+_.operators_iregexpTitle = function operators_iregexpTitle(){
+  return 'matches expression';
+}
+;
+_.operators_isNullTitle = function operators_isNullTitle(){
+  return 'is null';
+}
+;
+_.operators_lessOrEqualFieldTitle = function operators_lessOrEqualFieldTitle(){
+  return 'less than or equal to field';
+}
+;
+_.operators_lessOrEqualTitle = function operators_lessOrEqualTitle(){
+  return 'less than or equal to';
+}
+;
+_.operators_lessThanFieldTitle = function operators_lessThanFieldTitle(){
+  return 'less than field';
+}
+;
+_.operators_lessThanTitle = function operators_lessThanTitle(){
+  return 'less than';
+}
+;
+_.operators_notContainsTitle = function operators_notContainsTitle(){
+  return 'does not contain (match case)';
+}
+;
+_.operators_notEndsWithTitle = function operators_notEndsWithTitle(){
+  return 'does not end with (match case)';
+}
+;
+_.operators_notEqualFieldTitle = function operators_notEqualFieldTitle(){
+  return 'differs from field';
+}
+;
+_.operators_notEqualTitle = function operators_notEqualTitle(){
+  return 'not equal';
+}
+;
+_.operators_notInSetTitle = function operators_notInSetTitle(){
+  return 'is not one of';
+}
+;
+_.operators_notNullTitle = function operators_notNullTitle(){
+  return 'is not null';
+}
+;
+_.operators_notStartsWithTitle = function operators_notStartsWithTitle(){
+  return 'does not start with (match case)';
+}
+;
+_.operators_notTitle = function operators_notTitle(){
+  return 'Match None';
+}
+;
+_.operators_orTitle = function operators_orTitle(){
+  return 'Match Any';
+}
+;
+_.operators_regexpTitle = function operators_regexpTitle(){
+  return 'matches expression (exact case)';
+}
+;
+_.operators_startsWithFieldTitle = function operators_startsWithFieldTitle(){
+  return 'starts with (match case) another field value';
+}
+;
+_.operators_startsWithTitle = function operators_startsWithTitle(){
+  return 'starts with (match case)';
+}
+;
+_.pickListMenu_emptyMessage = function pickListMenu_emptyMessage(){
+  return 'No Items To Show';
+}
+;
+_.pickTreeItem_emptyMenuMessage = function pickTreeItem_emptyMenuMessage(){
+  return 'No items to display';
+}
+;
+_.printWindow_printButtonTitle = function printWindow_printButtonTitle(){
+  return 'Print';
+}
+;
+_.printWindow_title = function printWindow_title(){
+  return 'Print Preview';
+}
+;
+_.relativeDateItem_daysAgoTitle = function relativeDateItem_daysAgoTitle(){
+  return 'N days ago';
+}
+;
+_.relativeDateItem_daysFromNowTitle = function relativeDateItem_daysFromNowTitle(){
+  return 'N days from now';
+}
+;
+_.relativeDateItem_hoursAgoTitle = function relativeDateItem_hoursAgoTitle(){
+  return 'N hours ago';
+}
+;
+_.relativeDateItem_hoursFromNowTitle = function relativeDateItem_hoursFromNowTitle(){
+  return 'N hours from now';
+}
+;
+_.relativeDateItem_millisecondsAgoTitle = function relativeDateItem_millisecondsAgoTitle(){
+  return 'N milliseconds ago';
+}
+;
+_.relativeDateItem_millisecondsFromNowTitle = function relativeDateItem_millisecondsFromNowTitle(){
+  return 'N milliseconds from now';
+}
+;
+_.relativeDateItem_minutesAgoTitle = function relativeDateItem_minutesAgoTitle(){
+  return 'N minutes ago';
+}
+;
+_.relativeDateItem_minutesFromNowTitle = function relativeDateItem_minutesFromNowTitle(){
+  return 'N minutes from now';
+}
+;
+_.relativeDateItem_monthsAgoTitle = function relativeDateItem_monthsAgoTitle(){
+  return 'N months ago';
+}
+;
+_.relativeDateItem_monthsFromNowTitle = function relativeDateItem_monthsFromNowTitle(){
+  return 'N months from now';
+}
+;
+_.relativeDateItem_pickerIconPrompt = function relativeDateItem_pickerIconPrompt(){
+  return 'Show Date Chooser';
+}
+;
+_.relativeDateItem_presetOptions_minus_1m = function relativeDateItem_presetOptions_minus_1m(){
+  return 'Current day of last month';
+}
+;
+_.relativeDateItem_presetOptions_minus_1w = function relativeDateItem_presetOptions_minus_1w(){
+  return 'Current day of last week';
+}
+;
+_.relativeDateItem_presetOptions_plus_1m = function relativeDateItem_presetOptions_plus_1m(){
+  return 'Current day of next month';
+}
+;
+_.relativeDateItem_presetOptions_plus_1w = function relativeDateItem_presetOptions_plus_1w(){
+  return 'Current day of next week';
+}
+;
+_.relativeDateItem_presetOptions_today = function relativeDateItem_presetOptions_today(){
+  return 'Today';
+}
+;
+_.relativeDateItem_presetOptions_tomorrow = function relativeDateItem_presetOptions_tomorrow(){
+  return 'Tomorrow';
+}
+;
+_.relativeDateItem_presetOptions_yesterday = function relativeDateItem_presetOptions_yesterday(){
+  return 'Yesterday';
+}
+;
+_.relativeDateItem_secondsAgoTitle = function relativeDateItem_secondsAgoTitle(){
+  return 'N seconds ago';
+}
+;
+_.relativeDateItem_secondsFromNowTitle = function relativeDateItem_secondsFromNowTitle(){
+  return 'N seconds from now';
+}
+;
+_.relativeDateItem_todayTitle = function relativeDateItem_todayTitle(){
+  return 'Today';
+}
+;
+_.relativeDateItem_weeksAgoTitle = function relativeDateItem_weeksAgoTitle(){
+  return 'N weeks ago';
+}
+;
+_.relativeDateItem_weeksFromNowTitle = function relativeDateItem_weeksFromNowTitle(){
+  return 'N weeks from now';
+}
+;
+_.relativeDateItem_yearsAgoTitle = function relativeDateItem_yearsAgoTitle(){
+  return 'N years ago';
+}
+;
+_.relativeDateItem_yearsFromNowTitle = function relativeDateItem_yearsFromNowTitle(){
+  return 'N years from now';
+}
+;
+_.richTextEditor_alignCenterPrompt = function richTextEditor_alignCenterPrompt(){
+  return 'Center selection';
+}
+;
+_.richTextEditor_alignLeftPrompt = function richTextEditor_alignLeftPrompt(){
+  return 'Left align selection';
+}
+;
+_.richTextEditor_alignRightPrompt = function richTextEditor_alignRightPrompt(){
+  return 'Right align selection';
+}
+;
+_.richTextEditor_backgroundColorPrompt = function richTextEditor_backgroundColorPrompt(){
+  return 'Set selection background color';
+}
+;
+_.richTextEditor_boldSelectionPrompt = function richTextEditor_boldSelectionPrompt(){
+  return 'Make selection bold';
+}
+;
+_.richTextEditor_colorPrompt = function richTextEditor_colorPrompt(){
+  return 'Set selection color';
+}
+;
+_.richTextEditor_copySelectionPrompt = function richTextEditor_copySelectionPrompt(){
+  return 'Copy Selection';
+}
+;
+_.richTextEditor_cutSelectionPrompt = function richTextEditor_cutSelectionPrompt(){
+  return 'Cut Selection';
+}
+;
+_.richTextEditor_fontPrompt = function richTextEditor_fontPrompt(){
+  return 'Set Font ...';
+}
+;
+_.richTextEditor_fontSizePrompt = function richTextEditor_fontSizePrompt(){
+  return 'Set Font Size ...';
+}
+;
+_.richTextEditor_indentSelectionPrompt = function richTextEditor_indentSelectionPrompt(){
+  return 'Indent selection';
+}
+;
+_.richTextEditor_italicSelectionPrompt = function richTextEditor_italicSelectionPrompt(){
+  return 'Make selection italic';
+}
+;
+_.richTextEditor_justifyPrompt = function richTextEditor_justifyPrompt(){
+  return 'Full justify selection';
+}
+;
+_.richTextEditor_linkPrompt = function richTextEditor_linkPrompt(){
+  return 'Edit hyperlink';
+}
+;
+_.richTextEditor_linkUrlTitle = function richTextEditor_linkUrlTitle(){
+  return 'Hyperlink URL:';
+}
+;
+_.richTextEditor_outdentSelectionPrompt = function richTextEditor_outdentSelectionPrompt(){
+  return 'Decrease selection indent';
+}
+;
+_.richTextEditor_pasteSelectionPrompt = function richTextEditor_pasteSelectionPrompt(){
+  return 'Paste Selection';
+}
+;
+_.richTextEditor_underlineSelectionPrompt = function richTextEditor_underlineSelectionPrompt(){
+  return 'Make selection underlined';
+}
+;
+_.rpcManager_defaultPrompt = function rpcManager_defaultPrompt(){
+  return 'Contacting Server...';
+}
+;
+_.rpcManager_fetchDataPrompt = function rpcManager_fetchDataPrompt(){
+  return 'Finding Records that match your criteria...';
+}
+;
+_.rpcManager_removeDataPrompt = function rpcManager_removeDataPrompt(){
+  return 'Deleting Record(s)...';
+}
+;
+_.rpcManager_saveDataPrompt = function rpcManager_saveDataPrompt(){
+  return 'Saving form...';
+}
+;
+_.rpcManager_timeoutErrorMessage = function rpcManager_timeoutErrorMessage(){
+  return 'Operation timed out';
+}
+;
+_.rpcManager_validateDataPrompt = function rpcManager_validateDataPrompt(){
+  return 'Validating...';
+}
+;
+_.selectOtherItem_otherTitle = function selectOtherItem_otherTitle(){
+  return 'Other...';
+}
+;
+_.selectOtherItem_selectOtherPrompt = function selectOtherItem_selectOtherPrompt(){
+  return 'Other value for';
+}
+;
+_.selection_selectionRangeNotLoadedMessage = function selection_selectionRangeNotLoadedMessage(){
+  return 'Can&#39;t select that many records at once.<br><br>Please try working in smaller batches.';
+}
+;
+_.summaryBuilder_autoHideCheckBoxLabel = function summaryBuilder_autoHideCheckBoxLabel(){
+  return 'Auto hide fields used in summary';
+}
+;
+_.summaryBuilder_builderTypeText = function summaryBuilder_builderTypeText(){
+  return 'Summary';
+}
+;
+_.summaryBuilder_helpTextIntro = function summaryBuilder_helpTextIntro(){
+  return 'Building Summary Columns';
+}
+;
+_.time_AMIndicator = function time_AMIndicator(){
+  return 'am';
+}
+;
+_.time_PMIndicator = function time_PMIndicator(){
+  return 'pm';
+}
+;
+_.treeGrid_cantDragIntoChildMessage = function treeGrid_cantDragIntoChildMessage(){
+  return 'You can&#39;t drag an item into one of it&#39;s children.';
+}
+;
+_.treeGrid_cantDragIntoSelfMessage = function treeGrid_cantDragIntoSelfMessage(){
+  return 'You can&#39;t drag an item into itself.';
+}
+;
+_.treeGrid_parentAlreadyContainsChildMessage = function treeGrid_parentAlreadyContainsChildMessage(){
+  return 'This item already contains a child item with that name.';
+}
+;
+_.validator_mustBeEarlierThan = function validator_mustBeEarlierThan(){
+  return 'Must be earlier than';
+}
+;
+_.validator_mustBeExactLength = function validator_mustBeExactLength(){
+  return 'Must be exactly $max characters';
+}
+;
+_.validator_mustBeGreaterThan = function validator_mustBeGreaterThan(){
+  return 'Must be at least ';
+}
+;
+_.validator_mustBeLaterThan = function validator_mustBeLaterThan(){
+  return 'Must be later than';
+}
+;
+_.validator_mustBeLessThan = function validator_mustBeLessThan(){
+  return 'Must be no more than';
+}
+;
+_.validator_mustBeLongerThan = function validator_mustBeLongerThan(){
+  return 'Must be at least $min characters';
+}
+;
+_.validator_mustBeShorterThan = function validator_mustBeShorterThan(){
+  return 'Must be less than $max characters';
+}
+;
+_.validator_notABoolean = function validator_notABoolean(){
+  return 'Must be a true/false value.';
+}
+;
+_.validator_notAColor = function validator_notAColor(){
+  return 'Must be a CSS color identifier.';
+}
+;
+_.validator_notADate = function validator_notADate(){
+  return 'Must be a date.';
+}
+;
+_.validator_notADecimal = function validator_notADecimal(){
+  return 'Must be a valid decimal.';
+}
+;
+_.validator_notAFunction = function validator_notAFunction(){
+  return 'Must be a function.';
+}
+;
+_.validator_notARegex = function validator_notARegex(){
+  return 'Must be a valid regular expression.';
+}
+;
+_.validator_notAString = function validator_notAString(){
+  return 'Must be a String.';
+}
+;
+_.validator_notATime = function validator_notATime(){
+  return 'Must be a time.';
+}
+;
+_.validator_notAnIdentifier = function validator_notAnIdentifier(){
+  return 'Identifiers must start with a letter, underscore or $ character, and may contain only letters, numbers, underscores or $ characters.';
+}
+;
+_.validator_notAnInteger = function validator_notAnInteger(){
+  return 'Must be a whole number.';
+}
+;
+_.validator_notOneOf = function validator_notOneOf(){
+  return 'Not a valid option';
+}
+;
+_.validator_requiredField = function validator_requiredField(){
+  return 'Field is required';
+}
+;
+_.window_title = function window_title(){
+  return 'Untitled Window';
+}
+;
+function Enum(){
+}
+
+_ = Enum.prototype = new Object_0;
+_.equals$ = function equals_0(other){
+  return this === other;
+}
+;
+_.getClass$ = function getClass_33(){
+  return Ljava_lang_Enum_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_2(){
+  return getHashCode(this);
+}
+;
+_.toString$ = function toString_6(){
+  return this.name_0;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Comparable, Q$Enum]);
+_.name_0 = null;
+function $clinit_Overflow(){
+  $clinit_Overflow = nullMethod;
+  VISIBLE = new Overflow_0('VISIBLE', 'visible');
+  HIDDEN = new Overflow_0('HIDDEN', 'hidden');
+  AUTO = new Overflow_0('AUTO', 'auto');
+  SCROLL = new Overflow_0('SCROLL', 'scroll');
+  CLIP_H = new Overflow_0('CLIP_H', 'clip_h');
+  CLIP_V = new Overflow_0('CLIP_V', 'clip_v');
+  $VALUES = initValues(_3Lcom_smartgwt_client_types_Overflow_2_classLit, makeCastMap([Q$Serializable]), Q$Overflow, [VISIBLE, HIDDEN, AUTO, SCROLL, CLIP_H, CLIP_V]);
+}
+
+function Overflow_0(enum$name, value){
+  this.name_0 = enum$name;
+  this.value_0 = value;
+}
+
+function values(){
+  $clinit_Overflow();
+  return $VALUES;
+}
+
+function Overflow(){
+}
+
+_ = Overflow_0.prototype = Overflow.prototype = new Enum;
+_.getClass$ = function getClass_34(){
+  return Lcom_smartgwt_client_types_Overflow_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Overflow, Q$ValueEnum, Q$Serializable, Q$Comparable, Q$Enum]);
+_.value_0 = null;
+var $VALUES, AUTO, CLIP_H, CLIP_V, HIDDEN, SCROLL, VISIBLE;
+function $clinit_Positioning(){
+  $clinit_Positioning = nullMethod;
+  ABSOLUTE = new Positioning_0('ABSOLUTE', 'absolute');
+  RELATIVE = new Positioning_0('RELATIVE', 'relative');
+  $VALUES_0 = initValues(_3Lcom_smartgwt_client_types_Positioning_2_classLit, makeCastMap([Q$Serializable]), Q$Positioning, [ABSOLUTE, RELATIVE]);
+}
+
+function Positioning_0(enum$name, value){
+  this.name_0 = enum$name;
+  this.value_0 = value;
+}
+
+function values_0(){
+  $clinit_Positioning();
+  return $VALUES_0;
+}
+
+function Positioning(){
+}
+
+_ = Positioning_0.prototype = Positioning.prototype = new Enum;
+_.getClass$ = function getClass_35(){
+  return Lcom_smartgwt_client_types_Positioning_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Positioning, Q$ValueEnum, Q$Serializable, Q$Comparable, Q$Enum]);
+_.value_0 = null;
+var $VALUES_0, ABSOLUTE, RELATIVE;
+function init_1(){
+  var messages;
+  if (!initialized_0) {
+    messages = new SmartGwtMessages__0;
+    initMessages(messages);
+  }
+}
+
+--></script>
+<script><!--
+function initMessages(messages){
+  if ($wnd.isc.Dialog) {
+    $wnd.isc.Dialog.addClassProperties({OK_BUTTON_TITLE:messages.dialog_OkButtonTitle()});
+    $wnd.isc.Dialog.addClassProperties({APPLY_BUTTON_TITLE:messages.dialog_ApplyButtonTitle()});
+    $wnd.isc.Dialog.addClassProperties({YES_BUTTON_TITLE:messages.dialog_YesButtonTitle()});
+    $wnd.isc.Dialog.addClassProperties({NO_BUTTON_TITLE:messages.dialog_NoButtonTitle()});
+    $wnd.isc.Dialog.addClassProperties({CANCEL_BUTTON_TITLE:messages.dialog_CancelButtonTitle()});
+    $wnd.isc.Dialog.addClassProperties({DONE_BUTTON_TITLE:messages.dialog_DoneButtonTitle()});
+    $wnd.isc.Dialog.addClassProperties({CONFIRM_TITLE:messages.dialog_ConfirmTitle()});
+    $wnd.isc.Dialog.addClassProperties({SAY_TITLE:messages.dialog_SayTitle()});
+    $wnd.isc.Dialog.addClassProperties({WARN_TITLE:messages.dialog_WarnTitle()});
+    $wnd.isc.Dialog.addClassProperties({ASK_TITLE:messages.dialog_AskTitle()});
+    $wnd.isc.Dialog.addClassProperties({ASK_FOR_VALUE_TITLE:messages.dialog_AskForValueTitle()});
+    $wnd.isc.Dialog.addClassProperties({LOGIN_TITLE:messages.dialog_LoginTitle()});
+    $wnd.isc.Dialog.addClassProperties({USERNAME_TITLE:messages.dialog_UserNameTitle()});
+    $wnd.isc.Dialog.addClassProperties({PASSWORD_TITLE:messages.dialog_PasswordTitle()});
+    $wnd.isc.Dialog.addClassProperties({LOGIN_BUTTON_TITLE:messages.dialog_LoginButtonTitle()});
+    $wnd.isc.Dialog.addClassProperties({LOGIN_ERROR_MESSAGE:messages.dialog_LoginErrorMessage()});
+  }
+  if ($wnd.isc.LoginDialog) {
+    $wnd.isc.LoginDialog.addClassProperties({LOGIN_TITLE:messages.dialog_LoginTitle()});
+    $wnd.isc.LoginDialog.addClassProperties({USERNAME_TITLE:messages.dialog_UserNameTitle()});
+    $wnd.isc.LoginDialog.addClassProperties({PASSWORD_TITLE:messages.dialog_PasswordTitle()});
+    $wnd.isc.LoginDialog.addClassProperties({LOGIN_BUTTON_TITLE:messages.dialog_LoginButtonTitle()});
+    $wnd.isc.LoginDialog.addClassProperties({LOGIN_ERROR_MESSAGE:messages.dialog_LoginErrorMessage()});
+  }
+  if ($wnd.isc.RPCManager) {
+    $wnd.isc.RPCManager.addClassProperties({defaultPrompt:messages.rpcManager_defaultPrompt()});
+    $wnd.isc.RPCManager.addClassProperties({timeoutErrorMessage:messages.rpcManager_timeoutErrorMessage()});
+    $wnd.isc.RPCManager.addClassProperties({removeDataPrompt:messages.rpcManager_removeDataPrompt()});
+    $wnd.isc.RPCManager.addClassProperties({saveDataPrompt:messages.rpcManager_saveDataPrompt()});
+    $wnd.isc.RPCManager.addClassProperties({validateDataPrompt:messages.rpcManager_validateDataPrompt()});
+    $wnd.isc.RPCManager.addClassProperties({fetchDataPrompt:messages.rpcManager_fetchDataPrompt()});
+  }
+  if ($wnd.isc.Operators) {
+    $wnd.isc.Operators.addClassProperties({equalsTitle:messages.operators_equalsTitle()});
+    $wnd.isc.Operators.addClassProperties({notEqualTitle:messages.operators_notEqualTitle()});
+    $wnd.isc.Operators.addClassProperties({iEqualsTitle:messages.operators_iEqualsTitle()});
+    $wnd.isc.Operators.addClassProperties({iNotEqualTitle:messages.operators_iNotEqualTitle()});
+    $wnd.isc.Operators.addClassProperties({greaterThanTitle:messages.operators_greaterThanTitle()});
+    $wnd.isc.Operators.addClassProperties({lessThanTitle:messages.operators_lessThanTitle()});
+    $wnd.isc.Operators.addClassProperties({betweenTitle:messages.operators_betweenTitle()});
+    $wnd.isc.Operators.addClassProperties({greaterOrEqualTitle:messages.operators_greaterOrEqualTitle()});
+    $wnd.isc.Operators.addClassProperties({lessOrEqualTitle:messages.operators_lessOrEqualTitle()});
+    $wnd.isc.Operators.addClassProperties({betweenTitle:messages.operators_betweenTitle()});
+    $wnd.isc.Operators.addClassProperties({lessThanTitle:messages.operators_lessThanTitle()});
+    $wnd.isc.Operators.addClassProperties({betweenTitle:messages.operators_betweenTitle()});
+    $wnd.isc.Operators.addClassProperties({betweenInclusiveTitle:messages.operators_betweenInclusiveTitle()});
+    $wnd.isc.Operators.addClassProperties({iContainsTitle:messages.operators_iContainsTitle()});
+    $wnd.isc.Operators.addClassProperties({iStartsWithTitle:messages.operators_iStartsWithTitle()});
+    $wnd.isc.Operators.addClassProperties({iEndsWithTitle:messages.operators_iEndsWithTitle()});
+    $wnd.isc.Operators.addClassProperties({containsTitle:messages.operators_containsTitle()});
+    $wnd.isc.Operators.addClassProperties({startsWithTitle:messages.operators_startsWithTitle()});
+    $wnd.isc.Operators.addClassProperties({endsWithTitle:messages.operators_endsWithTitle()});
+    $wnd.isc.Operators.addClassProperties({iNotContainsTitle:messages.operators_iNotContainsTitle()});
+    $wnd.isc.Operators.addClassProperties({iNotStartsWithTitle:messages.operators_iNotStartsWithTitle()});
+    $wnd.isc.Operators.addClassProperties({iNotEndsWithTitle:messages.operators_iNotEndsWithTitle()});
+    $wnd.isc.Operators.addClassProperties({notContainsTitle:messages.operators_notContainsTitle()});
+    $wnd.isc.Operators.addClassProperties({notStartsWithTitle:messages.operators_notStartsWithTitle()});
+    $wnd.isc.Operators.addClassProperties({notEndsWithTitle:messages.operators_notEndsWithTitle()});
+    $wnd.isc.Operators.addClassProperties({isNullTitle:messages.operators_isNullTitle()});
+    $wnd.isc.Operators.addClassProperties({notNullTitle:messages.operators_notNullTitle()});
+    $wnd.isc.Operators.addClassProperties({regexpTitle:messages.operators_regexpTitle()});
+    $wnd.isc.Operators.addClassProperties({iregexpTitle:messages.operators_iregexpTitle()});
+    $wnd.isc.Operators.addClassProperties({inSetTitle:messages.operators_inSetTitle()});
+    $wnd.isc.Operators.addClassProperties({notInSetTitle:messages.operators_notInSetTitle()});
+    $wnd.isc.Operators.addClassProperties({equalsFieldTitle:messages.operators_equalsFieldTitle()});
+    $wnd.isc.Operators.addClassProperties({notEqualFieldTitle:messages.operators_notEqualFieldTitle()});
+    $wnd.isc.Operators.addClassProperties({greaterThanFieldTitle:messages.operators_greaterThanFieldTitle()});
+    $wnd.isc.Operators.addClassProperties({lessThanFieldTitle:messages.operators_lessThanFieldTitle()});
+    $wnd.isc.Operators.addClassProperties({greaterOrEqualFieldTitle:messages.operators_greaterOrEqualFieldTitle()});
+    $wnd.isc.Operators.addClassProperties({lessOrEqualFieldTitle:messages.operators_lessOrEqualFieldTitle()});
+    $wnd.isc.Operators.addClassProperties({containsFieldTitle:messages.operators_containsFieldTitle()});
+    $wnd.isc.Operators.addClassProperties({startsWithFieldTitle:messages.operators_startsWithFieldTitle()});
+    $wnd.isc.Operators.addClassProperties({endsWithFieldTitle:messages.operators_endsWithFieldTitle()});
+    $wnd.isc.Operators.addClassProperties({andTitle:messages.operators_andTitle()});
+    $wnd.isc.Operators.addClassProperties({notTitle:messages.operators_notTitle()});
+    $wnd.isc.Operators.addClassProperties({orTitle:messages.operators_orTitle()});
+  }
+  if ($wnd.isc.GroupingMessages) {
+    $wnd.isc.GroupingMessages.addClassProperties({upcomingTodayTitle:messages.grouping_upcomingTodayTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({upcomingTomorrowTitle:messages.grouping_upcomingTomorrowTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({upcomingThisWeekTitle:messages.grouping_upcomingThisWeekTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({upcomingNextWeekTitle:messages.grouping_upcomingNextWeekTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({upcomingNextMonthTitle:messages.grouping_upcomingNextMonthTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({upcomingBeforeTitle:messages.grouping_upcomingBeforeTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({upcomingLaterTitle:messages.grouping_upcomingLaterTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({byDayTitle:messages.grouping_byDayTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({byWeekTitle:messages.grouping_byWeekTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({byMonthTitle:messages.grouping_byMonthTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({byQuarterTitle:messages.grouping_byQuarterTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({byYearTitle:messages.grouping_byYearTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({byDayOfMonthTitle:messages.grouping_byDayOfMonthTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({byUpcomingTitle:messages.grouping_byUpcomingTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({byHoursTitle:messages.grouping_byHoursTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({byMinutesTitle:messages.grouping_byMinutesTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({bySecondsTitle:messages.grouping_bySecondsTitle()});
+    $wnd.isc.GroupingMessages.addClassProperties({byMillisecondsTitle:messages.grouping_byMillisecondsTitle()});
+    if ($wnd.isc.builtinTypes) {
+      $wnd.isc.addProperties($wnd.isc.builtinTypes.date.groupingModes, {day:$wnd.isc.GroupingMessages.byDayTitle});
+      $wnd.isc.addProperties($wnd.isc.builtinTypes.date.groupingModes, {week:$wnd.isc.GroupingMessages.byWeekTitle});
+      $wnd.isc.addProperties($wnd.isc.builtinTypes.date.groupingModes, {month:$wnd.isc.GroupingMessages.byMonthTitle});
+      $wnd.isc.addProperties($wnd.isc.builtinTypes.date.groupingModes, {quarter:$wnd.isc.GroupingMessages.byQuarterTitle});
+      $wnd.isc.addProperties($wnd.isc.builtinTypes.date.groupingModes, {year:$wnd.isc.GroupingMessages.byYearTitle});
+      $wnd.isc.addProperties($wnd.isc.builtinTypes.date.groupingModes, {dayOfMonth:$wnd.isc.GroupingMessages.byDayOfMonthTitle});
+      $wnd.isc.addProperties($wnd.isc.builtinTypes.date.groupingModes, {upcoming:$wnd.isc.GroupingMessages.byUpcomingTitle});
+      $wnd.isc.addProperties($wnd.isc.builtinTypes.time.groupingModes, {hours:$wnd.isc.GroupingMessages.byHoursTitle});
+      $wnd.isc.addProperties($wnd.isc.builtinTypes.time.groupingModes, {minutes:$wnd.isc.GroupingMessages.byMinutesTitle});
+      $wnd.isc.addProperties($wnd.isc.builtinTypes.time.groupingModes, {seconds:$wnd.isc.GroupingMessages.bySecondsTitle});
+      $wnd.isc.addProperties($wnd.isc.builtinTypes.time.groupingModes, {milliseconds:$wnd.isc.GroupingMessages.byMillisecondsTitle});
+    }
+  }
+  if ($wnd.isc.Validator) {
+    $wnd.isc.Validator.addClassProperties({notABoolean:messages.validator_notABoolean()});
+    $wnd.isc.Validator.addClassProperties({notAString:messages.validator_notAString()});
+    $wnd.isc.Validator.addClassProperties({notAnInteger:messages.validator_notAnInteger()});
+    $wnd.isc.Validator.addClassProperties({notADecimal:messages.validator_notADecimal()});
+    $wnd.isc.Validator.addClassProperties({notADate:messages.validator_notADate()});
+    $wnd.isc.Validator.addClassProperties({notATime:messages.validator_notATime()});
+    $wnd.isc.Validator.addClassProperties({notAnIdentifier:messages.validator_notAnIdentifier()});
+    $wnd.isc.Validator.addClassProperties({notARegex:messages.validator_notARegex()});
+    $wnd.isc.Validator.addClassProperties({notAColor:messages.validator_notAColor()});
+    $wnd.isc.Validator.addClassProperties({mustBeLessThan:messages.validator_mustBeLessThan() + ' ${max}'});
+    $wnd.isc.Validator.addClassProperties({mustBeGreaterThan:messages.validator_mustBeGreaterThan() + ' ${min}'});
+    $wnd.isc.Validator.addClassProperties({mustBeLaterThan:messages.validator_mustBeLaterThan() + ' ${min.toShortDate()}'});
+    $wnd.isc.Validator.addClassProperties({mustBeEarlierThan:messages.validator_mustBeEarlierThan() + ' ${max.toShortDate()}'});
+    $wnd.isc.Validator.addClassProperties({mustBeShorterThan:messages.validator_mustBeShorterThan().replace('$max', '${max}')});
+    $wnd.isc.Validator.addClassProperties({mustBeLongerThan:messages.validator_mustBeLongerThan().replace('$min', '${min}')});
+    $wnd.isc.Validator.addClassProperties({mustBeExactLength:messages.validator_mustBeExactLength().replace('$max', '${max}')});
+    $wnd.isc.Validator.addClassProperties({requiredField:messages.validator_requiredField()});
+    $wnd.isc.Validator.addClassProperties({notOneOf:messages.validator_notOneOf()});
+    $wnd.isc.Validator.addClassProperties({notAFunction:messages.validator_notAFunction()});
+  }
+  if ($wnd.isc.Time) {
+    $wnd.isc.Time.addClassProperties({AMIndicator:messages.time_AMIndicator()});
+    $wnd.isc.Time.addClassProperties({PMIndicator:messages.time_PMIndicator()});
+  }
+  $wnd.isc.Window && $wnd.isc.Window.addProperties({title:messages.window_title()});
+  if ($wnd.isc.DateChooser) {
+    $wnd.isc.DateChooser.addProperties({todayButtonTitle:messages.dateChooser_todayButtonTitle()});
+    $wnd.isc.DateChooser.addProperties({cancelButtonTitle:messages.dateChooser_cancelButtonTitle()});
+    $wnd.isc.DateChooser.addProperties({firstDayOfWeek:Number(messages.dateChooser_firstDayOfWeek())});
+  }
+  if ($wnd.isc.DynamicForm) {
+    $wnd.isc.DynamicForm.addProperties({errorsPreamble:messages.dynamicForm_errorsPreamble()});
+    $wnd.isc.DynamicForm.addProperties({formSubmitFailedWarning:messages.dynamicForm_formSubmitFailedWarning()});
+  }
+  if ($wnd.isc.SelectItem) {
+    $wnd.isc.SelectItem.addProperties({otherTitle:messages.selectOtherItem_otherTitle()});
+    $wnd.isc.SelectItem.addProperties({selectOtherPrompt:messages.selectOtherItem_selectOtherPrompt() + ' ${item.getTitle()} :'});
+  }
+  if ($wnd.isc.DateItem) {
+    $wnd.isc.DateItem.addProperties({invalidDateStringMessage:messages.dateItem_invalidDateStringMessage()});
+    $wnd.isc.DateItem.addProperties({pickerIconPrompt:messages.dateItem_pickerIconPrompt()});
+    $wnd.isc.DateItem.changeDefaults('daySelectorDefaults', {prompt:messages.dateItem_daySelectorPrompt()});
+    $wnd.isc.DateItem.changeDefaults('monthSelectorDefaults', {prompt:messages.dateItem_monthSelectorPrompt()});
+    $wnd.isc.DateItem.changeDefaults('yearSelectorDefaults', {prompt:messages.dateItem_yearSelectorPrompt()});
+    var selectorFormat = messages.dateItem_selectorFormat();
+    selectorFormat != null && selectorFormat != 'null' && $wnd.isc.DateItem.changeDefaults('selectorFormat', selectorFormat);
+  }
+  $wnd.isc.MultiFilePicker && $wnd.isc.MultiFilePicker.addProperties({emptyMessage:messages.multiFilePicker_emptyMessage()});
+  if ($wnd.isc.RichTextEditor) {
+    $wnd.isc.RichTextEditor.changeDefaults('boldSelectionDefaults', {prompt:messages.richTextEditor_boldSelectionPrompt()});
+    $wnd.isc.RichTextEditor.changeDefaults('italicSelectionDefaults', {prompt:messages.richTextEditor_italicSelectionPrompt()});
+    $wnd.isc.RichTextEditor.changeDefaults('underlineSelectionDefaults', {prompt:messages.richTextEditor_underlineSelectionPrompt()});
+    $wnd.isc.RichTextEditor.changeDefaults('copySelectionDefaults', {prompt:messages.richTextEditor_copySelectionPrompt()});
+    $wnd.isc.RichTextEditor.changeDefaults('cutSelectionDefaults', {prompt:messages.richTextEditor_cutSelectionPrompt()});
+    $wnd.isc.RichTextEditor.changeDefaults('pasteSelectionDefaults', {prompt:messages.richTextEditor_pasteSelectionPrompt()});
+    $wnd.isc.RichTextEditor.changeDefaults('alignLeftDefaults', {prompt:messages.richTextEditor_alignLeftPrompt()});
+    $wnd.isc.RichTextEditor.changeDefaults('alignRightDefaults', {prompt:messages.richTextEditor_alignRightPrompt()});
+    $wnd.isc.RichTextEditor.changeDefaults('alignCenterDefaults', {prompt:messages.richTextEditor_alignCenterPrompt()});
+    $wnd.isc.RichTextEditor.changeDefaults('justifyDefaults', {prompt:messages.richTextEditor_justifyPrompt()});
+    $wnd.isc.RichTextEditor.changeDefaults('indentSelectionDefaults', {prompt:messages.richTextEditor_indentSelectionPrompt()});
+    $wnd.isc.RichTextEditor.changeDefaults('outdentSelectionDefaults', {prompt:messages.richTextEditor_outdentSelectionPrompt()});
+    $wnd.isc.RichTextEditor.changeDefaults('colorDefaults', {prompt:messages.richTextEditor_colorPrompt()});
+    $wnd.isc.RichTextEditor.changeDefaults('backgroundColorDefaults', {prompt:messages.richTextEditor_backgroundColorPrompt()});
+    $wnd.isc.RichTextEditor.changeDefaults('linkDefaults', {prompt:messages.richTextEditor_linkPrompt()});
+    $wnd.isc.RichTextEditor.addProperties({fontPrompt:messages.richTextEditor_fontPrompt()});
+    $wnd.isc.RichTextEditor.addProperties({fontSizePrompt:messages.richTextEditor_fontSizePrompt()});
+    $wnd.isc.RichTextEditor.addProperties({linkUrlTitle:messages.richTextEditor_linkUrlTitle()});
+  }
+  $wnd.isc.Selection && $wnd.isc.Selection.addProperties({selectionRangeNotLoadedMessage:messages.selection_selectionRangeNotLoadedMessage()});
+  if ($wnd.isc.ListGrid) {
+    $wnd.isc.ListGrid.addProperties({emptyMessage:messages.listGrid_emptyMessage()});
+    $wnd.isc.ListGrid.addProperties({loadingDataMessage:'${loadingImage}&nbsp;' + messages.listGrid_loadingDataMessage()});
+    $wnd.isc.ListGrid.addProperties({removeFieldTitle:messages.listGrid_removeFieldTitle()});
+    $wnd.isc.ListGrid.addProperties({cancelEditingConfirmationMessage:messages.listGrid_cancelEditingConfirmationMessage()});
+    $wnd.isc.ListGrid.addProperties({confirmDiscardEditsMessage:messages.listGrid_confirmDiscardEditsMessage()});
+    $wnd.isc.ListGrid.addProperties({discardEditsSaveButtonTitle:messages.listGrid_discardEditsSaveButtonTitle()});
+    $wnd.isc.ListGrid.addProperties({newRecordRowMessage:messages.listGrid_newRecordRowMessage()});
+    $wnd.isc.ListGrid.addProperties({openRecordEditorContextMenuItemTitle:messages.listGrid_openRecordEditorContextMenuItemTitle()});
+    $wnd.isc.ListGrid.addProperties({dismissEmbeddedComponentContextMenuItemTitle:messages.listGrid_dismissEmbeddedComponentContextMenuItemTitle()});
+    $wnd.isc.ListGrid.addProperties({deleteRecordContextMenuItemTitle:messages.listGrid_deleteRecordContextMenuItemTitle()});
+    $wnd.isc.ListGrid.addProperties({recordEditorSaveButtonTitle:messages.listGrid_recordEditorSaveButtonTitle()});
+    $wnd.isc.ListGrid.addProperties({recordEditorCancelButtonTitle:messages.listGrid_recordEditorCancelButtonTitle()});
+    $wnd.isc.ListGrid.addProperties({maxExpandedRecordsPrompt:messages.listGrid_maxExpandedRecordsPrompt().replace('$count', '${count}')});
+    $wnd.isc.ListGrid.addProperties({freezeOnRightText:messages.listGrid_freezeOnRightText()});
+    $wnd.isc.ListGrid.addProperties({freezeOnLeftText:messages.listGrid_freezeOnLeftText()});
+    $wnd.isc.ListGrid.addProperties({sortFieldAscendingText:messages.listGrid_sortFieldAscendingText()});
+    $wnd.isc.ListGrid.addProperties({sortFieldDescendingText:messages.listGrid_sortFieldDescendingText()});
+    $wnd.isc.ListGrid.addProperties({clearSortFieldText:messages.listGrid_clearSortFieldText()});
+    $wnd.isc.ListGrid.addProperties({clearAllSortingText:messages.listGrid_clearAllSortingText()});
+    $wnd.isc.ListGrid.addProperties({clearFilterText:messages.listGrid_clearFilterText()});
+    $wnd.isc.ListGrid.addProperties({configureSortText:messages.listGrid_configureSortText()});
+    $wnd.isc.ListGrid.addProperties({autoFitFieldText:messages.listGrid_autoFitFieldText()});
+    $wnd.isc.ListGrid.addProperties({autoFitAllText:messages.listGrid_autoFitAllText()});
+    $wnd.isc.ListGrid.addProperties({fieldVisibilitySubmenuTitle:messages.listGrid_fieldVisibilitySubmenuTitle()});
+    $wnd.isc.ListGrid.addProperties({freezeFieldText:messages.listGrid_freezeFieldText() + ' ${viewer.getSummaryTitle(field)}'});
+    $wnd.isc.ListGrid.addProperties({unfreezeFieldText:messages.listGrid_unfreezeFieldText() + ' ${viewer.getSummaryTitle(field)}'});
+    $wnd.isc.ListGrid.addProperties({groupByText:messages.listGrid_groupByText() + ' ${title}'});
+    $wnd.isc.ListGrid.addProperties({ungroupText:messages.listGrid_ungroupText()});
+  }
+  $wnd.isc.Canvas.addProperties({addFormulaFieldText:messages.dataBoundComponent_addFormulaFieldText()});
+  $wnd.isc.Canvas.addProperties({editFormulaFieldText:messages.dataBoundComponent_editFormulaFieldText()});
+  $wnd.isc.Canvas.addProperties({addSummaryFieldText:messages.dataBoundComponent_addSummaryFieldText()});
+  $wnd.isc.Canvas.addProperties({editSummaryFieldText:messages.dataBoundComponent_editSummaryFieldText()});
+  $wnd.isc.Canvas.addProperties({requiredFieldMessage:messages.dataBoundComponent_requiredFieldMessage()});
+  $wnd.isc.Canvas.addProperties({removeSummaryFieldText:messages.dataBoundComponent_removeSummaryFieldText()});
+  $wnd.isc.Canvas.addProperties({removeFormulaFieldText:messages.dataBoundComponent_removeFormulaFieldText()});
+  $wnd.isc.Canvas.addProperties({duplicateDragMessage:messages.dataBoundComponent_duplicateDragMessage()});
+  $wnd.isc.Canvas.addProperties({unknownErrorMessage:messages.dataBoundComponent_unknownErrorMessage()});
+  $wnd.isc.Canvas.addProperties({offlineMessage:messages.dataBoundComponent_offlineMessage()});
+  if ($wnd.isc.TreeGrid) {
+    $wnd.isc.TreeGrid.addProperties({parentAlreadyContainsChildMessage:messages.treeGrid_parentAlreadyContainsChildMessage()});
+    $wnd.isc.TreeGrid.addProperties({cantDragIntoSelfMessage:messages.treeGrid_cantDragIntoSelfMessage()});
+    $wnd.isc.TreeGrid.addProperties({cantDragIntoChildMessage:messages.treeGrid_cantDragIntoChildMessage()});
+  }
+  if ($wnd.isc.FormulaBuilder) {
+    $wnd.isc.FormulaBuilder.addProperties({instructionsTextStart:messages.formulaBuilder_instructionsTextStart() + ' ${builderType}'});
+    $wnd.isc.FormulaBuilder.addProperties({samplePrompt:'<nobr>' + messages.formulaBuilder_samplePromptForRecord() + ' ${title}<\/nobr><br><nobr>' + messages.formulaBuilder_samplePromptOutput() + ' ${output}<\/nobr>'});
+    $wnd.isc.FormulaBuilder.addProperties({builderTypeText:messages.formulaBuilder_builderTypeText()});
+    $wnd.isc.FormulaBuilder.addProperties({invalidBuilderPrompt:messages.formulaBuilder_invalidBuilderPrompt().replace('$builderType', '${builderType}').replace('$errorText', '${errorText}')});
+    $wnd.isc.FormulaBuilder.addProperties({invalidBlankPrompt:messages.formulaBuilder_invalidBlankPrompt().replace('$builderType', '${builderType}')});
+    $wnd.isc.FormulaBuilder.addProperties({validBuilderPrompt:messages.formulaBuilder_validBuilderPrompt().replace('$builderType', '${builderType}')});
+    $wnd.isc.FormulaBuilder.addProperties({helpWindowTitle:messages.formulaBuilder_helpWindowTitle().replace('$builderType', '${builderType}')});
+    $wnd.isc.FormulaBuilder.addProperties({saveConfirmationPrompt:messages.formulaBuilder_saveConfirmationPrompt().replace('$builderType', '${builderType}')});
+    $wnd.isc.FormulaBuilder.addProperties({invalidGeneratedFunctionPrompt:messages.formulaBuilder_invalidGeneratedFunctionPrompt().replace('$builderType', '${builderType}')});
+    $wnd.isc.FormulaBuilder.addProperties({titleFieldTitle:messages.formulaBuilder_titleFieldTitle()});
+    $wnd.isc.FormulaBuilder.addProperties({defaultNewFieldTitle:messages.formulaBuilder_defaultNewFieldTitle()});
+    $wnd.isc.FormulaBuilder.addProperties({keyColumnTitle:messages.formulaBuilder_keyColumnTitle()});
+    $wnd.isc.FormulaBuilder.addProperties({sourceFieldColumnTitle:messages.formulaBuilder_sourceFieldColumnTitle()});
+    $wnd.isc.FormulaBuilder.addProperties({cancelButtonTitle:messages.formulaBuilder_cancelButtonTitle()});
+    $wnd.isc.FormulaBuilder.addProperties({saveButtonTitle:messages.formulaBuilder_saveButtonTitle()});
+    $wnd.isc.FormulaBuilder.addProperties({sampleHeaderTitle:messages.formulaBuilder_sampleHeaderTitle()});
+    $wnd.isc.FormulaBuilder.addProperties({testButtonTitle:messages.formulaBuilder_testButtonTitle()});
+  }
+  if ($wnd.isc.SummaryBuilder) {
+    $wnd.isc.SummaryBuilder.addProperties({autoHideCheckBoxLabel:messages.summaryBuilder_autoHideCheckBoxLabel()});
+    $wnd.isc.SummaryBuilder.addProperties({helpTextIntro:messages.summaryBuilder_helpTextIntro()});
+    $wnd.isc.SummaryBuilder.addProperties({builderTypeText:messages.summaryBuilder_builderTypeText()});
+  }
+  if ($wnd.isc.PrintWindow) {
+    $wnd.isc.PrintWindow.addProperties({printButtonTitle:messages.printWindow_printButtonTitle()});
+    $wnd.isc.PrintWindow.addProperties({title:messages.printWindow_title()});
+  }
+  $wnd.isc.PickTreeItem && $wnd.isc.PickTreeItem.addProperties({emptyMenuMessage:messages.pickTreeItem_emptyMenuMessage()});
+  $wnd.isc.MultiFileItem && $wnd.isc.MultiFileItem.addProperties({emptyMessage:messages.multiFileItem_emptyMessage()});
+  $wnd.isc.MenuButton && $wnd.isc.MenuButton.addProperties({title:messages.menuButton_title()});
+  if ($wnd.isc.Calendar) {
+    $wnd.isc.Calendar.addProperties({invalidDateMessage:messages.calendar_invalidDateMessage()});
+    $wnd.isc.Calendar.addProperties({addEventButtonHoverText:messages.calendar_addEventButtonHoverText()});
+    $wnd.isc.Calendar.addProperties({cancelButtonTitle:messages.calendar_cancelButtonTitle()});
+    $wnd.isc.Calendar.addProperties({datePickerHoverText:messages.calendar_datePickerHoverText()});
+    $wnd.isc.Calendar.addProperties({dayViewTitle:messages.calendar_dayViewTitle()});
+    $wnd.isc.Calendar.addProperties({detailsButtonTitle:messages.calendar_detailsButtonTitle()});
+    $wnd.isc.Calendar.addProperties({eventNameFieldTitle:messages.calendar_eventNameFieldTitle()});
+    $wnd.isc.Calendar.addProperties({monthViewTitle:messages.calendar_monthViewTitle()});
+    $wnd.isc.Calendar.addProperties({nextButtonHoverText:messages.calendar_nextButtonHoverText()});
+    $wnd.isc.Calendar.addProperties({previousButtonHoverText:messages.calendar_previousButtonHoverText()});
+    $wnd.isc.Calendar.addProperties({saveButtonTitle:messages.calendar_saveButtonTitle()});
+    $wnd.isc.Calendar.addProperties({timelineViewTitle:messages.calendar_timelineViewTitle()});
+    $wnd.isc.Calendar.addProperties({weekViewTitle:messages.calendar_weekViewTitle()});
+  }
+  if ($wnd.isc.FilterBuilder) {
+    $wnd.isc.FilterBuilder.addProperties({addButtonPrompt:messages.filterBuilder_addButtonPrompt()});
+    $wnd.isc.FilterBuilder.addProperties({rangeSeparator:messages.filterBuilder_rangeSeparator()});
+    $wnd.isc.FilterBuilder.addProperties({removeButtonPrompt:messages.filterBuilder_removeButtonPrompt()});
+    $wnd.isc.FilterBuilder.addProperties({subClauseButtonPrompt:messages.filterBuilder_subClauseButtonPrompt()});
+    $wnd.isc.FilterBuilder.addProperties({subClauseButtonPrompt:messages.filterBuilder_subClauseButtonPrompt()});
+    $wnd.isc.FilterBuilder.addProperties({missingFieldPrompt:messages.filterBuilder_missingFieldPrompt()});
+    $wnd.isc.FilterBuilder.addProperties({matchAllTitle:messages.filterBuilder_matchAllTitle()});
+    $wnd.isc.FilterBuilder.addProperties({matchNoneTitle:messages.filterBuilder_matchNoneTitle()});
+    $wnd.isc.FilterBuilder.addProperties({matchAnyTitle:messages.filterBuilder_matchAnyTitle()});
+    $wnd.isc.FilterBuilder.addProperties({subClauseButtonTitle:messages.filterBuilder_subClauseButtonTitle()});
+  }
+  $wnd.isc.FilterClause && $wnd.isc.FilterClause.addProperties({removeButtonPrompt:messages.filterClause_removeButtonPrompt()});
+  if ($wnd.isc.MultiSortDialog) {
+    $wnd.isc.MultiSortPanel.addProperties({addLevelButtonTitle:messages.multiSortDialog_addLevelButtonTitle()});
+    $wnd.isc.MultiSortPanel.addProperties({deleteLevelButtonTitle:messages.multiSortDialog_deleteLevelButtonTitle()});
+    $wnd.isc.MultiSortPanel.addProperties({copyLevelButtonTitle:messages.multiSortDialog_copyLevelButtonTitle()});
+    $wnd.isc.MultiSortPanel.addProperties({invalidListPrompt:messages.multiSortDialog_invalidListPrompt()});
+    $wnd.isc.MultiSortPanel.addProperties({propertyFieldTitle:messages.multiSortDialog_propertyFieldTitle()});
+    $wnd.isc.MultiSortPanel.addProperties({directionFieldTitle:messages.multiSortDialog_directionFieldTitle()});
+    $wnd.isc.MultiSortPanel.addProperties({ascendingTitle:messages.multiSortDialog_ascendingTitle()});
+    $wnd.isc.MultiSortPanel.addProperties({descendingTitle:messages.multiSortDialog_descendingTitle()});
+    $wnd.isc.MultiSortPanel.addProperties({firstSortLevelTitle:messages.multiSortDialog_firstSortLevelTitle()});
+    $wnd.isc.MultiSortPanel.addProperties({otherSortLevelTitle:messages.multiSortDialog_otherSortLevelTitle()});
+    $wnd.isc.MultiSortDialog.addProperties({title:messages.multiSortDialog_title()});
+    $wnd.isc.MultiSortDialog.addProperties({applyButtonTitle:messages.multiSortDialog_applyButtonTitle()});
+    $wnd.isc.MultiSortDialog.addProperties({cancelButtonTitle:messages.multiSortDialog_cancelButtonTitle()});
+    $wnd.isc.MultiSortDialog.addProperties({levelUpPrompt:messages.multiSortDialog_levelUpPrompt()});
+    $wnd.isc.MultiSortDialog.addProperties({levelDownPrompt:messages.multiSortDialog_levelDownPrompt()});
+  }
+  $wnd.isc.HiliteRule && $wnd.isc.HiliteRule.addProperties({removeButtonPrompt:messages.hiliteRule_removeButtonPrompt()});
+  $wnd.isc.AdvancedHiliteEditor && $wnd.isc.AdvancedHiliteEditor.addProperties({invalidCriteriaPrompt:messages.advancedHiliteEditor_invalidCriteriaPrompt()});
+  var shortDateFormat = messages.date_shortDateFormat();
+  shortDateFormat != null && $wnd.Date.setShortDisplayFormat(shortDateFormat);
+  var shortDatetimeFormat = messages.date_shortDatetimeFormat();
+  shortDatetimeFormat != null && $wnd.Date.setShortDatetimeDisplayFormat(shortDatetimeFormat);
+  var dateSeparator = messages.date_dateSeparator();
+  dateSeparator != null && $wnd.Date.setDefaultDateSeparator(dateSeparator);
+  $wnd.isc.addProperties($wnd.Date, {shortDayNames:[messages.date_shortDayNames_1(), messages.date_shortDayNames_2(), messages.date_shortDayNames_3(), messages.date_shortDayNames_4(), messages.date_shortDayNames_5(), messages.date_shortDayNames_6(), messages.date_shortDayNames_7()]});
+  $wnd.isc.addProperties($wnd.Date, {shortMonthNames:[messages.date_shortMonthNames_1(), messages.date_shortMonthNames_2(), messages.date_shortMonthNames_3(), messages.date_shortMonthNames_4(), messages.date_shortMonthNames_5(), messages.date_shortMonthNames_6(), messages.date_shortMonthNames_7(), messages.date_shortMonthNames_8(), messages.date_shortMonthNames_9(), messages.date_shortMonthNames_10(), messages.date_shortMonthNames_11(), messages.date_shortMonthNames_12()]});
+  if ($wnd.isc.DateRangeItem) {
+    $wnd.isc.DateRangeItem.addProperties({fromTitle:messages.dateRangeItem_fromTitle()});
+    $wnd.isc.DateRangeItem.addProperties({toTitle:messages.dateRangeItem_toTitle()});
+    $wnd.isc.DateRangeDialog.addProperties({headerTitle:messages.dateRangeDialog_headerTitle()});
+    $wnd.isc.DateRangeDialog.addProperties({clearButtonTitle:messages.dateRangeDialog_clearButtonTitle()});
+    $wnd.isc.DateRangeDialog.addProperties({okButtonTitle:messages.dateRangeDialog_okButtonTitle()});
+    $wnd.isc.DateRangeDialog.addProperties({cancelButtonTitle:messages.dateRangeDialog_cancelButtonTitle()});
+    $wnd.isc.MiniDateRangeItem.addProperties({pickerIconPrompt:messages.miniDateRangeItem_pickerIconPrompt()});
+    $wnd.isc.MiniDateRangeItem.addProperties({fromDateOnlyPrefix:messages.miniDateRangeItem_fromDateOnlyPrefix()});
+    $wnd.isc.MiniDateRangeItem.addProperties({toDateOnlyPrefix:messages.miniDateRangeItem_toDateOnlyPrefix()});
+    $wnd.isc.RelativeDateItem.addProperties({todayTitle:messages.relativeDateItem_todayTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({millisecondsAgoTitle:messages.relativeDateItem_millisecondsAgoTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({secondsAgoTitle:messages.relativeDateItem_secondsAgoTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({minutesAgoTitle:messages.relativeDateItem_minutesAgoTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({hoursAgoTitle:messages.relativeDateItem_hoursAgoTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({daysAgoTitle:messages.relativeDateItem_daysAgoTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({weeksAgoTitle:messages.relativeDateItem_weeksAgoTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({monthsAgoTitle:messages.relativeDateItem_monthsAgoTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({yearsAgoTitle:messages.relativeDateItem_yearsAgoTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({millisecondsFromNowTitle:messages.relativeDateItem_millisecondsFromNowTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({secondsFromNowTitle:messages.relativeDateItem_secondsFromNowTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({minutesFromNowTitle:messages.relativeDateItem_minutesFromNowTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({hoursFromNowTitle:messages.relativeDateItem_hoursFromNowTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({daysFromNowTitle:messages.relativeDateItem_daysFromNowTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({weeksFromNowTitle:messages.relativeDateItem_weeksFromNowTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({monthsFromNowTitle:messages.relativeDateItem_monthsFromNowTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({yearsFromNowTitle:messages.relativeDateItem_yearsFromNowTitle()});
+    $wnd.isc.RelativeDateItem.addProperties({pickerIconPrompt:messages.relativeDateItem_pickerIconPrompt()});
+    $wnd.isc.RelativeDateItem.addProperties({presetOptions:{$today:messages.relativeDateItem_presetOptions_today(), $yesterday:messages.relativeDateItem_presetOptions_yesterday(), $tomorrow:messages.relativeDateItem_presetOptions_tomorrow(), $weekAgo:messages.relativeDateItem_presetOptions_minus_1w(), $weekFromNow:messages.relativeDateItem_presetOptions_plus_1w(), $monthAgo:messages.relativeDateItem_presetOptions_minus_1m(), $monthFromNow:messages.relativeDateItem_presetOptions_plus_1m()}});
+  }
+  $wnd.isc.PickListMenu && $wnd.isc.PickListMenu.addProperties({emptyMessage:messages.pickListMenu_emptyMessage()});
+  $wnd.isc.IMenuButton && $wnd.isc.IMenuButton.addProperties({title:messages.iMenuButton_title()});
+  initialized_0 = true;
+}
+
+--></script>
+<script><!--
+var initialized_0 = false;
+function $clinit_IDManager(){
+  $clinit_IDManager = nullMethod;
+  assignedIDs = new HashSet_0;
+}
+
+function isValidID(id){
+  $clinit_IDManager();
+  if ($contains(assignedIDs, id)) {
+    $wnd.isc.logWarn('Specified ID:' + id + ' collides with the ID for an existing SmartGWT component or object.');
+    return;
+  }
+  $wnd[id] != null && $wnd.isc.logWarn('Specified ID:' + id + " collides with the ID of an existing object '" + $wnd[id] + "'.");
+}
+
+function unregisterID(id){
+  $clinit_IDManager();
+  $remove(assignedIDs, id);
+}
+
+var assignedIDs;
+function convertToJavaObjectArray(array){
+  var arr, i, length_0, result;
+  if (!array)
+    return initValues(_3Ljava_lang_Object_2_classLit, makeCastMap([Q$Serializable]), Q$Object, []);
+  length_0 = array.length;
+  arr = initDim(_3Ljava_lang_Object_2_classLit, makeCastMap([Q$Serializable]), Q$Object, length_0, 0);
+  for (i = 0; i < length_0; ++i) {
+    setCheck(arr, i, (result = array[i] , result == null || result === undefined?null:result));
+  }
+  return arr;
+}
+
+function convertToJavaScriptDate(date){
+  var dateJS;
+  if (!date)
+    return null;
+  dateJS = doConvertToJavaScriptDate(toDouble(fromDouble(date.jsdate.getTime())));
+  return dateJS;
+}
+
+function convertToString(obj){
+  if (instanceOf(obj, Q$String)) {
+    return dynamicCast(obj, Q$String);
+  }
+   else {
+    throw new IllegalArgumentException_0('Object ' + obj + ' is not of type String');
+  }
+}
+
+function doConvertToJavaScriptDate(time){
+  var dateJS = $wnd.Date.create();
+  dateJS.setTime(time);
+  return dateJS;
+}
+
+function setAttribute(elem, value){
+  !value?setNullAttribute(elem, 'padding'):(elem['padding'] = value.value_0 , undefined);
+}
+
+function setAttribute_0(elem, attr, value){
+  !value?setNullAttribute(elem, attr):(elem[attr] = value.value_0 , undefined);
+}
+
+function setNullAttribute(elem, attr){
+  elem[attr] = null;
+}
+
+function toBoolean(value){
+  return $clinit_Boolean() , value?TRUE:FALSE;
+}
+
+function toDate(millis){
+  return new Date_1(fromDouble(millis));
+}
+
+function handleOnError(msg, url, line){
+  return true;
+}
+
+function setJSNIErrorHandler(){
+  $wnd != window && (window.onerror = handleOnError);
+  var oldOnError = $wnd.onerror;
+  $wnd.onerror = function(msg, url, line){
+    var result, oldResult;
+    try {
+      result = true;
+    }
+     finally {
+      oldResult = oldOnError && oldOnError(msg, url, line);
+    }
+    if (result != null)
+      return result;
+    if (oldResult != null)
+      return oldResult;
+  }
+  ;
+}
+
+function PrintProperties_0(jsObj){
+  this.jsObj = jsObj;
+}
+
+function getOrCreateRef(jsObj){
+  if (!jsObj)
+    return null;
+  return new PrintProperties_0(jsObj);
+}
+
+function PrintProperties(){
+}
+
+_ = PrintProperties_0.prototype = PrintProperties.prototype = new DataClass;
+_.getClass$ = function getClass_36(){
+  return Lcom_smartgwt_client_util_PrintProperties_2_classLit;
+}
+;
+function generateID(className){
+  var simpleName = className.substring(className.lastIndexOf('.') + 1);
+  simpleName = simpleName.replace('$', '_');
+  return $wnd.isc.ClassFactory.getNextGlobalIDForClass(simpleName);
+}
+
+function $clinit_BaseWidget(){
+  $clinit_BaseWidget = nullMethod;
+  $wnd.isc.setAutoDraw(false);
+}
+
+function $$init(this$static){
+  this$static.config = new Object;
+}
+
+function $doAddHandler(this$static, handler, type){
+  return $addHandler(!this$static.manager?(this$static.manager = new HandlerManager_0(this$static)):this$static.manager, type, handler);
+}
+
+function $draw(this$static){
+  var self_0 = this$static.getOrCreateJsObj();
+  self_0.draw();
+}
+
+function $fireEvent_0(this$static, event_0){
+  !!this$static.manager && $fireEvent(this$static.manager, event_0);
+}
+
+function $getAttributeAsString(this$static, property){
+  var ret;
+  if (this$static.isCreated()) {
+    var widget = this$static.getJsObj();
+    ret = widget.getProperty(property);
+  }
+   else {
+    var config = this$static.config;
+    if (config[property] != undefined) {
+      ret = config[property];
+    }
+     else {
+      var scClassName = this$static.scClassName;
+      ret = $wnd.isc[scClassName].getInstanceProperty(property);
+    }
+  }
+  return ret == null || ret === undefined?null:String(ret);
+}
+
+function $getElement(this$static){
+  var jsObj, self_0, wrapperDiv, widget;
+  if (!this$static.isElementSet) {
+    jsObj = $getJsObj(this$static);
+    !jsObj && $getOrCreateJsObj(this$static);
+    wrapperDiv = $doc.createElement('div');
+    wrapperDiv['id'] = this$static.id + '_wrapper';
+    $appendChild(($clinit_RootPanel() , $doc.body), wrapperDiv);
+    self_0 = dynamicCast(this$static, Q$Canvas);
+    $setProperty(this$static, 'position', ($clinit_Positioning() , RELATIVE).value_0);
+    $setProperty_0(this$static, 'redrawOnResize', true);
+    widget = this$static.getJsObj();
+    widget.setProperty('htmlElement', wrapperDiv);
+    $clear(self_0);
+    $draw(self_0);
+    this$static.element = wrapperDiv;
+    this$static.isElementSet = true;
+    return wrapperDiv;
+  }
+  return this$static.element;
+}
+
+function $getHandlerCount_0(this$static, type){
+  return !this$static.manager?0:$getHandlerCount(this$static.manager, type);
+}
+
+function $getJsObj(this$static){
+  var id = this$static.getID();
+  if ($wnd.window[id] != null && $wnd.window[id] !== undefined) {
+    return $wnd.window[id];
+  }
+   else {
+    return null;
+  }
+}
+
+function $getOrCreateJsObj(this$static){
+  var jsObj;
+  if ($isCreated(this$static)) {
+    return $getJsObj(this$static);
+  }
+   else {
+    jsObj = this$static.create_0();
+    jsObj['__ref'] = this$static;
+    return jsObj;
+  }
+}
+
+function $isCreated(this$static){
+  var id = this$static.getID();
+  var obj = $wnd.window[id];
+  return id != null && obj != null && obj !== undefined && $wnd.isc.isA.Canvas(obj) === true;
+}
+
+function $setAttribute(this$static, value, allowPostCreate){
+  $isCreated(this$static)?allowPostCreate?$setProperty(this$static, 'overflow', value):undefined:(this$static.config['overflow'] = value , undefined);
+}
+
+function $setNullProperty(this$static, property){
+  var widget = this$static.getJsObj();
+  widget.setProperty(property, null);
+}
+
+function $setProperty(this$static, property, value){
+  var widget = this$static.getJsObj();
+  widget.setProperty(property, value);
+}
+
+function $setProperty_0(this$static, property, value){
+  var widget = this$static.getJsObj();
+  widget.setProperty(property, value);
+}
+
+function $setProperty_1(this$static, property, value){
+  var widget = this$static.getJsObj();
+  widget.setProperty(property, value);
+}
+
+function $setProperty_2(this$static, property, value){
+  var widget = this$static.getJsObj();
+  widget.setProperty(property, value);
+}
+
+function BaseWidget(){
+}
+
+_ = BaseWidget.prototype = new Widget;
+_.create_0 = function create_2(){
+  var config = this.getConfig();
+  return $wnd.isc.Canvas.create(config);
+}
+;
+_.destroy_0 = function destroy(){
+  var self_0 = this.getOrCreateJsObj();
+  var id = self_0.ID;
+  self_0.__destroy();
+  unregisterID(id);
+  this.onDestroy();
+}
+;
+_.doInit = function doInit(){
+  var self_0 = this.getOrCreateJsObj();
+  self_0.__setDragTracker = self_0.setDragTracker;
+  self_0.setDragTracker = function(){
+    var jObj = this.__ref;
+    return jObj.setDragTracker_0();
+  }
+  ;
+  self_0.__getInnerHTML = self_0.getInnerHTML;
+  self_0.getInnerHTML = function(){
+    var jObj = this.__ref;
+    return jObj.getInnerHTML_0();
+  }
+  ;
+  self_0.shouldRedrawOnResize == $wnd.isc.Canvas.getPrototype().shouldRedrawOnResize && (self_0.shouldRedrawOnResize = function(deltaX, deltaY){
+    var redrawOnResize = self_0.redrawOnResize;
+    redrawOnResize == null && (redrawOnResize = !(self_0.children != null && self_0.children.length > 0 && !self_0.allowContentAndChildren || self_0.__getInnerHTML == $wnd.isc.Canvas.getPrototype().getInnerHTML && !$wnd.isc.isA.Function(self_0.contents)));
+    return redrawOnResize;
+  }
+  );
+  self_0.onDraw = function(){
+    var jObj = this.__ref;
+    jObj != null && jObj.rendered();
+  }
+  ;
+  self_0.__destroy = self_0.destroy;
+  self_0.destroy = function(){
+    var jObj = this.__ref;
+    jObj.destroy_0();
+  }
+  ;
+  this.onInit();
+}
+;
+_.equals$ = function equals_1(obj){
+  var other;
+  if (instanceOf(obj, Q$BaseWidget)) {
+    if (obj === this) {
+      return true;
+    }
+     else {
+      other = dynamicCast(obj, Q$BaseWidget);
+      if ($equals(other.id, this.id)) {
+        return true;
+      }
+    }
+    return false;
+  }
+   else {
+    return false;
+  }
+}
+;
+_.fireEvent = function fireEvent(event_0){
+  $fireEvent_0(this, event_0);
+}
+;
+_.getClass$ = function getClass_37(){
+  return Lcom_smartgwt_client_widgets_BaseWidget_2_classLit;
+}
+;
+_.getConfig = function getConfig(){
+  return this.config;
+}
+;
+_.getElement = function getElement_0(){
+  return $getElement(this);
+}
+;
+_.getID = function getID(){
+  return this.id;
+}
+;
+_.getInnerHTML_0 = function getInnerHTML(){
+  var self_0 = this.getOrCreateJsObj();
+  return self_0.__getInnerHTML();
+}
+;
+_.getJsObj = function getJsObj_1(){
+  return $getJsObj(this);
+}
+;
+_.getOrCreateJsObj = function getOrCreateJsObj(){
+  return $getOrCreateJsObj(this);
+}
+;
+_.hashCode$ = function hashCode_3(){
+  return getHashCode_0(this.id);
+}
+;
+_.isCreated = function isCreated(){
+  return $isCreated(this);
+}
+;
+_.onDestroy = function onDestroy(){
+}
+;
+_.onInit = function onInit(){
+}
+;
+_.rendered = function rendered(){
+  $fireEvent_0(this, new DrawEvent_0);
+}
+;
+_.setDragTracker_0 = function setDragTracker(){
+  var self_0 = this.getOrCreateJsObj();
+  return !!self_0.__setDragTracker();
+}
+;
+_.toString$ = function toString_7(){
+  return '<<SmartGWT Component>>::' + this.getClass$() + ', ID:' + this.id;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$BaseWidget]);
+_.id = null;
+_.isElementSet = false;
+_.manager = null;
+_.scClassName = null;
+function $addClickHandler(this$static, handler){
+  $getHandlerCount_0(this$static, (!TYPE && (TYPE = new GwtEvent$Type_0) , TYPE)) == 0 && $setupClickEvent(this$static);
+  return $doAddHandler(this$static, handler, (!TYPE && (TYPE = new GwtEvent$Type_0) , TYPE));
+}
+
+function $clear(this$static){
+  var self_0 = this$static.getOrCreateJsObj();
+  self_0.clear();
+}
+
+function $getPrintHTML(this$static, printProperties, callback){
+  var self_0 = this$static.getOrCreateJsObj();
+  if (self_0._jsOverrideCall.getPrintHTML) {
+    self_0._fireDefaultMethod.getPrintHTML = true;
+    return;
+  }
+  var ppJS = printProperties == null?null:printProperties.getJsObj();
+  var ret = self_0.__getPrintHTML(ppJS, callback == null?null:$entry(function(HTML){
+    callback.setHTML(HTML);
+  }
+  ));
+  return ret === undefined?null:ret;
+}
+
+function $onInit(this$static){
+  var self_0 = this$static.getOrCreateJsObj();
+  self_0._jsOverrideCall = {};
+  self_0._fireDefaultMethod = {};
+  self_0.__parentResized = self_0.parentResized;
+  self_0.parentResized = $debox($entry(function(){
+    var jObj = this.__ref;
+    jObj.parentResized_0();
+  }
+  ));
+  self_0.__willAcceptDrop = self_0.willAcceptDrop;
+  self_0.willAcceptDrop = $debox($entry(function(){
+    var jObj = this.__ref;
+    var retVal = jObj.willAcceptDrop_0();
+    return retVal.booleanValue();
+  }
+  ));
+  self_0.__getPrintHTML = self_0.getPrintHTML;
+  self_0.getPrintHTML = function(printProperties, callback){
+    self_0._jsOverrideCall.getPrintHTML = true;
+    var jObj = this.__ref;
+    var jPP = printProperties == null?null:getOrCreateRef(printProperties);
+    var ret;
+    ret = jObj.getPrintHTMLJSCB(jPP, callback);
+    self_0._fireDefaultMethod.getPrintHTML && (ret = self_0.__getPrintHTML(printProperties, callback));
+    self_0._jsOverrideCall.getPrintHTML = null;
+    self_0._fireDefaultMethod.getPrintHTML = null;
+    return ret;
+  }
+  ;
+  self_0.__getHoverComponent = self_0.getHoverComponent;
+  self_0.getHoverComponent = $entry(function(){
+    var jObj = this.__ref;
+    var componentJ = jObj.getHoverComponent_0();
+    return componentJ == null?null:componentJ.getOrCreateJsObj();
+  }
+  );
+}
+
+function $setCanDragResize(this$static, canDragResize){
+  $isCreated(this$static)?!canDragResize?$setNullProperty(this$static, 'canDragResize'):$setProperty_0(this$static, 'canDragResize', canDragResize.value_0):setAttribute_0(this$static.config, 'canDragResize', canDragResize);
+}
+
+function $setContents(this$static, contents){
+  $isCreated(this$static)?$setProperty(this$static, 'contents', contents):(this$static.config['contents'] = contents , undefined);
+}
+
+function $setPadding(this$static, padding){
+  $isCreated(this$static)?!padding?$setNullProperty(this$static, 'padding'):$setProperty_1(this$static, 'padding', padding.value_0):setAttribute(this$static.config, padding);
+}
+
+function $setShowEdges(this$static, showEdges){
+  $isCreated(this$static)?undefined:setAttribute_0(this$static.config, 'showEdges', showEdges);
+}
+
+function $setupClickEvent(this$static){
+  var obj = null;
+  var selfJ = this$static;
+  if (this$static.isCreated()) {
+    obj = this$static.getJsObj();
+    obj.addProperties({click:$debox($entry(function(){
+      var param = {};
+      var event_0 = new ClickEvent_0(param);
+      selfJ.fireEvent(event_0);
+      var ret = event_0.isCancelled();
+      return !ret;
+    }
+    ))});
+  }
+   else {
+    obj = this$static.getConfig();
+    obj.click = $debox($entry(function(){
+      var param = {};
+      var event_0 = new ClickEvent_0(param);
+      selfJ.fireEvent(event_0);
+      var ret = event_0.isCancelled();
+      return !ret;
+    }
+    ));
+  }
+}
+
+function Canvas_1(){
+  var id;
+  $clinit_BaseWidget();
+  $$init(this);
+  id = generateID(this.getClass$().typeName);
+  this.id != null && unregisterID(this.id);
+  $clinit_IDManager();
+  isValidID(id);
+  $add_0(assignedIDs, id);
+  $isCreated(this)?undefined:(this.config['ID'] = id , undefined);
+  this.id = id;
+  this.scClassName = 'Canvas';
+}
+
+function Canvas_2(jsObj){
+  var ret;
+  $$init(this);
+  this.id = (ret = jsObj['ID'] , ret === undefined || ret == null?null:String(ret));
+}
+
+function getOrCreateRef_0(jsObj){
+  var obj, ret;
+  if (!jsObj)
+    return null;
+  obj = !jsObj?null:dynamicCast((ret = jsObj['__ref'] , ret === undefined?null:ret), Q$BaseWidget);
+  return obj?dynamicCast(obj, Q$Canvas):new Canvas_2(jsObj);
+}
+
+function Canvas_0(){
+}
+
+_ = Canvas_2.prototype = Canvas_1.prototype = Canvas_0.prototype = new BaseWidget;
+_.create_0 = function create_3(){
+  var config = this.getConfig();
+  var scClassName = this.scClassName;
+  var widget = $wnd.isc[scClassName].create(config);
+  this.doInit();
+  return widget;
+}
+;
+_.getClass$ = function getClass_38(){
+  return Lcom_smartgwt_client_widgets_Canvas_2_classLit;
+}
+;
+_.getHoverComponent_0 = function getHoverComponent(){
+  var self_0 = this.getOrCreateJsObj();
+  var hoverComponent = self_0.__getHoverComponent == null?null:self_0.__getHoverComponent();
+  return hoverComponent == null?null:hoverComponent.getOrCreateJsObj();
+}
+;
+_.getPrintHTMLJSCB = function getPrintHTMLJSCB(printProperties, jscallback){
+  var jcb;
+  if (!jscallback) {
+    return $getPrintHTML(this, printProperties, null);
+  }
+   else {
+    jcb = new Canvas$1_0(this, jscallback);
+    return $getPrintHTML(this, printProperties, jcb);
+  }
+}
+;
+_.onInit = function onInit_0(){
+  $onInit(this);
+}
+;
+_.parentResized_0 = function parentResized(){
+  var self_0 = this.getOrCreateJsObj();
+  self_0.__parentResized();
+}
+;
+_.setOverflow = function setOverflow(overflow){
+  $setAttribute(this, overflow.value_0, true);
+}
+;
+_.willAcceptDrop_0 = function willAcceptDrop(){
+  var self_0 = this.getOrCreateJsObj();
+  var retVal = self_0.__willAcceptDrop();
+  if (retVal == null || retVal === undefined) {
+    return null;
+  }
+   else {
+    return toBoolean(retVal);
+  }
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$BaseWidget, Q$Canvas]);
+function $executeJS(HTML, jscallback, canvas){
+  canvas.fireCallback(jscallback, ['HTML', 'callback'], [HTML, jscallback]);
+}
+
+function Canvas$1_0(this$0, val$jscallback){
+  this.this$0 = this$0;
+  this.val$jscallback = val$jscallback;
+}
+
+function Canvas$1(){
+}
+
+_ = Canvas$1_0.prototype = Canvas$1.prototype = new Object_0;
+_.getClass$ = function getClass_39(){
+  return Lcom_smartgwt_client_widgets_Canvas$1_2_classLit;
+}
+;
+_.setHTML = function setHTML(HTML){
+  $executeJS(HTML, this.val$jscallback, $getOrCreateJsObj(this.this$0));
+}
+;
+_.this$0 = null;
+_.val$jscallback = null;
+function StatefulCanvas(){
+}
+
+_ = StatefulCanvas.prototype = new Canvas_0;
+_.create_0 = function create_4(){
+  var config = this.getConfig();
+  var scClassName = this.scClassName;
+  var widget = $wnd.isc[scClassName].create(config);
+  this.doInit();
+  return widget;
+}
+;
+_.getClass$ = function getClass_40(){
+  return Lcom_smartgwt_client_widgets_StatefulCanvas_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$BaseWidget, Q$Canvas]);
+function StretchImg(){
+}
+
+_ = StretchImg.prototype = new StatefulCanvas;
+_.create_0 = function create_5(){
+  var config = this.getConfig();
+  var scClassName = this.scClassName;
+  var widget = $wnd.isc[scClassName].create(config);
+  this.doInit();
+  return widget;
+}
+;
+_.getClass$ = function getClass_41(){
+  return Lcom_smartgwt_client_widgets_StretchImg_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$BaseWidget, Q$Canvas]);
+function StretchImgButton(){
+}
+
+_ = StretchImgButton.prototype = new StretchImg;
+_.create_0 = function create_6(){
+  var config = this.getConfig();
+  var scClassName = this.scClassName;
+  var widget = $wnd.isc[scClassName].create(config);
+  this.doInit();
+  return widget;
+}
+;
+_.getClass$ = function getClass_42(){
+  return Lcom_smartgwt_client_widgets_StretchImgButton_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$BaseWidget, Q$Canvas]);
+function IButton_0(){
+  $clinit_BaseWidget();
+  Canvas_1.call(this);
+  this.scClassName = 'StatefulCanvas';
+  this.scClassName = 'StretchImg';
+  this.scClassName = 'StretchImgButton';
+  $isCreated(this)?$setProperty(this, 'title', 'Set Canvas HTML'):(this.config['title'] = 'Set Canvas HTML' , undefined);
+  this.scClassName = 'IButton';
+}
+
+function IButton(){
+}
+
+_ = IButton_0.prototype = IButton.prototype = new StretchImgButton;
+_.create_0 = function create_7(){
+  var config = this.getConfig();
+  var scClassName = this.scClassName;
+  var widget = $wnd.isc[scClassName].create(config);
+  this.doInit();
+  return widget;
+}
+;
+_.getClass$ = function getClass_43(){
+  return Lcom_smartgwt_client_widgets_IButton_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$BaseWidget, Q$Canvas]);
+function $addMember(this$static, component){
+  var componentJS, container, config;
+  componentJS = $getOrCreateJsObj(component);
+  $isCreated(this$static)?(container = this$static.getOrCreateJsObj() , container.addMember(componentJS) , undefined):(config = this$static.config , !config.members && (config.members = $wnd.Array.create()) , config.members.push(componentJS) , undefined);
+}
+
+function $onInit_Layout(this$static){
+  var self_0 = this$static.getOrCreateJsObj();
+  self_0.__getDropComponent = self_0.getDropComponent;
+  self_0.getDropComponent = $entry(function(dragTarget, dropPosition){
+    var jObj = this.__ref;
+    var dragTargetJ = getOrCreateRef_0(dragTarget);
+    var dragTarget2J = jObj.getDropComponent_0(dragTargetJ, dropPosition);
+    return dragTarget2J == null?null:dragTarget2J.getOrCreateJsObj();
+  }
+  );
+}
+
+function Layout(){
+}
+
+_ = Layout.prototype = new Canvas_0;
+_.create_0 = function create_8(){
+  var config = this.getConfig();
+  var scClassName = this.scClassName;
+  var widget = $wnd.isc[scClassName].create(config);
+  this.doInit();
+  return widget;
+}
+;
+_.getClass$ = function getClass_44(){
+  return Lcom_smartgwt_client_widgets_layout_Layout_2_classLit;
+}
+;
+_.getDropComponent_0 = function getDropComponent(dragTarget, dropPosition){
+  var self_0 = this.getOrCreateJsObj();
+  var ret = self_0.__getDropComponent(dragTarget == null?null:dragTarget.getOrCreateJsObj(), dropPosition);
+  return ret == null || ret == undefined?null:getOrCreateRef_0(ret);
+}
+;
+_.onInit = function onInit_1(){
+  $onInit(this);
+  $onInit_Layout(this);
+}
+;
+_.setOverflow = function setOverflow_0(overflow){
+  $setAttribute(this, overflow.value_0, false);
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$BaseWidget, Q$Canvas]);
+function VLayout_0(){
+  $clinit_BaseWidget();
+  Canvas_1.call(this);
+  this.scClassName = 'Layout';
+  this.scClassName = 'VLayout';
+}
+
+function VLayout(){
+}
+
+_ = VLayout_0.prototype = VLayout.prototype = new Layout;
+_.create_0 = function create_9(){
+  var config = this.getConfig();
+  var scClassName = this.scClassName;
+  var widget = $wnd.isc[scClassName].create(config);
+  this.doInit();
+  return widget;
+}
+;
+_.getClass$ = function getClass_45(){
+  return Lcom_smartgwt_client_widgets_layout_VLayout_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$BaseWidget, Q$Canvas]);
+function RichTextEditor_0(){
+  $clinit_BaseWidget();
+  VLayout_0.call(this);
+  this.scClassName = 'RichTextEditor';
+}
+
+function RichTextEditor(){
+}
+
+_ = RichTextEditor_0.prototype = RichTextEditor.prototype = new VLayout;
+_.create_0 = function create_10(){
+  var config = this.getConfig();
+  var scClassName = this.scClassName;
+  var widget = $wnd.isc[scClassName].create(config);
+  this.doInit();
+  return widget;
+}
+;
+_.getClass$ = function getClass_46(){
+  return Lcom_smartgwt_client_widgets_RichTextEditor_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$BaseWidget, Q$Canvas]);
+function BrowserEvent(){
+}
+
+_ = BrowserEvent.prototype = new AbstractSmartEvent;
+_.getClass$ = function getClass_47(){
+  return Lcom_smartgwt_client_widgets_events_BrowserEvent_2_classLit;
+}
+;
+function ClickEvent_0(jsObj){
+}
+
+function ClickEvent(){
+}
+
+_ = ClickEvent_0.prototype = ClickEvent.prototype = new BrowserEvent;
+_.dispatch = function dispatch(handler){
+  $setContents(handler.val$htmlCanvas, $getAttributeAsString(handler.val$richTextEditor, 'value'));
+}
+;
+_.getAssociatedType = function getAssociatedType(){
+  return TYPE;
+}
+;
+_.getClass$ = function getClass_48(){
+  return Lcom_smartgwt_client_widgets_events_ClickEvent_2_classLit;
+}
+;
+_.isCancelled = function isCancelled(){
+  return false;
+}
+;
+var TYPE = null;
+function DrawEvent_0(){
+}
+
+function DrawEvent(){
+}
+
+_ = DrawEvent_0.prototype = DrawEvent.prototype = new GwtEvent;
+_.dispatch = function dispatch_0(handler){
+  throwClassCastExceptionUnlessNull(handler);
+  null.nullMethod();
+}
+;
+_.getAssociatedType = function getAssociatedType_0(){
+  return TYPE_0;
+}
+;
+_.getClass$ = function getClass_49(){
+  return Lcom_smartgwt_client_widgets_events_DrawEvent_2_classLit;
+}
+;
+var TYPE_0 = null;
+function convertToDateRange(valueJS){
+  if (valueJS == null)
+    return null;
+  var startJS = valueJS.start;
+  var endJS = valueJS.end;
+  var dateRangeJ = new DateRange_0;
+  if (!(startJS == null || startJS === undefined)) {
+    if ($wnd.isc.isA.Date(startJS)) {
+      var start = toDate(startJS.getTime());
+      dateRangeJ.setStartDate(start);
+    }
+     else if ($wnd.isc.isA.String(startJS)) {
+      var start = new RelativeDate_0(startJS);
+      dateRangeJ.setRelativeStartDate(start);
+    }
+     else if (startJS.value) {
+      var start = new RelativeDate_0(startJS.value);
+      dateRangeJ.setRelativeStartDate(start);
+    }
+  }
+  if (!(endJS == null || endJS === undefined)) {
+    if ($wnd.isc.isA.Date(endJS)) {
+      var end = toDate(endJS.getTime());
+      dateRangeJ.setEndDate(end);
+    }
+     else if ($wnd.isc.isA.String(startJS)) {
+      var end = new RelativeDate_0(endJS);
+      dateRangeJ.setRelativeEndDate(end);
+    }
+     else if (endJS.value) {
+      var end = new RelativeDate_0(endJS.value);
+      dateRangeJ.setRelativeEndDate(end);
+    }
+  }
+  return dateRangeJ;
+}
+
+function ArithmeticException_0(){
+  RuntimeException_0.call(this, 'divide by zero');
+}
+
+function ArithmeticException(){
+}
+
+_ = ArithmeticException_0.prototype = ArithmeticException.prototype = new RuntimeException;
+_.getClass$ = function getClass_50(){
+  return Ljava_lang_ArithmeticException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$RuntimeException, Q$Throwable]);
+function ArrayStoreException_0(){
+  $fillInStackTrace();
+}
+
+function ArrayStoreException(){
+}
+
+_ = ArrayStoreException_0.prototype = ArrayStoreException.prototype = new RuntimeException;
+_.getClass$ = function getClass_51(){
+  return Ljava_lang_ArrayStoreException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$RuntimeException, Q$Throwable]);
+function $clinit_Boolean(){
+  $clinit_Boolean = nullMethod;
+  FALSE = new Boolean_1(false);
+  TRUE = new Boolean_1(true);
+}
+
+function Boolean_1(value){
+  this.value_0 = value;
+}
+
+function Boolean_0(){
+}
+
+_ = Boolean_1.prototype = Boolean_0.prototype = new Object_0;
+_.booleanValue = function booleanValue(){
+  return this.value_0;
+}
+;
+_.equals$ = function equals_2(o){
+  return instanceOf(o, Q$Boolean) && dynamicCast(o, Q$Boolean).value_0 == this.value_0;
+}
+;
+_.getClass$ = function getClass_52(){
+  return Ljava_lang_Boolean_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_4(){
+  return this.value_0?1231:1237;
+}
+;
+_.toString$ = function toString_8(){
+  return this.value_0?'true':'false';
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Boolean, Q$Comparable]);
+_.value_0 = false;
+var FALSE, TRUE;
+function Class_0(){
+}
+
+function createForArray(packageName, className){
+  var clazz;
+  clazz = new Class_0;
+  clazz.typeName = packageName + className;
+  clazz.modifiers = 4;
+  return clazz;
+}
+
+function createForClass(packageName, className){
+  var clazz;
+  clazz = new Class_0;
+  clazz.typeName = packageName + className;
+  return clazz;
+}
+
+function createForEnum(packageName, className, enumConstantsFunc){
+  var clazz;
+  clazz = new Class_0;
+  clazz.typeName = packageName + className;
+  clazz.modifiers = enumConstantsFunc?8:0;
+  return clazz;
+}
+
+function Class(){
+}
+
+_ = Class_0.prototype = Class.prototype = new Object_0;
+_.getClass$ = function getClass_53(){
+  return Ljava_lang_Class_2_classLit;
+}
+;
+_.toString$ = function toString_9(){
+  return ((this.modifiers & 2) != 0?'interface ':(this.modifiers & 1) != 0?'':'class ') + this.typeName;
+}
+;
+_.modifiers = 0;
+_.typeName = null;
+function ClassCastException_0(){
+  $fillInStackTrace();
+}
+
+function ClassCastException(){
+}
+
+_ = ClassCastException_0.prototype = ClassCastException.prototype = new RuntimeException;
+_.getClass$ = function getClass_54(){
+  return Ljava_lang_ClassCastException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$RuntimeException, Q$Throwable]);
+function Number_0(){
+}
+
+_ = Number_0.prototype = new Object_0;
+_.getClass$ = function getClass_55(){
+  return Ljava_lang_Number_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Number]);
+function Double_0(value){
+  this.value_0 = value;
+}
+
+function Double(){
+}
+
+_ = Double_0.prototype = Double.prototype = new Number_0;
+_.equals$ = function equals_3(o){
+  return instanceOf(o, Q$Double) && dynamicCast(o, Q$Double).value_0 == this.value_0;
+}
+;
+_.floatValue = function floatValue(){
+  return this.value_0;
+}
+;
+_.getClass$ = function getClass_56(){
+  return Ljava_lang_Double_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_5(){
+  return round_int(this.value_0);
+}
+;
+_.toString$ = function toString_10(){
+  return '' + this.value_0;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Comparable, Q$Double, Q$Number]);
+_.value_0 = 0;
+function Float_0(value){
+  this.value_0 = value;
+}
+
+function Float(){
+}
+
+_ = Float_0.prototype = Float.prototype = new Number_0;
+_.equals$ = function equals_4(o){
+  return instanceOf(o, Q$Float) && dynamicCast(o, Q$Float).value_0 == this.value_0;
+}
+;
+_.floatValue = function floatValue_0(){
+  return this.value_0;
+}
+;
+_.getClass$ = function getClass_57(){
+  return Ljava_lang_Float_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_6(){
+  return round_int(this.value_0);
+}
+;
+_.toString$ = function toString_11(){
+  return '' + this.value_0;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Comparable, Q$Float, Q$Number]);
+_.value_0 = 0;
+function IllegalArgumentException_0(message){
+  RuntimeException_0.call(this, message);
+}
+
+function IllegalArgumentException(){
+}
+
+_ = IllegalArgumentException_0.prototype = IllegalArgumentException.prototype = new RuntimeException;
+_.getClass$ = function getClass_58(){
+  return Ljava_lang_IllegalArgumentException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$RuntimeException, Q$Throwable]);
+function IndexOutOfBoundsException_0(){
+  $fillInStackTrace();
+}
+
+function IndexOutOfBoundsException_1(message){
+  RuntimeException_0.call(this, message);
+}
+
+function IndexOutOfBoundsException(){
+}
+
+_ = IndexOutOfBoundsException_1.prototype = IndexOutOfBoundsException_0.prototype = IndexOutOfBoundsException.prototype = new RuntimeException;
+_.getClass$ = function getClass_59(){
+  return Ljava_lang_IndexOutOfBoundsException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$RuntimeException, Q$Throwable]);
+function Integer_0(value){
+  this.value_0 = value;
+}
+
+function numberOfLeadingZeros_0(i){
+  var m_0, n, y;
+  if (i < 0) {
+    return 0;
+  }
+   else if (i == 0) {
+    return 32;
+  }
+   else {
+    y = -(i >> 16);
+    m_0 = y >> 16 & 16;
+    n = 16 - m_0;
+    i = i >> m_0;
+    y = i - 256;
+    m_0 = y >> 16 & 8;
+    n += m_0;
+    i <<= m_0;
+    y = i - 4096;
+    m_0 = y >> 16 & 4;
+    n += m_0;
+    i <<= m_0;
+    y = i - 16384;
+    m_0 = y >> 16 & 2;
+    n += m_0;
+    i <<= m_0;
+    y = i >> 14;
+    m_0 = y & ~(y >> 1);
+    return n + 2 - m_0;
+  }
+}
+
+function numberOfTrailingZeros(i){
+  var r, rtn;
+  if (i == 0) {
+    return 32;
+  }
+   else {
+    rtn = 0;
+    for (r = 1; (r & i) == 0; r <<= 1) {
+      ++rtn;
+    }
+    return rtn;
+  }
+}
+
+function toPowerOfTwoString(value){
+  var buf, digits, pos;
+  buf = initDim(_3C_classLit, makeCastMap([Q$Serializable]), -1, 8, 1);
+  digits = ($clinit_Number$__Digits() , digits_0);
+  pos = 7;
+  if (value >= 0) {
+    while (value > 15) {
+      buf[pos--] = digits[value & 15];
+      value >>= 4;
+    }
+  }
+   else {
+    while (pos > 0) {
+      buf[pos--] = digits[value & 15];
+      value >>= 4;
+    }
+  }
+  buf[pos] = digits[value & 15];
+  return __valueOf(buf, pos, 8);
+}
+
+--></script>
+<script><!--
+function valueOf(i){
+  var rebase, result;
+  if (i > -129 && i < 128) {
+    rebase = i + 128;
+    result = ($clinit_Integer$BoxedValues() , boxedValues_0)[rebase];
+    !result && (result = boxedValues_0[rebase] = new Integer_0(i));
+    return result;
+  }
+  return new Integer_0(i);
+}
+
+function Integer(){
+}
+
+_ = Integer_0.prototype = Integer.prototype = new Number_0;
+_.equals$ = function equals_5(o){
+  return instanceOf(o, Q$Integer) && dynamicCast(o, Q$Integer).value_0 == this.value_0;
+}
+;
+_.floatValue = function floatValue_1(){
+  return this.value_0;
+}
+;
+_.getClass$ = function getClass_60(){
+  return Ljava_lang_Integer_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_7(){
+  return this.value_0;
+}
+;
+_.intValue = function intValue(){
+  return this.value_0;
+}
+;
+_.toString$ = function toString_12(){
+  return '' + this.value_0;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Comparable, Q$Integer, Q$Number]);
+_.value_0 = 0;
+function $clinit_Integer$BoxedValues(){
+  $clinit_Integer$BoxedValues = nullMethod;
+  boxedValues_0 = initDim(_3Ljava_lang_Integer_2_classLit, makeCastMap([Q$Serializable]), Q$Integer, 256, 0);
+}
+
+var boxedValues_0;
+function Long_0(value){
+  this.value_0 = value;
+}
+
+function valueOf_0(i){
+  var rebase, result;
+  if (gt(i, N81_longLit) && lt(i, P80_longLit)) {
+    rebase = toInt(i) + 128;
+    result = ($clinit_Long$BoxedValues() , boxedValues_1)[rebase];
+    !result && (result = boxedValues_1[rebase] = new Long_0(i));
+    return result;
+  }
+  return new Long_0(i);
+}
+
+function Long(){
+}
+
+_ = Long_0.prototype = Long.prototype = new Number_0;
+_.equals$ = function equals_6(o){
+  return instanceOf(o, Q$Long) && eq(dynamicCast(o, Q$Long).value_0, this.value_0);
+}
+;
+_.floatValue = function floatValue_2(){
+  return toDouble(this.value_0);
+}
+;
+_.getClass$ = function getClass_61(){
+  return Ljava_lang_Long_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_8(){
+  return toInt(this.value_0);
+}
+;
+_.toString$ = function toString_13(){
+  return '' + toString_4(this.value_0);
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Comparable, Q$Long, Q$Number]);
+_.value_0 = P0_longLit;
+function $clinit_Long$BoxedValues(){
+  $clinit_Long$BoxedValues = nullMethod;
+  boxedValues_1 = initDim(_3Ljava_lang_Long_2_classLit, makeCastMap([Q$Serializable]), Q$Long, 256, 0);
+}
+
+var boxedValues_1;
+function NullPointerException_0(){
+  $fillInStackTrace();
+}
+
+function NullPointerException_1(message){
+  RuntimeException_0.call(this, message);
+}
+
+function NullPointerException(){
+}
+
+_ = NullPointerException_1.prototype = NullPointerException_0.prototype = NullPointerException.prototype = new RuntimeException;
+_.getClass$ = function getClass_62(){
+  return Ljava_lang_NullPointerException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$RuntimeException, Q$Throwable]);
+function $clinit_Number$__Digits(){
+  $clinit_Number$__Digits = nullMethod;
+  digits_0 = initValues(_3C_classLit, makeCastMap([Q$Serializable]), -1, [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122]);
+}
+
+var digits_0;
+function StackTraceElement_0(methodName){
+  this.className = 'Unknown';
+  this.methodName = methodName;
+  this.lineNumber = -1;
+}
+
+function StackTraceElement(){
+}
+
+_ = StackTraceElement_0.prototype = StackTraceElement.prototype = new Object_0;
+_.getClass$ = function getClass_63(){
+  return Ljava_lang_StackTraceElement_2_classLit;
+}
+;
+_.toString$ = function toString_14(){
+  return this.className + '.' + this.methodName + '(Unknown Source' + (this.lineNumber >= 0?':' + this.lineNumber:'') + ')';
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$StackTraceElement]);
+_.className = null;
+_.lineNumber = 0;
+_.methodName = null;
+function $charAt(this$static, index){
+  return this$static.charCodeAt(index);
+}
+
+function $equals(this$static, other){
+  if (!instanceOf(other, Q$String)) {
+    return false;
+  }
+  return String(this$static) == other;
+}
+
+function $trim(this$static){
+  if (this$static.length == 0 || this$static[0] > ' ' && this$static[this$static.length - 1] > ' ') {
+    return this$static;
+  }
+  var r1 = this$static.replace(/^(\s*)/, '');
+  var r2 = r1.replace(/\s*$/, '');
+  return r2;
+}
+
+function __valueOf(x, start, end){
+  x = x.slice(start, end);
+  return String.fromCharCode.apply(null, x);
+}
+
+_ = String.prototype;
+_.equals$ = function equals_7(other){
+  return $equals(this, other);
+}
+;
+_.getClass$ = function getClass_64(){
+  return Ljava_lang_String_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_9(){
+  return getHashCode_0(this);
+}
+;
+_.toString$ = function toString_15(){
+  return this;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$String, Q$Serializable, Q$CharSequence, Q$Comparable]);
+function $clinit_String$HashCache(){
+  $clinit_String$HashCache = nullMethod;
+  back_0 = {};
+  front = {};
+}
+
+function compute(str){
+  var hashCode, i, n, nBatch;
+  hashCode = 0;
+  n = str.length;
+  nBatch = n - 4;
+  i = 0;
+  while (i < nBatch) {
+    hashCode = str.charCodeAt(i + 3) + 31 * (str.charCodeAt(i + 2) + 31 * (str.charCodeAt(i + 1) + 31 * (str.charCodeAt(i) + 31 * hashCode))) | 0;
+    i += 4;
+  }
+  while (i < n) {
+    hashCode = hashCode * 31 + $charAt(str, i++);
+  }
+  return hashCode | 0;
+}
+
+function getHashCode_0(str){
+  $clinit_String$HashCache();
+  var key = ':' + str;
+  var result = front[key];
+  if (result != null) {
+    return result;
+  }
+  result = back_0[key];
+  result == null && (result = compute(str));
+  increment();
+  return front[key] = result;
+}
+
+function increment(){
+  if (count == 256) {
+    back_0 = front;
+    front = {};
+    count = 0;
+  }
+  ++count;
+}
+
+var back_0, count = 0, front;
+function StringBuffer_0(){
+  var array;
+  this.data_0 = (array = [] , array.explicitLength = 0 , array);
+}
+
+function StringBuffer(){
+}
+
+_ = StringBuffer_0.prototype = StringBuffer.prototype = new Object_0;
+_.getClass$ = function getClass_65(){
+  return Ljava_lang_StringBuffer_2_classLit;
+}
+;
+_.toString$ = function toString_16(){
+  return $toString(this.data_0);
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$CharSequence]);
+function UnsupportedOperationException_0(message){
+  RuntimeException_0.call(this, message);
+}
+
+function UnsupportedOperationException(){
+}
+
+_ = UnsupportedOperationException_0.prototype = UnsupportedOperationException.prototype = new RuntimeException;
+_.getClass$ = function getClass_66(){
+  return Ljava_lang_UnsupportedOperationException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$RuntimeException, Q$Throwable]);
+function $advanceToFind(iter, o){
+  var t;
+  while (iter.hasNext()) {
+    t = iter.next_0();
+    if (o == null?t == null:equals__devirtual$(o, t)) {
+      return iter;
+    }
+  }
+  return null;
+}
+
+function $toString_0(this$static){
+  var comma, iter, sb, value;
+  sb = new StringBuffer_0;
+  comma = null;
+  $append(sb.data_0, '[');
+  iter = this$static.iterator();
+  while (iter.hasNext()) {
+    comma != null?($append(sb.data_0, comma) , sb):(comma = ', ');
+    value = iter.next_0();
+    $append(sb.data_0, value === this$static?'(this Collection)':'' + value);
+  }
+  $append(sb.data_0, ']');
+  return $toString(sb.data_0);
+}
+
+function AbstractCollection(){
+}
+
+_ = AbstractCollection.prototype = new Object_0;
+_.add = function add(o){
+  throw new UnsupportedOperationException_0('Add not supported on this collection');
+}
+;
+_.contains = function contains(o){
+  var iter;
+  iter = $advanceToFind(this.iterator(), o);
+  return !!iter;
+}
+;
+_.getClass$ = function getClass_67(){
+  return Ljava_util_AbstractCollection_2_classLit;
+}
+;
+_.toArray = function toArray(a){
+  var i, it, size;
+  size = this.size_0();
+  a.length < size && (a = createFrom(a, size));
+  it = this.iterator();
+  for (i = 0; i < size; ++i) {
+    setCheck(a, i, it.next_0());
+  }
+  a.length > size && setCheck(a, size, null);
+  return a;
+}
+;
+_.toString$ = function toString_17(){
+  return $toString_0(this);
+}
+;
+function $implFindEntry(this$static, key){
+  var entry, iter, k;
+  for (iter = this$static.entrySet().iterator(); iter.hasNext();) {
+    entry = dynamicCast(iter.next_0(), Q$Map$Entry);
+    k = entry.getKey();
+    if (key == null?k == null:equals__devirtual$(key, k)) {
+      return entry;
+    }
+  }
+  return null;
+}
+
+function $keySet(this$static){
+  var entrySet;
+  entrySet = this$static.entrySet();
+  return new AbstractMap$1_0(this$static, entrySet);
+}
+
+function AbstractMap(){
+}
+
+_ = AbstractMap.prototype = new Object_0;
+_.containsKey = function containsKey(key){
+  return !!$implFindEntry(this, key);
+}
+;
+_.equals$ = function equals_8(obj){
+  var entry, entry$iterator, otherKey, otherMap, otherValue;
+  if (obj === this) {
+    return true;
+  }
+  if (!instanceOf(obj, Q$Map)) {
+    return false;
+  }
+  otherMap = dynamicCast(obj, Q$Map);
+  if (this.size_0() != otherMap.size_0()) {
+    return false;
+  }
+  for (entry$iterator = otherMap.entrySet().iterator(); entry$iterator.hasNext();) {
+    entry = dynamicCast(entry$iterator.next_0(), Q$Map$Entry);
+    otherKey = entry.getKey();
+    otherValue = entry.getValue();
+    if (!this.containsKey(otherKey)) {
+      return false;
+    }
+    if (!equalsWithNullCheck(otherValue, this.get(otherKey))) {
+      return false;
+    }
+  }
+  return true;
+}
+;
+_.get = function get(key){
+  var entry;
+  entry = $implFindEntry(this, key);
+  return !entry?null:entry.getValue();
+}
+;
+_.getClass$ = function getClass_68(){
+  return Ljava_util_AbstractMap_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_10(){
+  var entry, entry$iterator, hashCode;
+  hashCode = 0;
+  for (entry$iterator = this.entrySet().iterator(); entry$iterator.hasNext();) {
+    entry = dynamicCast(entry$iterator.next_0(), Q$Map$Entry);
+    hashCode += entry.hashCode$();
+    hashCode = ~~hashCode;
+  }
+  return hashCode;
+}
+;
+_.put = function put(key, value){
+  throw new UnsupportedOperationException_0('Put not supported on this map');
+}
+;
+_.size_0 = function size_0(){
+  return this.entrySet().size_0();
+}
+;
+_.toString$ = function toString_18(){
+  var comma, entry, iter, s;
+  s = '{';
+  comma = false;
+  for (iter = this.entrySet().iterator(); iter.hasNext();) {
+    entry = dynamicCast(iter.next_0(), Q$Map$Entry);
+    comma?(s += ', '):(comma = true);
+    s += '' + entry.getKey();
+    s += '=';
+    s += '' + entry.getValue();
+  }
+  return s + '}';
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Map]);
+function $addAllHashEntries(this$static, dest){
+  var hashCodeMap = this$static.hashCodeMap;
+  for (var hashCode in hashCodeMap) {
+    var hashCodeInt = parseInt(hashCode, 10);
+    if (hashCode == hashCodeInt) {
+      var array = hashCodeMap[hashCodeInt];
+      for (var i = 0, c = array.length; i < c; ++i) {
+        dest.add(array[i]);
+      }
+    }
+  }
+}
+
+function $addAllStringEntries(this$static, dest){
+  var stringMap = this$static.stringMap;
+  for (var key in stringMap) {
+    if (key.charCodeAt(0) == 58) {
+      var entry = new AbstractHashMap$MapEntryString_0(this$static, key.substring(1));
+      dest.add(entry);
+    }
+  }
+}
+
+function $getHashValue(this$static, key, hashCode){
+  var array = this$static.hashCodeMap[hashCode];
+  if (array) {
+    for (var i = 0, c = array.length; i < c; ++i) {
+      var entry = array[i];
+      var entryKey = entry.getKey();
+      if (this$static.equalsBridge(key, entryKey)) {
+        return entry.getValue();
+      }
+    }
+  }
+  return null;
+}
+
+function $getStringValue(this$static, key){
+  return this$static.stringMap[':' + key];
+}
+
+function $hasHashValue(this$static, key, hashCode){
+  var array = this$static.hashCodeMap[hashCode];
+  if (array) {
+    for (var i = 0, c = array.length; i < c; ++i) {
+      var entry = array[i];
+      var entryKey = entry.getKey();
+      if (this$static.equalsBridge(key, entryKey)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+function $putHashValue(this$static, key, value, hashCode){
+  var array = this$static.hashCodeMap[hashCode];
+  if (array) {
+    for (var i = 0, c = array.length; i < c; ++i) {
+      var entry = array[i];
+      var entryKey = entry.getKey();
+      if (this$static.equalsBridge(key, entryKey)) {
+        var previous = entry.getValue();
+        entry.setValue(value);
+        return previous;
+      }
+    }
+  }
+   else {
+    array = this$static.hashCodeMap[hashCode] = [];
+  }
+  var entry = new MapEntryImpl_0(key, value);
+  array.push(entry);
+  ++this$static.size;
+  return null;
+}
+
+function $putNullSlot(this$static, value){
+  var result;
+  result = this$static.nullSlot;
+  this$static.nullSlot = value;
+  if (!this$static.nullSlotLive) {
+    this$static.nullSlotLive = true;
+    ++this$static.size;
+  }
+  return result;
+}
+
+function $putStringValue(this$static, key, value){
+  var result, stringMap = this$static.stringMap;
+  key = ':' + key;
+  key in stringMap?(result = stringMap[key]):++this$static.size;
+  stringMap[key] = value;
+  return result;
+}
+
+function $removeHashValue(this$static, key, hashCode){
+  var array = this$static.hashCodeMap[hashCode];
+  if (array) {
+    for (var i = 0, c = array.length; i < c; ++i) {
+      var entry = array[i];
+      var entryKey = entry.getKey();
+      if (this$static.equalsBridge(key, entryKey)) {
+        array.length == 1?delete this$static.hashCodeMap[hashCode]:array.splice(i, 1);
+        --this$static.size;
+        return entry.getValue();
+      }
+    }
+  }
+  return null;
+}
+
+function $removeNullSlot(this$static){
+  var result;
+  result = this$static.nullSlot;
+  this$static.nullSlot = null;
+  if (this$static.nullSlotLive) {
+    this$static.nullSlotLive = false;
+    --this$static.size;
+  }
+  return result;
+}
+
+function $removeStringValue(this$static, key){
+  var result, stringMap = this$static.stringMap;
+  key = ':' + key;
+  if (key in stringMap) {
+    result = stringMap[key];
+    --this$static.size;
+    delete stringMap[key];
+  }
+  return result;
+}
+
+function AbstractHashMap(){
+}
+
+_ = AbstractHashMap.prototype = new AbstractMap;
+_.containsKey = function containsKey_0(key){
+  return key == null?this.nullSlotLive:instanceOf(key, Q$String)?':' + dynamicCast(key, Q$String) in this.stringMap:$hasHashValue(this, key, this.getHashCode(key));
+}
+;
+_.entrySet = function entrySet_0(){
+  return new AbstractHashMap$EntrySet_0(this);
+}
+;
+_.equalsBridge = function equalsBridge(value1, value2){
+  return this.equals(value1, value2);
+}
+;
+_.get = function get_0(key){
+  return key == null?this.nullSlot:instanceOf(key, Q$String)?$getStringValue(this, dynamicCast(key, Q$String)):$getHashValue(this, key, this.getHashCode(key));
+}
+;
+_.getClass$ = function getClass_69(){
+  return Ljava_util_AbstractHashMap_2_classLit;
+}
+;
+_.put = function put_0(key, value){
+  return key == null?$putNullSlot(this, value):instanceOf(key, Q$String)?$putStringValue(this, dynamicCast(key, Q$String), value):$putHashValue(this, key, value, this.getHashCode(key));
+}
+;
+_.remove = function remove(key){
+  return key == null?$removeNullSlot(this):instanceOf(key, Q$String)?$removeStringValue(this, dynamicCast(key, Q$String)):$removeHashValue(this, key, this.getHashCode(key));
+}
+;
+_.size_0 = function size_1(){
+  return this.size;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Map]);
+_.hashCodeMap = null;
+_.nullSlot = null;
+_.nullSlotLive = false;
+_.size = 0;
+_.stringMap = null;
+function AbstractSet(){
+}
+
+_ = AbstractSet.prototype = new AbstractCollection;
+_.equals$ = function equals_9(o){
+  var iter, other, otherItem;
+  if (o === this) {
+    return true;
+  }
+  if (!instanceOf(o, Q$Set)) {
+    return false;
+  }
+  other = dynamicCast(o, Q$Set);
+  if (other.size_0() != this.size_0()) {
+    return false;
+  }
+  for (iter = other.iterator(); iter.hasNext();) {
+    otherItem = iter.next_0();
+    if (!this.contains(otherItem)) {
+      return false;
+    }
+  }
+  return true;
+}
+;
+_.getClass$ = function getClass_70(){
+  return Ljava_util_AbstractSet_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_11(){
+  var hashCode, iter, next;
+  hashCode = 0;
+  for (iter = this.iterator(); iter.hasNext();) {
+    next = iter.next_0();
+    if (next != null) {
+      hashCode += hashCode__devirtual$(next);
+      hashCode = ~~hashCode;
+    }
+  }
+  return hashCode;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Set]);
+function AbstractHashMap$EntrySet_0(this$0){
+  this.this$0 = this$0;
+}
+
+function AbstractHashMap$EntrySet(){
+}
+
+_ = AbstractHashMap$EntrySet_0.prototype = AbstractHashMap$EntrySet.prototype = new AbstractSet;
+_.contains = function contains_0(o){
+  var entry, key, value;
+  if (instanceOf(o, Q$Map$Entry)) {
+    entry = dynamicCast(o, Q$Map$Entry);
+    key = entry.getKey();
+    if (this.this$0.containsKey(key)) {
+      value = this.this$0.get(key);
+      return this.this$0.equals(entry.getValue(), value);
+    }
+  }
+  return false;
+}
+;
+_.getClass$ = function getClass_71(){
+  return Ljava_util_AbstractHashMap$EntrySet_2_classLit;
+}
+;
+_.iterator = function iterator(){
+  return new AbstractHashMap$EntrySetIterator_0(this.this$0);
+}
+;
+_.size_0 = function size_2(){
+  return this.this$0.size_0();
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Set]);
+_.this$0 = null;
+function AbstractHashMap$EntrySetIterator_0(this$0){
+  var list;
+  list = new ArrayList_0;
+  this$0.nullSlotLive && $add(list, new AbstractHashMap$MapEntryNull_0(this$0));
+  $addAllStringEntries(this$0, list);
+  $addAllHashEntries(this$0, list);
+  this.iter = new AbstractList$IteratorImpl_0(list);
+}
+
+function AbstractHashMap$EntrySetIterator(){
+}
+
+_ = AbstractHashMap$EntrySetIterator_0.prototype = AbstractHashMap$EntrySetIterator.prototype = new Object_0;
+_.getClass$ = function getClass_72(){
+  return Ljava_util_AbstractHashMap$EntrySetIterator_2_classLit;
+}
+;
+_.hasNext = function hasNext(){
+  return $hasNext(this.iter);
+}
+;
+_.next_0 = function next_0(){
+  return dynamicCast($next(this.iter), Q$Map$Entry);
+}
+;
+_.iter = null;
+function AbstractMapEntry(){
+}
+
+_ = AbstractMapEntry.prototype = new Object_0;
+_.equals$ = function equals_10(other){
+  var entry;
+  if (instanceOf(other, Q$Map$Entry)) {
+    entry = dynamicCast(other, Q$Map$Entry);
+    if (equalsWithNullCheck(this.getKey(), entry.getKey()) && equalsWithNullCheck(this.getValue(), entry.getValue())) {
+      return true;
+    }
+  }
+  return false;
+}
+;
+_.getClass$ = function getClass_73(){
+  return Ljava_util_AbstractMapEntry_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_12(){
+  var keyHash, valueHash;
+  keyHash = 0;
+  valueHash = 0;
+  this.getKey() != null && (keyHash = hashCode__devirtual$(this.getKey()));
+  this.getValue() != null && (valueHash = hashCode__devirtual$(this.getValue()));
+  return keyHash ^ valueHash;
+}
+;
+_.toString$ = function toString_19(){
+  return this.getKey() + '=' + this.getValue();
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Map$Entry]);
+function AbstractHashMap$MapEntryNull_0(this$0){
+  this.this$0 = this$0;
+}
+
+function AbstractHashMap$MapEntryNull(){
+}
+
+_ = AbstractHashMap$MapEntryNull_0.prototype = AbstractHashMap$MapEntryNull.prototype = new AbstractMapEntry;
+_.getClass$ = function getClass_74(){
+  return Ljava_util_AbstractHashMap$MapEntryNull_2_classLit;
+}
+;
+_.getKey = function getKey(){
+  return null;
+}
+;
+_.getValue = function getValue(){
+  return this.this$0.nullSlot;
+}
+;
+_.setValue = function setValue(object){
+  return $putNullSlot(this.this$0, object);
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Map$Entry]);
+_.this$0 = null;
+function AbstractHashMap$MapEntryString_0(this$0, key){
+  this.this$0 = this$0;
+  this.key = key;
+}
+
+function AbstractHashMap$MapEntryString(){
+}
+
+_ = AbstractHashMap$MapEntryString_0.prototype = AbstractHashMap$MapEntryString.prototype = new AbstractMapEntry;
+_.getClass$ = function getClass_75(){
+  return Ljava_util_AbstractHashMap$MapEntryString_2_classLit;
+}
+;
+_.getKey = function getKey_0(){
+  return this.key;
+}
+;
+_.getValue = function getValue_0(){
+  return $getStringValue(this.this$0, this.key);
+}
+;
+_.setValue = function setValue_0(object){
+  return $putStringValue(this.this$0, this.key, object);
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Map$Entry]);
+_.key = null;
+_.this$0 = null;
+function checkIndex(index, size){
+  (index < 0 || index >= size) && indexOutOfBounds(index, size);
+}
+
+function indexOutOfBounds(index, size){
+  throw new IndexOutOfBoundsException_1('Index: ' + index + ', Size: ' + size);
+}
+
+function AbstractList(){
+}
+
+_ = AbstractList.prototype = new AbstractCollection;
+_.add = function add_0(obj){
+  this.add_0(this.size_0(), obj);
+  return true;
+}
+;
+_.add_0 = function add_1(index, element){
+  throw new UnsupportedOperationException_0('Add not supported on this list');
+}
+;
+_.equals$ = function equals_11(o){
+  var elem, elemOther, iter, iterOther, other;
+  if (o === this) {
+    return true;
+  }
+  if (!instanceOf(o, Q$List)) {
+    return false;
+  }
+  other = dynamicCast(o, Q$List);
+  if (this.size_0() != other.size_0()) {
+    return false;
+  }
+  iter = new AbstractList$IteratorImpl_0(this);
+  iterOther = other.iterator();
+  while (iter.i < iter.this$0_0.size_0()) {
+    elem = $next(iter);
+    elemOther = $next(iterOther);
+    if (!(elem == null?elemOther == null:equals__devirtual$(elem, elemOther))) {
+      return false;
+    }
+  }
+  return true;
+}
+;
+_.getClass$ = function getClass_76(){
+  return Ljava_util_AbstractList_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_13(){
+  var iter, k, obj;
+  k = 1;
+  iter = new AbstractList$IteratorImpl_0(this);
+  while (iter.i < iter.this$0_0.size_0()) {
+    obj = $next(iter);
+    k = 31 * k + (obj == null?0:hashCode__devirtual$(obj));
+    k = ~~k;
+  }
+  return k;
+}
+;
+_.iterator = function iterator_0(){
+  return new AbstractList$IteratorImpl_0(this);
+}
+;
+_.listIterator = function listIterator(){
+  return new AbstractList$ListIteratorImpl_0(this, 0);
+}
+;
+_.listIterator_0 = function listIterator_0(from){
+  return new AbstractList$ListIteratorImpl_0(this, from);
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$List]);
+function $hasNext(this$static){
+  return this$static.i < this$static.this$0_0.size_0();
+}
+
+function $next(this$static){
+  if (this$static.i >= this$static.this$0_0.size_0()) {
+    throw new NoSuchElementException_0;
+  }
+  return this$static.this$0_0.get_0(this$static.i++);
+}
+
+function AbstractList$IteratorImpl_0(this$0){
+  this.this$0_0 = this$0;
+}
+
+function AbstractList$IteratorImpl(){
+}
+
+_ = AbstractList$IteratorImpl_0.prototype = AbstractList$IteratorImpl.prototype = new Object_0;
+_.getClass$ = function getClass_77(){
+  return Ljava_util_AbstractList$IteratorImpl_2_classLit;
+}
+;
+_.hasNext = function hasNext_0(){
+  return $hasNext(this);
+}
+;
+_.next_0 = function next_1(){
+  return $next(this);
+}
+;
+_.i = 0;
+_.this$0_0 = null;
+function $previous(this$static){
+  if (this$static.i <= 0) {
+    throw new NoSuchElementException_0;
+  }
+  return this$static.this$0.get_0(--this$static.i);
+}
+
+function AbstractList$ListIteratorImpl_0(this$0, start){
+  var size;
+  this.this$0 = this$0;
+  this.this$0_0 = this$0;
+  size = this$0.size_0();
+  (start < 0 || start > size) && indexOutOfBounds(start, size);
+  this.i = start;
+}
+
+function AbstractList$ListIteratorImpl(){
+}
+
+_ = AbstractList$ListIteratorImpl_0.prototype = AbstractList$ListIteratorImpl.prototype = new AbstractList$IteratorImpl;
+_.getClass$ = function getClass_78(){
+  return Ljava_util_AbstractList$ListIteratorImpl_2_classLit;
+}
+;
+_.this$0 = null;
+function $iterator(this$static){
+  var outerIter;
+  outerIter = this$static.val$entrySet.iterator();
+  return new AbstractMap$1$1_0(outerIter);
+}
+
+function AbstractMap$1_0(this$0, val$entrySet){
+  this.this$0 = this$0;
+  this.val$entrySet = val$entrySet;
+}
+
+function AbstractMap$1(){
+}
+
+_ = AbstractMap$1_0.prototype = AbstractMap$1.prototype = new AbstractSet;
+_.contains = function contains_1(key){
+  return this.this$0.containsKey(key);
+}
+;
+_.getClass$ = function getClass_79(){
+  return Ljava_util_AbstractMap$1_2_classLit;
+}
+;
+_.iterator = function iterator_1(){
+  return $iterator(this);
+}
+;
+_.size_0 = function size_3(){
+  return this.val$entrySet.size_0();
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Set]);
+_.this$0 = null;
+_.val$entrySet = null;
+function AbstractMap$1$1_0(val$outerIter){
+  this.val$outerIter = val$outerIter;
+}
+
+function AbstractMap$1$1(){
+}
+
+_ = AbstractMap$1$1_0.prototype = AbstractMap$1$1.prototype = new Object_0;
+_.getClass$ = function getClass_80(){
+  return Ljava_util_AbstractMap$1$1_2_classLit;
+}
+;
+_.hasNext = function hasNext_1(){
+  return this.val$outerIter.hasNext();
+}
+;
+_.next_0 = function next_2(){
+  var entry;
+  entry = dynamicCast(this.val$outerIter.next_0(), Q$Map$Entry);
+  return entry.getKey();
+}
+;
+_.val$outerIter = null;
+function $add(this$static, o){
+  setCheck(this$static.array, this$static.size++, o);
+  return true;
+}
+
+function $indexOf(this$static, o, index){
+  for (; index < this$static.size; ++index) {
+    if (equalsWithNullCheck(o, this$static.array[index])) {
+      return index;
+    }
+  }
+  return -1;
+}
+
+function ArrayList_0(){
+  this.array = initDim(_3Ljava_lang_Object_2_classLit, makeCastMap([Q$Serializable]), Q$Object, 0, 0);
+}
+
+function splice(array, index, deleteCount, value){
+  array.splice(index, deleteCount, value);
+}
+
+function ArrayList(){
+}
+
+_ = ArrayList_0.prototype = ArrayList.prototype = new AbstractList;
+_.add = function add_2(o){
+  return $add(this, o);
+}
+;
+_.add_0 = function add_3(index, o){
+  (index < 0 || index > this.size) && indexOutOfBounds(index, this.size);
+  splice(this.array, index, 0, o);
+  ++this.size;
+}
+;
+_.contains = function contains_2(o){
+  return $indexOf(this, o, 0) != -1;
+}
+;
+_.get_0 = function get_1(index){
+  return checkIndex(index, this.size) , this.array[index];
+}
+;
+_.getClass$ = function getClass_81(){
+  return Ljava_util_ArrayList_2_classLit;
+}
+;
+_.size_0 = function size_4(){
+  return this.size;
+}
+;
+_.toArray = function toArray_0(out){
+  var i;
+  out.length < this.size && (out = createFrom(out, this.size));
+  for (i = 0; i < this.size; ++i) {
+    setCheck(out, i, this.array[i]);
+  }
+  out.length > this.size && setCheck(out, this.size, null);
+  return out;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$List]);
+_.size = 0;
+function $clinit_Collections(){
+  $clinit_Collections = nullMethod;
+  EMPTY_LIST = new Collections$EmptyList_0;
+}
+
+var EMPTY_LIST;
+function Collections$EmptyList_0(){
+}
+
+function Collections$EmptyList(){
+}
+
+_ = Collections$EmptyList_0.prototype = Collections$EmptyList.prototype = new AbstractList;
+_.contains = function contains_3(object){
+  return false;
+}
+;
+_.get_0 = function get_2(location_0){
+  throw new IndexOutOfBoundsException_0;
+}
+;
+_.getClass$ = function getClass_82(){
+  return Ljava_util_Collections$EmptyList_2_classLit;
+}
+;
+_.size_0 = function size_5(){
+  return 0;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$List]);
+function Date_1(date){
+  this.jsdate = create(toDouble(date));
+}
+
+function padTwo(number){
+  return number < 10?'0' + number:'' + number;
+}
+
+function Date_0(){
+}
+
+_ = Date_1.prototype = Date_0.prototype = new Object_0;
+_.equals$ = function equals_12(obj){
+  return instanceOf(obj, Q$Date) && eq(fromDouble(this.jsdate.getTime()), fromDouble(dynamicCast(obj, Q$Date).jsdate.getTime()));
+}
+;
+_.getClass$ = function getClass_83(){
+  return Ljava_util_Date_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_14(){
+  var time;
+  time = fromDouble(this.jsdate.getTime());
+  return toInt(xor(time, shru(time, 32)));
+}
+;
+_.toString$ = function toString_20(){
+  var hourOffset, minuteOffset, offset;
+  offset = -this.jsdate.getTimezoneOffset();
+  hourOffset = (offset >= 0?'+':'') + ~~(offset / 60);
+  minuteOffset = (offset < 0?-offset:offset) % 60 < 10?'0' + (offset < 0?-offset:offset) % 60:'' + (offset < 0?-offset:offset) % 60;
+  return ($clinit_Date$StringData() , DAYS)[this.jsdate.getDay()] + ' ' + MONTHS[this.jsdate.getMonth()] + ' ' + padTwo(this.jsdate.getDate()) + ' ' + padTwo(this.jsdate.getHours()) + ':' + padTwo(this.jsdate.getMinutes()) + ':' + padTwo(this.jsdate.getSeconds()) + ' GMT' + hourOffset + minuteOffset + ' ' + this.jsdate.getFullYear();
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Comparable, Q$Date]);
+_.jsdate = null;
+function $clinit_Date$StringData(){
+  $clinit_Date$StringData = nullMethod;
+  DAYS = initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable]), Q$String, ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']);
+  MONTHS = initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable]), Q$String, ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
+}
+
+var DAYS, MONTHS;
+function HashMap_0(){
+  this.hashCodeMap = [];
+  this.stringMap = {};
+  this.nullSlotLive = false;
+  this.nullSlot = null;
+  this.size = 0;
+}
+
+function HashMap(){
+}
+
+_ = HashMap_0.prototype = HashMap.prototype = new AbstractHashMap;
+_.equals = function equals_13(value1, value2){
+  return maskUndefined(value1) === maskUndefined(value2) || value1 != null && equals__devirtual$(value1, value2);
+}
+;
+_.getClass$ = function getClass_84(){
+  return Ljava_util_HashMap_2_classLit;
+}
+;
+_.getHashCode = function getHashCode_1(key){
+  return ~~hashCode__devirtual$(key);
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Map]);
+function $add_0(this$static, o){
+  var old;
+  old = this$static.map.put(o, this$static);
+  return old == null;
+}
+
+function $contains(this$static, o){
+  return this$static.map.containsKey(o);
+}
+
+function $remove(this$static, o){
+  return this$static.map.remove(o) != null;
+}
+
+function HashSet_0(){
+  this.map = new HashMap_0;
+}
+
+function HashSet(){
+}
+
+_ = HashSet_0.prototype = HashSet.prototype = new AbstractSet;
+_.add = function add_4(o){
+  return $add_0(this, o);
+}
+;
+_.contains = function contains_4(o){
+  return this.map.containsKey(o);
+}
+;
+_.getClass$ = function getClass_85(){
+  return Ljava_util_HashSet_2_classLit;
+}
+;
+_.iterator = function iterator_2(){
+  return $iterator($keySet(this.map));
+}
+;
+_.size_0 = function size_6(){
+  return this.map.size_0();
+}
+;
+_.toString$ = function toString_21(){
+  return $toString_0($keySet(this.map));
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Set]);
+_.map = null;
+function $containsKey(this$static, key){
+  return this$static.map.containsKey(key);
+}
+
+--></script>
+<script><!--
+function $get(this$static, key){
+  var entry;
+  entry = dynamicCast(this$static.map.get(key), Q$LinkedHashMap$ChainEntry);
+  if (entry) {
+    $recordAccess(this$static, entry);
+    return entry.value_0;
+  }
+  return null;
+}
+
+function $recordAccess(this$static, entry){
+  if (this$static.accessOrder) {
+    $remove_0(entry);
+    $addToEnd(entry);
+  }
+}
+
+function LinkedHashMap_0(){
+  HashMap_0.call(this);
+  this.head = new LinkedHashMap$ChainEntry_0(this);
+  this.map = new HashMap_0;
+  this.head.prev = this.head;
+  this.head.next = this.head;
+}
+
+function LinkedHashMap(){
+}
+
+_ = LinkedHashMap_0.prototype = LinkedHashMap.prototype = new HashMap;
+_.containsKey = function containsKey_1(key){
+  return this.map.containsKey(key);
+}
+;
+_.entrySet = function entrySet_1(){
+  return new LinkedHashMap$EntrySet_0(this);
+}
+;
+_.get = function get_3(key){
+  return $get(this, key);
+}
+;
+_.getClass$ = function getClass_86(){
+  return Ljava_util_LinkedHashMap_2_classLit;
+}
+;
+_.put = function put_1(key, value){
+  var newEntry, old, oldValue;
+  old = dynamicCast(this.map.get(key), Q$LinkedHashMap$ChainEntry);
+  if (!old) {
+    newEntry = new LinkedHashMap$ChainEntry_1(this, key, value);
+    this.map.put(key, newEntry);
+    $addToEnd(newEntry);
+    return null;
+  }
+   else {
+    oldValue = old.value_0;
+    $setValue(old, value);
+    $recordAccess(this, old);
+    return oldValue;
+  }
+}
+;
+_.remove = function remove_0(key){
+  var entry;
+  entry = dynamicCast(this.map.remove(key), Q$LinkedHashMap$ChainEntry);
+  if (entry) {
+    $remove_0(entry);
+    return entry.value_0;
+  }
+  return null;
+}
+;
+_.size_0 = function size_7(){
+  return this.map.size_0();
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Map]);
+_.accessOrder = false;
+function $setValue(this$static, value){
+  var old;
+  old = this$static.value_0;
+  this$static.value_0 = value;
+  return old;
+}
+
+function MapEntryImpl_0(key, value){
+  this.key = key;
+  this.value_0 = value;
+}
+
+function MapEntryImpl(){
+}
+
+_ = MapEntryImpl_0.prototype = MapEntryImpl.prototype = new AbstractMapEntry;
+_.getClass$ = function getClass_87(){
+  return Ljava_util_MapEntryImpl_2_classLit;
+}
+;
+_.getKey = function getKey_1(){
+  return this.key;
+}
+;
+_.getValue = function getValue_1(){
+  return this.value_0;
+}
+;
+_.setValue = function setValue_1(value){
+  return $setValue(this, value);
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Map$Entry]);
+_.key = null;
+_.value_0 = null;
+function $addToEnd(this$static){
+  var tail;
+  tail = this$static.this$0.head.prev;
+  this$static.prev = tail;
+  this$static.next = this$static.this$0.head;
+  tail.next = this$static.this$0.head.prev = this$static;
+}
+
+function $remove_0(this$static){
+  this$static.next.prev = this$static.prev;
+  this$static.prev.next = this$static.next;
+  this$static.next = this$static.prev = null;
+}
+
+function LinkedHashMap$ChainEntry_0(this$0){
+  LinkedHashMap$ChainEntry_1.call(this, this$0, null, null);
+}
+
+function LinkedHashMap$ChainEntry_1(this$0, key, value){
+  this.this$0 = this$0;
+  MapEntryImpl_0.call(this, key, value);
+  this.next = this.prev = null;
+}
+
+function LinkedHashMap$ChainEntry(){
+}
+
+_ = LinkedHashMap$ChainEntry_1.prototype = LinkedHashMap$ChainEntry_0.prototype = LinkedHashMap$ChainEntry.prototype = new MapEntryImpl;
+_.getClass$ = function getClass_88(){
+  return Ljava_util_LinkedHashMap$ChainEntry_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$LinkedHashMap$ChainEntry, Q$Map$Entry]);
+_.next = null;
+_.prev = null;
+_.this$0 = null;
+function LinkedHashMap$EntrySet_0(this$0){
+  this.this$0 = this$0;
+}
+
+function LinkedHashMap$EntrySet(){
+}
+
+_ = LinkedHashMap$EntrySet_0.prototype = LinkedHashMap$EntrySet.prototype = new AbstractSet;
+_.contains = function contains_5(o){
+  var entry, key, value;
+  if (!instanceOf(o, Q$Map$Entry)) {
+    return false;
+  }
+  entry = dynamicCast(o, Q$Map$Entry);
+  key = entry.getKey();
+  if ($containsKey(this.this$0, key)) {
+    value = $get(this.this$0, key);
+    return equalsWithNullCheck(entry.getValue(), value);
+  }
+  return false;
+}
+;
+_.getClass$ = function getClass_89(){
+  return Ljava_util_LinkedHashMap$EntrySet_2_classLit;
+}
+;
+_.iterator = function iterator_3(){
+  return new LinkedHashMap$EntrySet$EntryIterator_0(this);
+}
+;
+_.size_0 = function size_8(){
+  return this.this$0.map.size_0();
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Set]);
+_.this$0 = null;
+function $next_0(this$static){
+  if (this$static.next == this$static.this$1.this$0.head) {
+    throw new NoSuchElementException_0;
+  }
+  this$static.last = this$static.next;
+  this$static.next = this$static.next.next;
+  return this$static.last;
+}
+
+function LinkedHashMap$EntrySet$EntryIterator_0(this$1){
+  this.this$1 = this$1;
+  this.next = this$1.this$0.head.next;
+}
+
+function LinkedHashMap$EntrySet$EntryIterator(){
+}
+
+_ = LinkedHashMap$EntrySet$EntryIterator_0.prototype = LinkedHashMap$EntrySet$EntryIterator.prototype = new Object_0;
+_.getClass$ = function getClass_90(){
+  return Ljava_util_LinkedHashMap$EntrySet$EntryIterator_2_classLit;
+}
+;
+_.hasNext = function hasNext_2(){
+  return this.next != this.this$1.this$0.head;
+}
+;
+_.next_0 = function next_3(){
+  return $next_0(this);
+}
+;
+_.last = null;
+_.next = null;
+_.this$1 = null;
+function NoSuchElementException_0(){
+  $fillInStackTrace();
+}
+
+function NoSuchElementException(){
+}
+
+_ = NoSuchElementException_0.prototype = NoSuchElementException.prototype = new RuntimeException;
+_.getClass$ = function getClass_91(){
+  return Ljava_util_NoSuchElementException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$RuntimeException, Q$Throwable]);
+function equalsWithNullCheck(a, b){
+  return maskUndefined(a) === maskUndefined(b) || a != null && equals__devirtual$(a, b);
+}
+
+function GWTsamples$1_0(val$htmlCanvas, val$richTextEditor){
+  this.val$htmlCanvas = val$htmlCanvas;
+  this.val$richTextEditor = val$richTextEditor;
+}
+
+function GWTsamples$1(){
+}
+
+_ = GWTsamples$1_0.prototype = GWTsamples$1.prototype = new Object_0;
+_.getClass$ = function getClass_92(){
+  return Lmygwt_client_GWTsamples$1_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$EventHandler]);
+_.val$htmlCanvas = null;
+_.val$richTextEditor = null;
+var $entry = entry_0;
+function gwtOnLoad(errFn, modName, modBase, softPermutationId){
+  $moduleName = modName;
+  $moduleBase = modBase;
+  if (errFn)
+    try {
+      $entry(init)();
+    }
+     catch (e) {
+      errFn(modName);
+    }
+   else {
+    $entry(init)();
+  }
+}
+
+var Ljava_lang_Object_2_classLit = createForClass('java.lang.', 'Object'), Ljava_lang_Enum_2_classLit = createForClass('java.lang.', 'Enum'), Ljava_lang_Throwable_2_classLit = createForClass('java.lang.', 'Throwable'), Ljava_lang_Exception_2_classLit = createForClass('java.lang.', 'Exception'), Ljava_lang_RuntimeException_2_classLit = createForClass('java.lang.', 'RuntimeException'), Lcom_google_gwt_core_client_JavaScriptException_2_classLit = createForClass('com.google.gwt.core.client.', 'JavaScriptException'), Lcom_google_gwt_core_client_JavaScriptObject_2_classLit = createForClass('com.google.gwt.core.client.', 'JavaScriptObject$'), Lcom_google_gwt_core_client_Scheduler_2_classLit = createForClass('com.google.gwt.core.client.', 'Scheduler'), _3Ljava_lang_Object_2_classLit = createForArray('[Ljava.lang.', 'Object;'), Lcom_google_gwt_core_client_impl_SchedulerImpl_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'SchedulerImpl'), Lcom_google_gwt_core_client_impl_StackTraceCreator$Collector_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'StackTraceCreator$Collector'), Ljava_lang_StackTraceElement_2_classLit = createForClass('java.lang.', 'StackTraceElement'), _3Ljava_lang_StackTraceElement_2_classLit = createForArray('[Ljava.lang.', 'StackTraceElement;'), Ljava_lang_String_2_classLit = createForClass('java.lang.', 'String'), _3Ljava_lang_String_2_classLit = createForArray('[Ljava.lang.', 'String;'), Lcom_google_web_bindery_event_shared_Event_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'Event'), Lcom_google_gwt_event_shared_GwtEvent_2_classLit = createForClass('com.google.gwt.event.shared.', 'GwtEvent'), Lcom_google_web_bindery_event_shared_Event$Type_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'Event$Type'), Lcom_google_gwt_event_shared_GwtEvent$Type_2_classLit = createForClass('com.google.gwt.event.shared.', 'GwtEvent$Type'), Lcom_google_gwt_event_shared_HandlerManager_2_classLit = createForClass('com.google.gwt.event.shared.', 'HandlerManager'), Lcom_google_web_bindery_event_shared_EventBus_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'EventBus'), Lcom_google_web_bindery_event_shared_SimpleEventBus_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'SimpleEventBus'), Lcom_google_gwt_event_shared_HandlerManager$Bus_2_classLit = createForClass('com.google.gwt.event.shared.', 'HandlerManager$Bus'), Lcom_google_gwt_event_shared_LegacyHandlerWrapper_2_classLit = createForClass('com.google.gwt.event.shared.', 'LegacyHandlerWrapper'), Lcom_google_web_bindery_event_shared_UmbrellaException_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'UmbrellaException'), Lcom_google_gwt_event_shared_UmbrellaException_2_classLit = createForClass('com.google.gwt.event.shared.', 'UmbrellaException'), Lcom_google_gwt_lang_LongLibBase$LongEmul_2_classLit = createForClass('com.google.gwt.lang.', 'LongLibBase$LongEmul'), _3Lcom_google_gwt_lang_LongLibBase$LongEmul_2_classLit = createForArray('[Lcom.google.gwt.lang.', 'LongLibBase$LongEmul;'), Lcom_google_gwt_user_client_ui_UIObject_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'UIObject'), Lcom_google_gwt_user_client_ui_Widget_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Widget'), Ljava_util_AbstractCollection_2_classLit = createForClass('java.util.', 'AbstractCollection'), Ljava_util_AbstractList_2_classLit = createForClass('java.util.', 'AbstractList'), Ljava_util_ArrayList_2_classLit = createForClass('java.util.', 'ArrayList'), _3C_classLit = createForArray('', '[C'), Lcom_google_web_bindery_event_shared_SimpleEventBus$1_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'SimpleEventBus$1'), Lcom_google_web_bindery_event_shared_SimpleEventBus$2_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'SimpleEventBus$2'), _3Ljava_lang_Throwable_2_classLit = createForArray('[Ljava.lang.', 'Throwable;'), Lcom_smartgwt_client_SmartGwtEntryPoint$1_2_classLit = createForClass('com.smartgwt.client.', 'SmartGwtEntryPoint$1'), Lcom_smartgwt_client_core_JsObject_2_classLit = createForClass('com.smartgwt.client.core.', 'JsObject'), Lcom_smartgwt_client_core_DataClass_2_classLit = createForClass('com.smartgwt.client.core.', 'DataClass'), Lcom_smartgwt_client_core_JsObject$SGWT_1WARN_2_classLit = createForClass('com.smartgwt.client.core.', 'JsObject$SGWT_WARN'), Lcom_smartgwt_client_data_DateRange_2_classLit = createForClass('com.smartgwt.client.data.', 'DateRange'), Lcom_smartgwt_client_data_RelativeDate_2_classLit = createForClass('com.smartgwt.client.data.', 'RelativeDate'), Lcom_smartgwt_client_event_AbstractSmartEvent_2_classLit = createForClass('com.smartgwt.client.event.', 'AbstractSmartEvent'), Lcom_smartgwt_client_i18n_SmartGwtMessages_1_2_classLit = createForClass('com.smartgwt.client.i18n.', 'SmartGwtMessages_'), Lcom_smartgwt_client_types_Overflow_2_classLit = createForEnum('com.smartgwt.client.types.', 'Overflow', values), _3Lcom_smartgwt_client_types_Overflow_2_classLit = createForArray('[Lcom.smartgwt.client.types.', 'Overflow;'), Lcom_smartgwt_client_types_Positioning_2_classLit = createForEnum('com.smartgwt.client.types.', 'Positioning', values_0), _3Lcom_smartgwt_client_types_Positioning_2_classLit = createForArray('[Lcom.smartgwt.client.types.', 'Positioning;'), Ljava_lang_Number_2_classLit = createForClass('java.lang.', 'Number'), Ljava_lang_Integer_2_classLit = createForClass('java.lang.', 'Integer'), _3Ljava_lang_Integer_2_classLit = createForArray('[Ljava.lang.', 'Integer;'), Ljava_lang_Float_2_classLit = createForClass('java.lang.', 'Float'), Lcom_smartgwt_client_util_PrintProperties_2_classLit = createForClass('com.smartgwt.client.util.', 'PrintProperties'), Lcom_smartgwt_client_widgets_BaseWidget_2_classLit = createForClass('com.smartgwt.client.widgets.', 'BaseWidget'), Lcom_smartgwt_client_widgets_Canvas_2_classLit = createForClass('com.smartgwt.client.widgets.', 'Canvas'), Lcom_smartgwt_client_widgets_StatefulCanvas_2_classLit = createForClass('com.smartgwt.client.widgets.', 'StatefulCanvas'), Lcom_smartgwt_client_widgets_Canvas$1_2_classLit = createForClass('com.smartgwt.client.widgets.', 'Canvas$1'), Lcom_smartgwt_client_widgets_layout_Layout_2_classLit = createForClass('com.smartgwt.client.widgets.layout.', 'Layout'), Lcom_smartgwt_client_widgets_layout_VLayout_2_classLit = createForClass('com.smartgwt.client.widgets.layout.', 'VLayout'), Lcom_smartgwt_client_widgets_StretchImg_2_classLit = createForClass('com.smartgwt.client.widgets.', 'StretchImg'), Lcom_smartgwt_client_widgets_StretchImgButton_2_classLit = createForClass('com.smartgwt.client.widgets.', 'StretchImgButton'), Lcom_smartgwt_client_widgets_IButton_2_classLit = createForClass('com.smartgwt.client.widgets.', 'IButton'), Lcom_smartgwt_client_widgets_RichTextEditor_2_classLit = createForClass('com.smartgwt.client.widgets.', 'RichTextEditor'), Lcom_smartgwt_client_widgets_events_BrowserEvent_2_classLit = createForClass('com.smartgwt.client.widgets.events.', 'BrowserEvent'), Lcom_smartgwt_client_widgets_events_ClickEvent_2_classLit = createForClass('com.smartgwt.client.widgets.events.', 'ClickEvent'), Lcom_smartgwt_client_widgets_events_DrawEvent_2_classLit = createForClass('com.smartgwt.client.widgets.events.', 'DrawEvent'), Ljava_lang_ArithmeticException_2_classLit = createForClass('java.lang.', 'ArithmeticException'), Ljava_lang_IndexOutOfBoundsException_2_classLit = createForClass('java.lang.', 'IndexOutOfBoundsException'), Ljava_lang_ArrayStoreException_2_classLit = createForClass('java.lang.', 'ArrayStoreException'), Ljava_lang_Boolean_2_classLit = createForClass('java.lang.', 'Boolean'), Ljava_lang_Class_2_classLit = createForClass('java.lang.', 'Class'), Ljava_lang_ClassCastException_2_classLit = createForClass('java.lang.', 'ClassCastException'), Ljava_lang_Double_2_classLit = createForClass('java.lang.', 'Double'), Ljava_lang_IllegalArgumentException_2_classLit = createForClass('java.lang.', 'IllegalArgumentException'), Ljava_lang_Long_2_classLit = createForClass('java.lang.', 'Long'), _3Ljava_lang_Long_2_classLit = createForArray('[Ljava.lang.', 'Long;'), Ljava_lang_NullPointerException_2_classLit = createForClass('java.lang.', 'NullPointerException'), Ljava_lang_StringBuffer_2_classLit = createForClass('java.lang.', 'StringBuffer'), Ljava_lang_UnsupportedOperationException_2_classLit = createForClass('java.lang.', 'UnsupportedOperationException'), Ljava_util_AbstractMap_2_classLit = createForClass('java.util.', 'AbstractMap'), Ljava_util_AbstractHashMap_2_classLit = createForClass('java.util.', 'AbstractHashMap'), Ljava_util_AbstractSet_2_classLit = createForClass('java.util.', 'AbstractSet'), Ljava_util_AbstractHashMap$EntrySet_2_classLit = createForClass('java.util.', 'AbstractHashMap$EntrySet'), Ljava_util_AbstractHashMap$EntrySetIterator_2_classLit = createForClass('java.util.', 'AbstractHashMap$EntrySetIterator'), Ljava_util_AbstractMapEntry_2_classLit = createForClass('java.util.', 'AbstractMapEntry'), Ljava_util_AbstractHashMap$MapEntryNull_2_classLit = createForClass('java.util.', 'AbstractHashMap$MapEntryNull'), Ljava_util_AbstractHashMap$MapEntryString_2_classLit = createForClass('java.util.', 'AbstractHashMap$MapEntryString'), Ljava_util_AbstractList$IteratorImpl_2_classLit = createForClass('java.util.', 'AbstractList$IteratorImpl'), Ljava_util_AbstractList$ListIteratorImpl_2_classLit = createForClass('java.util.', 'AbstractList$ListIteratorImpl'), Ljava_util_AbstractMap$1_2_classLit = createForClass('java.util.', 'AbstractMap$1'), Ljava_util_AbstractMap$1$1_2_classLit = createForClass('java.util.', 'AbstractMap$1$1'), Ljava_util_Collections$EmptyList_2_classLit = createForClass('java.util.', 'Collections$EmptyList'), Ljava_util_Date_2_classLit = createForClass('java.util.', 'Date'), Ljava_util_HashMap_2_classLit = createForClass('java.util.', 'HashMap'), Ljava_util_HashSet_2_classLit = createForClass('java.util.', 'HashSet'), Ljava_util_LinkedHashMap_2_classLit = createForClass('java.util.', 'LinkedHashMap'), Ljava_util_MapEntryImpl_2_classLit = createForClass('java.util.', 'MapEntryImpl'), Ljava_util_LinkedHashMap$ChainEntry_2_classLit = createForClass('java.util.', 'LinkedHashMap$ChainEntry'), Ljava_util_LinkedHashMap$EntrySet_2_classLit = createForClass('java.util.', 'LinkedHashMap$EntrySet'), Ljava_util_LinkedHashMap$EntrySet$EntryIterator_2_classLit = createForClass('java.util.', 'LinkedHashMap$EntrySet$EntryIterator'), Ljava_util_NoSuchElementException_2_classLit = createForClass('java.util.', 'NoSuchElementException'), Lmygwt_client_GWTsamples$1_2_classLit = createForClass('mygwt.client.', 'GWTsamples$1');
+$stats && $stats({moduleName:'gwtsamples',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalEnd'});
+if ($wnd.gwtsamples) $wnd.gwtsamples.onScriptLoad();
+--></script></body></html>
